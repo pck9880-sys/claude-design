@@ -39,16 +39,22 @@ def main():
 
     elif tool == "Bash":
         cmd = inp.get("command", "")
-        m = re.search(r"build_deck\.py\s+(\S+\.json)", cmd)
-        if m:
-            spec_path = ROOT / m.group(1).strip("'\"")
+        m = re.search(r"python[^\n;&|]*build_deck\.py\s+([^\s;&|<>]+\.json)", cmd)
+        spec_path = ROOT / m.group(1).strip("'\"") if m else None
+        if spec_path and spec_path.is_file():
             try:
                 spec = json.loads(spec_path.read_text(encoding="utf-8"))
                 pptx = ROOT / "output" / f"ir-{spec['name']}" / "deck.pptx"
+                pptx = pptx.with_name(spec.get("out_file") or "deck.pptx")
                 if pptx.exists():
                     code, out = run(["ir/scripts/check_margins.py", str(pptx), "--tokens", spec.get("tokens") or "tokens.json"])
                     if code:
                         problems.append(f"[여백 검사 실패] {pptx.relative_to(ROOT)}\n{out}")
+                    sty = spec.get("style")
+                    args = ["ir/scripts/check_style.py", str(pptx)] + (["--style", sty] if isinstance(sty, str) else [])
+                    code, out = run(args)
+                    if code:
+                        problems.append(f"[서식 검사 실패: 최소 글자·폰트·선 굵기] {pptx.relative_to(ROOT)}\n{out}")
             except Exception as e:  # noqa: BLE001
                 problems.append(f"[훅 오류] {e}")
 

@@ -1,7 +1,8 @@
 # 내가 작업한 IR 포트폴리오
 
 원본 PPTX는 PC `바탕화면/IR 레퍼런스`에 있음 (용량 문제로 GitHub에는 PDF만).
-Claude는 새 IR 작업 때 이 폴더를 우리 스타일 레퍼런스로 먼저 참고한다.
+Claude는 새 IR 작업 때 이 폴더와 `refs/ir/samples/`를 같은 비중으로 참고한다.
+`pptx-lite/`: 원본 PPTX의 서식(도형·글꼴·자간·선·간격)을 그대로 둔 경량본 (사진은 회색 자리표시, 포함 폰트 제거). 서식 분석: `python ir/scripts/analyze_style.py refs/ir/portfolio/pptx-lite --pdf refs/ir/samples --out design-kit/ir-styles/analysis.json`
 
 | 회사 | 파일 | 장수 | 용량 |
 |---|---|---|---|

@@ -29,7 +29,18 @@ argument-hint: "<회사명> [자료 폴더/파일] [홈페이지 주소]"
 - 브랜드 색: 고객 색 코드 > 템플릿 테마 > 로고 > 홈페이지 색 후보 순 → `python tools/make_tokens.py ... --out output/ir-<작업명>/tokens.json`
 - 서식: 템플릿이 있으면 `python ir/scripts/format_profile.py <템플릿>` (결과를 `output/ir-<작업명>/format-profile.md`로 옮김)
 - 홈페이지 체크: `output/ir-<작업명>/site/check.md`
-- 레퍼런스: `refs/ir/portfolio/`에서 비슷한 덱 2–3개 선정 + 필요 시 웹 레퍼런스
+- 레퍼런스: `refs/ir/portfolio/`(사용자 작업)와 `refs/ir/samples/`(수집 샘플)를 **같은 비중**으로 보고, 업종·단계·톤이 비슷한 덱 2–3개 선정 + 필요 시 웹 레퍼런스
+
+## 2-1. 스타일 선택 (덱 생성 전 반드시)
+1. 고객 색으로 보기 이미지를 만든다: `python tools/style_preview.py --tokens output/ir-<작업명>/tokens.json --out output/ir-<작업명>/style-preview`
+2. 추천안을 정한다: 고른 레퍼런스 덱의 표지·상단·카드 유형과 `design-kit/ir-styles/styles.json`의 refs/refs_samples를 대조해 챕터별 1개씩 추천.
+3. 보기 이미지를 사용자에게 보낸다(SendUserFile, 챕터 순서: typography → cover → header → connector → card → image → bullet/divider/summary_bar).
+4. 질문으로 고르게 한다 (AskUserQuestion, 한 번에 4문항까지 → 두 번에 나눠서):
+   - 1차: 0. 글자 크기·자간·행간 / 1. 표지 / 2. 내지 상단 / 3. 화살표·연결
+   - 2차: 4. 텍스트 박스·카드 / 5. 이미지 모서리 / 6-1. 글머리 / 6-2. 구분선·요약 바
+   - 각 문항의 첫 번째 선택지는 추천안 "(추천)", 선택지 설명에 근거(비슷한 레퍼런스 덱 이름)를 쓴다. 선택지가 5개 이상이면 추천 포함 4개만 보여 주고 나머지는 "기타"로 받는다.
+5. 결과를 `output/ir-<작업명>/style.json`에 저장 (`{"typography": "...", "cover": "A", ... , "_why": {...}}`)하고 `deck.json`에 `"style": "output/ir-<작업명>/style.json"`.
+6. 사용자가 "알아서" / "추천대로"라고 하면 추천안으로 바로 저장하고 진행한다. 백그라운드(응답 없는) 실행이면 추천안으로 진행하고 보고에 적는다.
 
 ## 3. 멈추는 지점
 조사서의 **필수 항목**(마감, 투자 단계, 핵심 숫자, 분량) 중 비어 있는 게 있으면 덱 생성 전에 멈추고 확인 질문을 보낸다.

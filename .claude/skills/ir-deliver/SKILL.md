@@ -10,7 +10,7 @@ argument-hint: "<작업명> [메모]"
 
 1. **최종 검수** (하나라도 실패하면 멈추고 사용자에게 보고, 태그하지 않는다)
    - `python ir/scripts/check_numbers.py <deck.json>`
-   - `python ir/scripts/build_deck.py <deck.json>` 후 `python ir/scripts/check_margins.py output/ir-<작업명>/deck.pptx --tokens output/ir-<작업명>/tokens.json`
+   - `python ir/scripts/build_deck.py <deck.json>` 후 `check_margins.py ... --tokens output/ir-<작업명>/tokens.json` 와 `check_style.py ... --style output/ir-<작업명>/style.json`
    - `python ir/scripts/render.py output/ir-<작업명>/deck.pptx` → 미리보기 이미지를 직접 보고 넘침·겹침·잘림 확인
 2. **버전 번호**: `git tag -l "ir-<작업명>-v*"`로 마지막 번호 확인 → 다음 번호 `vN`
 3. **납품 폴더**: `output/ir-<작업명>/deliver/vN/` 에 복사

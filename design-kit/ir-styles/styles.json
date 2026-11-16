@@ -1,0 +1,401 @@
+{
+  "_about": "IR 스타일 카탈로그. 사용자 작업 IR 26건(refs/ir/portfolio, 382장)과 수집 샘플 21건(refs/ir/samples, 727쪽)을 같은 기준으로 분석(analysis.json)하고 표지·내지를 육안 분류해 만든 선택지. 작업 전 챕터별로 골라 output/ir-<작업명>/style.json에 저장.",
+  "defaults": {
+    "typography": "standard",
+    "cover": "A",
+    "header": "A",
+    "connector": "A",
+    "card": "A",
+    "image": "B",
+    "bullet": "dot",
+    "divider": "solid",
+    "summary_bar": "pill"
+  },
+  "chapters": [
+    {
+      "id": "typography",
+      "title": "0. 글자 크기·자간·행간",
+      "options": {
+        "compact": {
+          "name": "촘촘 (정보 많은 덱)",
+          "size": {
+            "title": 26,
+            "subtitle": 15,
+            "body": 12,
+            "small": 10.5,
+            "caption": 9
+          },
+          "min_pt": {
+            "body": 10.5,
+            "caption": 8
+          },
+          "tracking_pct": -2.5,
+          "leading_pct": {
+            "title": 100,
+            "body": 115
+          },
+          "weight": {
+            "title": "ExtraBold",
+            "head": "SemiBold",
+            "body": "Medium",
+            "caption": "Regular"
+          }
+        },
+        "standard": {
+          "name": "기본 (사용자 평균)",
+          "size": {
+            "title": 28,
+            "subtitle": 16,
+            "body": 14,
+            "small": 12,
+            "caption": 10
+          },
+          "min_pt": {
+            "body": 12,
+            "caption": 9
+          },
+          "tracking_pct": -2,
+          "leading_pct": {
+            "title": 100,
+            "body": 120
+          },
+          "weight": {
+            "title": "ExtraBold",
+            "head": "SemiBold",
+            "body": "Medium",
+            "caption": "Regular"
+          }
+        },
+        "airy": {
+          "name": "여유 (발표용 큰 글씨)",
+          "size": {
+            "title": 32,
+            "subtitle": 18,
+            "body": 16,
+            "small": 14,
+            "caption": 11
+          },
+          "min_pt": {
+            "body": 14,
+            "caption": 10
+          },
+          "tracking_pct": -1.5,
+          "leading_pct": {
+            "title": 105,
+            "body": 135
+          },
+          "weight": {
+            "title": "ExtraBold",
+            "head": "SemiBold",
+            "body": "Medium",
+            "caption": "Regular"
+          }
+        }
+      },
+      "evidence": "분석: 글자 크기 중간값 14.5pt, 하위 10% 9pt / 자간은 대부분 -0.2~-0.25pt(≈ -2%) / 행간은 대부분 100% / 굵기 사용 순: SemiBold > Medium > ExtraBold > Light / 샘플(상장사 IR)은 본문 중간값 11pt로 더 촘촘"
+    },
+    {
+      "id": "cover",
+      "title": "1. 표지",
+      "options": {
+        "A": {
+          "name": "다크 키비주얼 + 왼쪽 큰 로고",
+          "refs": [
+            "JUST",
+            "디미디어",
+            "로콘",
+            "바이너리컬",
+            "비즈",
+            "유니메이커",
+            "이프",
+            "코파",
+            "태정복",
+            "해월스타"
+          ],
+          "refs_samples": [
+            "에스엠코어",
+            "그린광학",
+            "뉴엔에이아이",
+            "듀켐바이오",
+            "민테크",
+            "아이씨티케이",
+            "아크릴",
+            "에스투더블유",
+            "큐리오시스",
+            "이노테크",
+            "삼양컴텍"
+          ]
+        },
+        "B": {
+          "name": "왼쪽 글 + 오른쪽 목업·사진",
+          "refs": [
+            "Foodloop+",
+            "키다",
+            "틈새러닝",
+            "페텔"
+          ],
+          "refs_samples": [
+            "쓰리에이로직스"
+          ]
+        },
+        "C": {
+          "name": "밝은 배경 + 3D·일러스트 오브젝트",
+          "refs": [
+            "Withly",
+            "와이즈바이오"
+          ],
+          "refs_samples": [
+            "에임드바이오",
+            "쿼드메디슨"
+          ]
+        },
+        "D": {
+          "name": "가운데 로고 + 코너 프레임",
+          "refs": [
+            "더만타스토리"
+          ],
+          "refs_samples": [
+            "에이유브랜즈"
+          ]
+        },
+        "E": {
+          "name": "컬러 배경 + 대형 타이포",
+          "refs": [
+            "로커스코리아"
+          ],
+          "refs_samples": [
+            "와이랩",
+            "아로마티카",
+            "대신밸류리츠",
+            "NAVER 통합보고서"
+          ]
+        }
+      }
+    },
+    {
+      "id": "header",
+      "title": "2. 내지 상단(제목 영역)",
+      "options": {
+        "A": {
+          "name": "위 라벨줄(섹션·로고) + 가운데 제목",
+          "refs": [
+            "JUST",
+            "더만타스토리",
+            "세이프포지션",
+            "유니메이커",
+            "틈새러닝",
+            "홈투게더"
+          ]
+        },
+        "B": {
+          "name": "알약 칩 + 왼쪽 제목",
+          "refs": [
+            "Gridi",
+            "디미디어",
+            "바이너리컬",
+            "Foodloop+"
+          ]
+        },
+        "C": {
+          "name": "위쪽 컬러 띠 + 제목",
+          "refs": [
+            "에스와이유",
+            "이프",
+            "홈투게더"
+          ]
+        },
+        "D": {
+          "name": "큰 섹션 번호 + 왼쪽 제목",
+          "refs": [
+            "로커스코리아",
+            "이프"
+          ]
+        },
+        "E": {
+          "name": "Chapter 표기 + 가운데 제목 + 가는 선",
+          "refs": [
+            "Withly",
+            "태정복",
+            "해월스타"
+          ]
+        },
+        "F": {
+          "name": "작은 섹션 표기(01. 섹션명) + 오른쪽 로고 + 왼쪽 제목 + 가는 구분선",
+          "refs_samples": [
+            "에스엠코어",
+            "그린광학",
+            "아이씨티케이",
+            "아크릴",
+            "에임드바이오",
+            "쓰리에이로직스",
+            "듀켐바이오"
+          ]
+        },
+        "G": {
+          "name": "위쪽 진행 막대(섹션 진행도) + 왼쪽 제목",
+          "refs_samples": [
+            "뉴엔에이아이",
+            "더핑크퐁컴퍼니"
+          ]
+        }
+      }
+    },
+    {
+      "id": "connector",
+      "title": "3. 화살표·연결",
+      "options": {
+        "A": {
+          "name": "작은 셰브론(>) 사이 연결",
+          "refs": [
+            "Gridi",
+            "유니메이커",
+            "홈투게더"
+          ]
+        },
+        "B": {
+          "name": "선 + 동그라미 끝",
+          "refs": [
+            "분석: 선 끝 1위(oval 123회)"
+          ]
+        },
+        "C": {
+          "name": "선 + 화살촉",
+          "refs": [
+            "분석: 선 끝 2위(stealth 34회)"
+          ]
+        },
+        "D": {
+          "name": "블록 화살표",
+          "refs": [
+            "비즈",
+            "분석: rightArrow 91회"
+          ]
+        },
+        "E": {
+          "name": "점선 연결",
+          "refs": [
+            "분석: 대시 1,500회·점선 749회"
+          ]
+        }
+      }
+    },
+    {
+      "id": "card",
+      "title": "4. 텍스트 박스·카드",
+      "options": {
+        "A": {
+          "name": "연한 면 + 살짝 둥근 모서리",
+          "radius": 0.06,
+          "refs": [
+            "와이즈바이오",
+            "홈투게더"
+          ]
+        },
+        "B": {
+          "name": "흰 바탕 + 얇은 테두리(0.8pt)",
+          "radius": 0.04,
+          "refs": [
+            "JUST",
+            "태정복",
+            "옴니코트"
+          ]
+        },
+        "C": {
+          "name": "위쪽 컬러 헤더 카드",
+          "radius": 0.06,
+          "refs": [
+            "바이너리컬",
+            "와이즈바이오",
+            "유니메이커",
+            "이프"
+          ]
+        },
+        "D": {
+          "name": "알약 라벨 + 내용(Phase형)",
+          "radius": 0.5,
+          "refs": [
+            "JUST",
+            "에스와이유",
+            "홈투게더"
+          ]
+        },
+        "E": {
+          "name": "진한 채움 카드",
+          "radius": 0.06,
+          "refs": [
+            "키다",
+            "호랑이얼굴"
+          ]
+        }
+      }
+    },
+    {
+      "id": "image",
+      "title": "5. 이미지 모서리",
+      "options": {
+        "A": {
+          "name": "직각",
+          "radius": 0
+        },
+        "B": {
+          "name": "살짝 둥근 모서리",
+          "radius": 0.06
+        },
+        "C": {
+          "name": "원형(인물·아이콘)",
+          "radius": "circle"
+        }
+      },
+      "evidence": "분석: 이미지 3,211개 직각, 250개 둥근 모서리, 34개 원형"
+    },
+    {
+      "id": "detail",
+      "title": "6. 글머리·구분선·요약 바",
+      "options": {
+        "bullet": {
+          "dot": "• 점",
+          "dash": "– 대시",
+          "check": "✓ 체크",
+          "number": "1. 번호"
+        },
+        "divider": {
+          "solid": "실선 0.8pt",
+          "dot": "점선",
+          "dash": "대시선",
+          "none": "구분선 없음"
+        },
+        "summary_bar": {
+          "pill": "하단 알약형 요약 바",
+          "band": "하단 직각 띠",
+          "none": "요약 바 없음"
+        }
+      },
+      "evidence": "분석: 글머리 •가 825회로 거의 전부 / 선 실선 3,960·대시 1,500·점선 749"
+    }
+  ],
+  "fixed": {
+    "_about": "모든 스타일에 공통으로 고정되는 값",
+    "line_pt": {
+      "hair": 0.5,
+      "regular": 0.8,
+      "bold": 1.6
+    },
+    "spacing_cm": {
+      "xs": 0.2,
+      "s": 0.4,
+      "m": 0.6,
+      "l": 1.0,
+      "xl": 1.5
+    },
+    "spacing_rules": {
+      "label_to_title": "xs",
+      "title_to_body": "s",
+      "card_padding": "m",
+      "card_gap": "l",
+      "image_to_caption": "s",
+      "section_gap": "xl",
+      "connector_gap": "s"
+    },
+    "evidence": "선 굵기 분석: 0.8pt 1,518회 > 0.5pt 829회 > 1.0pt 505회 > 1.6pt 342회 / 샘플은 0.2~0.3pt 가는 선이 대부분"
+  }
+}
