@@ -1,8 +1,9 @@
 # Claude·Codex 이어하기
 
 ## 현재 먼저 할 일
+새 레퍼런스 반영 시안 v003 한 장을 먼저 보고 방향성을 확인하는 단계다. 작가별 포인트색은 서로 다르되 비슷한 저채도 톤으로 계획하고, 현재는 샌드 브라운 한 장만 존재한다.
 최신 사용자 허용에 따라 임의 원고·새 생성 사진으로 완성형 내지 예시를 제작했다. 예시 작가명/글/사진은 실제 고객 자료가 아니며 demo-sample과 interior_sample_v002 데이터에만 보관한다.
-사용자가 내지 한 장을 보고 결정하겠다고 했다. output/interior-sample-v002/의 시안과 최신 피드백을 먼저 읽고 그 한 장만 수정한다. 나머지 23쪽의 새 디자인 적용은 피드백 이후에 진행. InDesign 한 쪽 생성 스크립트는 scripts/BuildInteriorSampleV002.jsx.
+사용자가 내지 한 장을 보고 결정하겠다고 했다. output/interior-sample-v003/의 시안과 최신 피드백을 먼저 읽고 그 한 장만 수정한다. 나머지 23쪽의 새 디자인 적용은 피드백 이후에 진행. InDesign 한 쪽 생성 스크립트는 scripts/BuildInteriorSampleV003.jsx.
 
 ## 한 문장 시작
 
