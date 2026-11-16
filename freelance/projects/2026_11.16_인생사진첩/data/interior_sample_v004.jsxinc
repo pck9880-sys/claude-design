@@ -1,0 +1,382 @@
+﻿var ALBUM_LAYOUT = {
+  "project": "2026_11.16_인생사진첩",
+  "sample_only": true,
+  "target_page": 4,
+  "state": "single_page_15mm_template_photo_pending",
+  "demo_content": true,
+  "reference": "2026-11-16 user-supplied editorial photo/circle/ruled-grid image",
+  "palette_name": "작가01 샌드 브라운 제안",
+  "author_color_strategy": "작가별 명도·채도가 비슷한 저채도 포인트색 사용. 현재 한 작가의 한 장만 제작.",
+  "spec": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "bleed_mm": 3,
+    "size_confirmed": false,
+    "margin_mm": {
+      "top": 15,
+      "bottom": 15,
+      "left": 15,
+      "right": 15
+    }
+  },
+  "pages": [
+    {
+      "page": 4,
+      "role": "artist",
+      "artist_id": "DEMO_AUTHOR_01",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 53,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 24,
+          "y": 21,
+          "w": 10,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 24,
+          "y": 21,
+          "w": 0.12,
+          "h": 8,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 165,
+          "h": 153,
+          "asset_id": "ARTWORK_PENDING_01",
+          "name": "ARTWORK_PENDING_01",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 163,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 185,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 182,
+          "w": 155,
+          "h": 6,
+          "text": "작품 01  /  빛이 머문 오래된 골목",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 198,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 21,
+          "y": 204,
+          "w": 24,
+          "h": 40,
+          "text": "평범한\n하루를\n새롭게\n바라보다",
+          "style": "SideTitle",
+          "color": "accent",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 60,
+          "y": 198,
+          "w": 130,
+          "h": 9,
+          "text": "김정숙 작가",
+          "style": "Author",
+          "color": "accent",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 60,
+          "y": 211,
+          "w": 130,
+          "h": 20,
+          "text": "익숙한 동네를 천천히 걷습니다.\n무심코 지나쳤던 풍경에서 오래된 기억과\n새로운 이야기를 발견하는 시간이 좋습니다.",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 60,
+          "y": 234,
+          "w": 130,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 60,
+          "y": 237,
+          "w": 61,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 60,
+          "y": 248,
+          "w": 61,
+          "h": 24,
+          "text": "낮은 담장 위로 햇살이\n내려앉았습니다. 오래된 대문과\n화분 사이에서 잠시 발걸음을\n멈추었습니다.",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 237,
+          "w": 58,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 248,
+          "w": 58,
+          "h": 24,
+          "text": "“매일 걷던 길도,\n카메라로 바라보니\n새로웠습니다.”",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 275,
+          "w": 173,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 17,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 278,
+          "w": 105,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 178,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "04",
+          "style": "Folio",
+          "color": "accent",
+          "align": "right",
+          "name": "Folio"
+        }
+      ]
+    }
+  ],
+  "styles": {
+    "Running": [
+      9.5,
+      "Regular",
+      1.5
+    ],
+    "Book": [
+      10,
+      "Bold",
+      1.4
+    ],
+    "SideTitle": [
+      17,
+      "Bold",
+      1.25
+    ],
+    "Author": [
+      14,
+      "Bold",
+      1.45
+    ],
+    "Intro": [
+      12,
+      "Regular",
+      1.55
+    ],
+    "Section": [
+      10.5,
+      "Bold",
+      1.45
+    ],
+    "Body": [
+      11.5,
+      "Regular",
+      1.6
+    ],
+    "Quote": [
+      13,
+      "Bold",
+      1.5
+    ],
+    "Caption": [
+      9,
+      "Regular",
+      1.4
+    ],
+    "Folio": [
+      10.5,
+      "Bold",
+      1.5
+    ]
+  },
+  "colors": {
+    "ink": [
+      65,
+      60,
+      53
+    ],
+    "muted": [
+      119,
+      111,
+      100
+    ],
+    "accent": [
+      160,
+      137,
+      108
+    ],
+    "line": [
+      196,
+      182,
+      163
+    ],
+    "soft": [
+      244,
+      240,
+      233
+    ],
+    "paper": [
+      255,
+      255,
+      255
+    ],
+    "white": [
+      255,
+      255,
+      255
+    ],
+    "scrim": [
+      83,
+      73,
+      58
+    ]
+  },
+  "demo_assets": [],
+  "demo_note": "사진은 나중에 삽입할 빈 프레임. 작가명·소개·작품 문구는 기존 사용자 허용 예시를 유지."
+};

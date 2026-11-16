@@ -1,5 +1,12 @@
 # 현재 상태 — 내지 한 장 디자인 검토 대기
 
+## 최신 — 15mm 여백·사진 빈 프레임 한 장 v004 (2026-11-16)
+- 사용자 요청: 사진은 추후 삽입. 사진 위 원형·글자를 삭제하고 상하좌우 15mm 여백으로 한 장만 수정.
+- 최신 시안: output/interior-sample-v004/ (사진 없는 PNG/SVG 및 15mm 가이드 확인본).
+- 하단 예시 원고·세로 제목·단 편집 유지. 현재 한 장만 수정하며 나머지 23쪽 적용 보류.
+- data/interior_sample_v004.json/.jsxinc, scripts/BuildInteriorSampleV004.jsx. 페이지·부모 페이지 여백 모두 15mm 설정.
+- 1쪽·빈 사진 프레임 1개·원형 없음·모든 요소 15mm 안전영역 검증 및 JSX 구문 검사. 실제 InDesign 앱 실행/INDD 생성은 미완료. 미리보기는 SVG 렌더링.
+
 ## 추가 요청 — 활동사진 15장 크기 변경
 - Photoshop, 폭10cm·300ppi·높이 원본비율 유지·자동 리샘플링.
 - scripts/photoshop/ResizeActivity15_10cm_300ppi.jsx에 원본 보존·15장 제한·저장 후 크기/ppi 검사를 준비.
