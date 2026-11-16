@@ -1,18 +1,32 @@
-# HANDOFF — test-run (세팅 검증용 시험 작업)
+# HANDOFF
 
-## 1. 한 일 / 남은 일
-- 한 일: 샘플 brief(`output/test-run/brief.md`)로 도자기 원데이 클래스 랜딩 1페이지 제작, 375/768/1440 확인, 대비 계산, 2건 수정
-- 남은 일: 실제 사진 2장, 공방 일정(예약 날짜), 주소·연락처, 예약 전송처
+마지막 갱신: 2026-11-16 (세팅 세션 종료 시점)
 
-## 2. 결정해야 할 것
-- **스킬 스크립트 실행 허용 여부**: hallmark의 `theme.mjs`(테마 뽑기)와 `sloplint.mjs`(AI티 검사)가 자동 모드에서 차단됨. 허용하지 않으면 hallmark는 규칙 문서만 쓰는 반쪽 상태로 동작
-  - 추천: 내용을 확인한 뒤 `.claude/settings.json` allow에 `Bash(node .claude/skills/hallmark/scripts/*)` 추가
-- **tokens.json의 primary 색**: `#E8572A` 위 흰 글씨는 대비 3.6:1로 기준 미달. 이번엔 `primaryHover(#C9461D)`를 버튼 배경으로 씀
-  - 추천: 버튼용 색을 따로 정하거나 primary를 한 단계 진하게
+## 1. 현재 상태 — 세팅 완료
+- 디자인 스킬 19개: `.claude/skills/` (출처·용도는 `design-kit/README.md`)
+- 상황별 프롬프트 모음: `design-kit/prompts/` (레이어 1–6, 42개 항목)
+- 규칙: `CLAUDE.md` (한국어 안내, 작업 범위, 완료 기준, 핸드오프 방식)
+- 권한: `.claude/settings.json`
+  - 허용: 파일 편집, npm/npx/node, git 일반 명령과 푸시(강제 푸시 포함)
+  - 차단: `npm publish`, `rm -rf`, `.env` 읽기
+  - hallmark 스크립트: `theme.mjs`, `sloplint.mjs`만 검토 후 허용 (install·install-hook·imagegen은 미허용)
+- Playwright MCP: `.mcp.json` (새 세션부터 로드)
+- 미리보기 서버: `.claude/launch.json` → `output/` 폴더를 localhost:4173으로 제공
+- GitHub: 비공개 저장소 `pck9880-sys/claude-design`, 브랜치 `main`
+  - 폰·아이패드: Claude 앱 Code 탭에서 클라우드 세션으로 이어서 작업 (PC 꺼져도 동작)
+  - 다른 PC: `git clone` 후 작업
 
-## 3. 결과 파일
-- `output/test-run/index.html`, `tokens.css`, `rubric-result.md`
-- 스크린샷: 브라우저 패널에서만 확인, 파일로 저장되지 않음 (Playwright MCP는 새 세션부터 로드됨)
+## 2. 시험 작업 결과 (output/test-run)
+- 도자기 원데이 클래스 랜딩 1페이지, 375/768/1440 확인, 대비 계산, 2건 자체 수정
+- 결과: `output/test-run/index.html`, `tokens.css`, `rubric-result.md`
+- 미확인: hallmark sloplint 자동 검사(당시 차단), Playwright 스크린샷 파일 저장
 
-## 4. 다음 세션 첫 지시
-"HANDOFF.md 읽고, Playwright로 output/test-run을 375/768/1440 스크린샷 찍어 screenshots/test-run/에 저장해 줘. 스크립트 실행이 허용됐으면 hallmark sloplint도 돌려 줘."
+## 3. 결정해야 할 것
+- **tokens.json**: 아직 예시 값. primary `#E8572A` 위 흰 글씨는 대비 3.6:1로 기준 미달 → 버튼용 진한 색을 따로 정할 것
+- `assets/`, `refs/`에 실제 브랜드 자료 넣기
+
+## 4. 다음 작업 (예정)
+- IR(투자자 설명) 디자인용 스킬·소스 조사 → 목록 보고 → 허가 후 다운로드·자동화 세팅
+
+## 5. 다음 세션 첫 지시 예시
+"HANDOFF.md 읽고 이어서 해줘"
