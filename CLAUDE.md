@@ -89,6 +89,7 @@
 - 명령: `/ir-start <회사명> [자료 위치] [홈페이지]` 로 작업 시작, `/ir-deliver <작업명> [메모]` 로 납품 버전 확정(태그).
 - **고객사 홈페이지 조사는 매번 한다** (`06-ir.md` 2-1단계): `tools/site_scan.py`로 색·로고·인용 문구·숫자 후보를 모으고 `check.md`로 정리. 홈페이지 숫자도 고객 확인 전에는 확정 값으로 쓰지 않는다.
 - PC의 문서·다운로드·바탕화면·OneDrive는 **읽기만** 한다. 필요한 파일은 `ir/inbox/`로 복사해서 쓴다.
+  - 예외(사용자 지정): 프로젝트모먼트 IR 결과물은 GitHub 경로 `output/ir-project-moment/v4/`(고정)와 `C:\Users\admin\Desktop\프로젝트 모먼트\` **두 곳에 모두 저장**한다. 바탕화면에는 이 폴더에 `프로젝트모먼트_IR_vN.pptx`·`.pdf`만 새로 복사하고, 기존 파일은 수정·삭제하지 않는다.
 - `ir/inbox/`는 고객 원본이라 GitHub에 올라가지 않는다 (.gitignore).
 - 레퍼런스는 링크·요약·구조 분석만 `refs/ir/`에 저장한다. 남의 덱 이미지·파일을 저장하지 않는다.
 - 스킬: 구성 `investor-pitch-deck`·`deck-narrative-arc`·`deck-outline-first`, 차트 `chart-choice`·`data-viz-deck`, 제작 `pptx`·`pptx-author`·`pro-deck-builder`, 검수 `ib-check-deck`·`deck-review-rubric`, 갱신 `deck-refresh`

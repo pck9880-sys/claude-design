@@ -67,12 +67,10 @@
     "deny": [
       "Edit(//c/Users/admin/Documents/**)",
       "Edit(//c/Users/admin/Downloads/**)",
-      "Edit(//c/Users/admin/Desktop/**)",
       "Edit(//c/Users/admin/OneDrive/**)",
       "Edit(//c/Users/admin/OneDrive - (주)엘투플랜/**)",
       "Write(//c/Users/admin/Documents/**)",
       "Write(//c/Users/admin/Downloads/**)",
-      "Write(//c/Users/admin/Desktop/**)",
       "Write(//c/Users/admin/OneDrive/**)",
       "Write(//c/Users/admin/OneDrive - (주)엘투플랜/**)",
       "Bash(npm publish:*)",
