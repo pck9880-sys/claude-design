@@ -418,7 +418,7 @@ def header(slide, d, idx):
     elif kind == "F":     # 작은 섹션 표기 + 로고 + 왼쪽 제목 + 구분선
         if sec:
             rect(slide, X0, Y0 + Inches(0.08), Inches(0.12), Inches(0.12), ACCENT)
-            text(slide, X0 + Inches(0.2), Y0, Inches(6), Inches(0.28), sec, role="caption", color=INK_SOFT, bold=True)
+            text(slide, X0 + Inches(0.2), Y0, Inches(6), Inches(0.28), sec, role="caption", color=ACCENT, bold=True)
         logo_mark(slide, Y0)
         text(slide, X0, Y0 + Inches(0.48), CW, Inches(0.7), d["title"], T, "title")
         if msg:
