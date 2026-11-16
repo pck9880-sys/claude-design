@@ -1,6 +1,6 @@
 # 인생사진첩 — 프로젝트 전용 지시
 
-**최신 사용자 지시:** 하단 제목박스와 본문 간격8mm. 좌상단 중복 작은 ㄱ자 선 삭제. 사진과 바깥 모서리 선은 상단/우하단 모두 가로·세로8mm 간격으로 통일. 사진과 하단박스 왼쪽 정렬, 사방15mm 안전여백, 좌측페이지 왼쪽/우측페이지 오른쪽 쪽번호 유지. 최신 output/interior-sample-v006/, scripts/BuildInteriorSampleV006.jsx. 사진은 빈 프레임이며 한 페이지 검토 후 확대 적용한다. 예시 글을 실제 고객 원고와 구분한다.
+**최신 사용자 지시:** 상단 사진 영역 높이를8mm 줄이고 하단 제목박스·작가소개·본문/인용 전체를8mm 위로 올려 푸터 위 여백 확보. 쪽번호 위치 유지. 기존 사진/박스 왼쪽 정렬·모서리8mm 간격·본문 옆8mm 간격·15mm 안전여백·바깥쪽 쪽번호 규칙 유지. 최신 output/interior-sample-v007/, scripts/BuildInteriorSampleV007.jsx. 사진은 빈 프레임, 예시 글과 고객 원고 구분, 한 페이지 검토 후 확대 적용.
 
 먼저 `START-HERE.md`, `STATUS.md`, `brief.md`, `data/manuscript-extracted.md`, `data/input-manifest.json`을 읽는다. 상위 외주 폴더의 공통 규칙도 따른다.
 
