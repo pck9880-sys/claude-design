@@ -4,7 +4,7 @@
     "typography": "standard",
     "cover": "A",
     "header": "A",
-    "connector": "A",
+    "connector": "F",
     "card": "A",
     "image": "B",
     "bullet": "dot",
@@ -244,6 +244,12 @@
       "id": "connector",
       "title": "3. 화살표·연결",
       "options": {
+        "F": {
+          "name": "선 + 열린 화살촉(→, 둥근 끝) — 기본",
+          "refs": [
+            "사용자 지정 기본 화살표 (2026-11-16)"
+          ]
+        },
         "A": {
           "name": "작은 셰브론(>) 사이 연결",
           "refs": [

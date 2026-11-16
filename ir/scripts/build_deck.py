@@ -11,7 +11,7 @@ deck.json 최상위:
 숫자는 data 파일만 가리킨다: value_ref "data/kpi.csv#mau", chart.data, table.data
 
 스타일(design-kit/ir-styles/styles.json):
-  typography(compact|standard|airy), cover(A–E), header(A–G), connector(A–E), card(A–E),
+  typography(compact|standard|airy), cover(A–E), header(A–G), connector(F 기본·A–E), card(A–E),
   image(A–C), bullet(dot|dash|check|number), divider(solid|dot|dash|none), summary_bar(pill|band|none)
 여백은 tokens.json slide.margin_cm(상하좌우 1.5cm) 안전 영역을 벗어나지 않는다. 꽉 찬 배경은 이름 "bleed:".
 """
@@ -418,6 +418,14 @@ def connector(slide, x_from, x_to, y):
     elif kind == "D":     # 블록 화살표
         s = min(gap - Inches(0.08), Inches(0.4))
         shape(slide, MSO_SHAPE.RIGHT_ARROW, x_from + (gap - s) / 2, y - Inches(0.16), s, Inches(0.32), fill=ACCENT_SOFT)
+    elif kind == "F":     # 기본: 선 + 열린 화살촉(→), 둥근 선 끝 (사용자 지정)
+        m = Inches(0.08)
+        c = seg(slide, x_from + m, y, x_to - m, y, ACCENT, "bold", None, "arrow")
+        ln = c.line._get_or_add_ln()
+        ln.set("cap", "rnd")
+        te = ln.find(qn("a:tailEnd"))
+        te.set("w", "lg")      # 참고 이미지처럼 큰 열린 화살촉
+        te.set("len", "lg")
     else:
         m = Inches(0.06)
         end = {"B": "oval", "C": "stealth", "E": "triangle"}[kind]
