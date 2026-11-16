@@ -1,5 +1,13 @@
 # HANDOFF
 
+## 최신 — INDD·IDML 문서 패키지 변환
+- 사용자는 스크립트가 아니라 InDesign 문서 파일 자체를 요청.
+- 최신24p full-v004 검토PDF를 Adobe document_convert_pdf로 변환. INDD/IDML 모두 success:true와 ZIP 다운로드 링크 반환.
+- INDD: https://to.adobe.com/oZa9S / IDML: https://to.adobe.com/tc2X0 (임시 다운로드 링크).
+- 로컬 다운로드는 네트워크403으로 차단되어 패키지 추출·실제 열림·텍스트/프레임 편집성·문서 여백/펼침면 확인 및 바이너리 GitHub 업로드 미완료. 변환 성공 응답과 실물 검증을 구분.
+- 링크 제공은 가능. JSX 직접 생성본과 PDF변환본은 다름. 실제 파일은 JSX로 새로 생성했다고 보고하지 않음.
+
+
 ## 최신 — 우측 상단 설명글 full-v004
 - 사용자 수정: 작가별 오른쪽에 간단한 설명글을 넣되 상단 배치.
 - 오른쪽10쪽 모두 상단 x25/y25/폭161/높이20mm 설명글, 사진은8mm 아래 y53에서 시작(161×211mm). 오른쪽 아래 쪽번호 유지.
