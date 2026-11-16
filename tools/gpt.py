@@ -87,9 +87,20 @@ STYLE = (
 )
 
 
+# --style photo: 실제 기기 목업·실사 장면이 꼭 필요할 때만 (사용자 지정, 2026-11-16)
+STYLE_PHOTO = (
+    "스타일 규칙 (반드시 지킬 것):\n"
+    "1. 실제 사진처럼 사실적인 제품·장면 사진. 부드러운 자연광, 깨끗한 배경.\n"
+    "2. 사람 얼굴이 보이면 안 됨. 사람이 필요하면 손·뒷모습·실루엣·얼굴이 프레임 밖인 구도로만.\n"
+    "3. 키워드에 있는 요소만. 무관한 사물·장식을 추가하지 않는다.\n"
+    "4. 글자·숫자·로고·워터마크 금지 (기기 화면 영역은 지시한 단색으로 비워 둔다).\n"
+)
+
+
 def build_image_prompt(a):
     kw = ", ".join(a.keywords)
-    p = (f"{STYLE}\n키워드(이것만 표현): {kw}\n장면 설명: {a.prompt}\n크기/비율: {a.size}\n")
+    style = STYLE_PHOTO if getattr(a, "style", "flat") == "photo" else STYLE
+    p = (f"{style}\n키워드(이것만 표현): {kw}\n장면 설명: {a.prompt}\n크기/비율: {a.size}\n")
     if a.fix:
         p += f"\n이전 시안의 문제점 (반드시 고칠 것): {a.fix}\n"
     return p
@@ -256,6 +267,8 @@ def main():
     i.add_argument("--keywords", nargs="+", required=True, help="이미지에 들어갈 요소만 (3–6개)")
     i.add_argument("--attempt", type=int, default=1, help="재생성 회차. 2부터 파일명에 -v2 …")
     i.add_argument("--fix", default="", help="검수에서 발견한 문제점 (재생성 때)")
+    i.add_argument("--style", choices=["flat", "photo"], default="flat",
+                   help="flat(기본, 클립아트) / photo(실제 기기 목업·실사 장면이 꼭 필요할 때만)")
     i.set_defaults(fn=cmd_image)
     r = sp.add_parser("research")
     r.add_argument("question", nargs="?")
