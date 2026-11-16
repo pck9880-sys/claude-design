@@ -1,5 +1,11 @@
 # HANDOFF
 
+## 인생사진첩 서버 백그라운드 요구 (2026-11-16)
+- 신규 폴더 `freelance/projects/2026_11.16_인생사진첩/`. InDesign 메인, Illustrator 보조.
+- 사용자 요구는 개인 PC가 꺼져도 서버에서 처리하는 방식. Adobe 계정·앱 구매 확인.
+- 공식 자료로 InDesign/Illustrator Firefly Services API의 사용자 정의 스크립트 기능 확인. Python은 API 호출·작업 관리, Adobe 클라우드는 실제 문서 처리 담당 방식으로 검토.
+- 기술 조사와 실행 준비 상태는 프로젝트 STATUS.md 및 automation/FEASIBILITY.md. 계정 API 권한·요금·인증·서버 배포·실제 실행은 아직 미완료. 로컬 스크립트 설치를 이 요구의 완료로 보고하지 않음.
+
 ## 외주 Adobe 공통 환경 (2026-11-16)
 - 사용자 요청: GitHub 외주 폴더, Claude·휴대폰 이어하기, InDesign·Illustrator·Photoshop 활용.
 - 구성: `freelance/README.md`, `CLAUDE.md`, `AGENTS.md`, `HANDOFF.md`, 프로젝트별 source/links/output/requests 구조, 템플릿·문서·Windows 설정/진단 스크립트·무수정 probe.jsx.

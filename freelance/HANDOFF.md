@@ -2,6 +2,14 @@
 
 갱신: 2026-11-16
 
+## 최신 작업 — 인생사진첩
+- 폴더 `projects/2026_11.16_인생사진첩/` 생성. 메인은 InDesign, 보조 Illustrator.
+- 사용자 요구는 **PC가 꺼져도 서버 백그라운드 실행**. 로컬 원격 조작이나 PC COM 자동화만으로 해결하지 않는다.
+- 사용자 확인: Adobe 계정·앱 구매 있음. 서버/API 이용 권한과 동일하다고 가정하지 않는다.
+- 공식 문서상 Firefly Services의 InDesign/Illustrator Custom Scripts API가 존재하므로 Python 서버가 API를 호출하는 방식을 우선 검토. 별도 InDesign Server 호스팅은 대안.
+- 조사 `projects/2026_11.16_인생사진첩/automation/FEASIBILITY.md`. 프로젝트 STATUS.md가 현재 사실의 기준이다.
+- 권한·요금·인증·서버 배포·실제 실행은 미확인/미완료. 이번에는 유료 자원이나 상시 실행 서비스를 만들지 않음.
+
 ## 완료한 구성
 - GitHub `pck9880-sys/claude-design`, 브랜치 `codex/project-moment-ir`의 `freelance/` 폴더.
 - Claude/Codex 공통 규칙, 프로젝트별 원본·링크·결과·요청 구조, 새 프로젝트 조사서.

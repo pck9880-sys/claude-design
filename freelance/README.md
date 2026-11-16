@@ -8,6 +8,8 @@ InDesign · Illustrator · Photoshop 작업을 PC, Claude, Codex, 휴대폰에�
 
 ## 바로 시작
 
+**현재 신규 작업:** [2026_11.16_인생사진첩](projects/2026_11.16_인생사진첩/STATUS.md) — InDesign 메인·Illustrator 보조. PC 종료 상태의 서버 작업이 요구되어 아래 PC 설치와 별개로 클라우드 API/서버 구성이 필요합니다. [가능성 조사](projects/2026_11.16_인생사진첩/automation/FEASIBILITY.md)를 먼저 확인하세요.
+
 - PC: [setup-windows.ps1](scripts/setup-windows.ps1)을 다운로드해 PowerShell에서 실행합니다. 기존 Git·Adobe 설치를 사용하며 앱·계정·원본을 변경하지 않습니다.
 - 로컬 설치 기본 경로: `C:\Users\admin\Projects\freelance-design`. 기존 모먼트 폴더는 그대로 보존합니다. 기존 체크아웃을 재사용하려면 `-Destination 'C:\Users\admin\Desktop\프로젝트 모먼트\IR-개발'`로 실행할 수 있지만, 기존 Claude 설정의 Desktop 쓰기 차단이 적용될 수 있어 새 기본 경로를 권장합니다.
 - 설치 후 `freelance/` 폴더에서 `claude` 또는 `codex`를 실행합니다. CLI가 이미 설치되어 있어야 합니다. 스크립트는 CLI를 자동 설치하거나 로그인하지 않습니다.

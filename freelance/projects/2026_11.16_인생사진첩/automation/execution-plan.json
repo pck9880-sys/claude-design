@@ -1,0 +1,15 @@
+{
+  "project": "2026_11.16_인생사진첩",
+  "primary_app": "InDesign",
+  "secondary_app": "Illustrator",
+  "requires_personal_pc_off": true,
+  "proposed_backend": "adobe_firefly_services",
+  "python_role": "job_orchestration_and_api_client",
+  "status": "feasibility_checked_not_deployed",
+  "api_entitlements_verified": false,
+  "cost_verified": false,
+  "credentials_configured": false,
+  "worker_deployed": false,
+  "native_execution_verified": false,
+  "source_assets_received": false
+}
