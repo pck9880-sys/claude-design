@@ -39,7 +39,7 @@
 - 같은 저장소 사용: Codex는 `AGENTS.md` → `CLAUDE.md` 규칙을 따름
 - Claude 자동 위임: `tools/gpt.py` (image / research / organize). 기준은 `CLAUDE.md` "GPT(Codex) 자동 위임"
 - PC: Codex CLI 0.169.0 설치, ChatGPT 로그인 사용 (API 키 불필요)
-- 클라우드 Claude 세션: Codex 로그인이 없어 GPT 호출 불가 → 환경 변수 `OPENAI_API_KEY`를 넣으면 API로 동작 (API 경로는 미시험)
+- 클라우드 Claude 세션: GPT 호출 불가. **사용자 결정(2026-11-16): OpenAI API 키는 쓰지 않음** → 클라우드에서는 이미지 자리만 잡고 `HANDOFF.md`에 "PC에서 이미지 생성 필요"를 남긴 뒤, PC 세션에서 생성
 - 시험 통과: 이미지 생성, 병렬 서칭 2건, 자료 정리 1건
 - 참고 자료: `refs/ir/seed-ir-mistakes.md` (시드 IR에서 투자자가 지적하는 실수, GPT 조사)
 
