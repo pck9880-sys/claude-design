@@ -1,0 +1,3855 @@
+﻿var ALBUM_LAYOUT = {
+  "spec": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "bleed_mm": 3,
+    "size_confirmed": false,
+    "margin_mm": {
+      "top": 15,
+      "bottom": 15,
+      "left": 15,
+      "right": 15
+    },
+    "folio_position": "outside: even-left, odd-right",
+    "page_count": 24,
+    "facing_pages": true
+  },
+  "styles": {
+    "Running": [
+      9.5,
+      "Regular",
+      1.5
+    ],
+    "Book": [
+      10,
+      "Bold",
+      1.4
+    ],
+    "SideTitle": [
+      17,
+      "Bold",
+      1.25
+    ],
+    "Author": [
+      14,
+      "Bold",
+      1.45
+    ],
+    "Intro": [
+      12,
+      "Regular",
+      1.55
+    ],
+    "Section": [
+      10.5,
+      "Bold",
+      1.45
+    ],
+    "Body": [
+      11.5,
+      "Regular",
+      1.6
+    ],
+    "Quote": [
+      13,
+      "Bold",
+      1.5
+    ],
+    "Caption": [
+      9,
+      "Regular",
+      1.4
+    ],
+    "Folio": [
+      10.5,
+      "Bold",
+      1.5
+    ],
+    "Title": [
+      34,
+      "Bold",
+      1.3
+    ],
+    "Subtitle": [
+      15,
+      "Regular",
+      1.6
+    ],
+    "PageTitle": [
+      27,
+      "Bold",
+      1.4
+    ],
+    "Small": [
+      10,
+      "Regular",
+      1.5
+    ],
+    "Draft": [
+      12,
+      "Regular",
+      1.6
+    ],
+    "Label": [
+      12,
+      "Bold",
+      1.4
+    ]
+  },
+  "colors": {
+    "ink": [
+      65,
+      60,
+      53
+    ],
+    "muted": [
+      119,
+      111,
+      100
+    ],
+    "accent": [
+      160,
+      137,
+      108
+    ],
+    "line": [
+      196,
+      182,
+      163
+    ],
+    "soft": [
+      244,
+      240,
+      233
+    ],
+    "paper": [
+      255,
+      255,
+      255
+    ],
+    "white": [
+      255,
+      255,
+      255
+    ],
+    "scrim": [
+      83,
+      73,
+      58
+    ],
+    "accent_A01": [
+      160,
+      137,
+      108
+    ],
+    "accent_A02": [
+      130,
+      145,
+      122
+    ],
+    "accent_A03": [
+      123,
+      146,
+      144
+    ],
+    "accent_A04": [
+      130,
+      147,
+      163
+    ],
+    "accent_A05": [
+      147,
+      144,
+      162
+    ],
+    "accent_A06": [
+      161,
+      140,
+      151
+    ],
+    "accent_A07": [
+      173,
+      143,
+      131
+    ],
+    "accent_A08": [
+      165,
+      149,
+      116
+    ],
+    "accent_A09": [
+      142,
+      154,
+      135
+    ],
+    "accent_A10": [
+      146,
+      149,
+      140
+    ]
+  },
+  "project": "2026_11.16_인생사진첩",
+  "state": "full_layout_missing_photos_and_copy",
+  "pages": [
+    {
+      "page": 1,
+      "role": "cover",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 23,
+          "w": 161,
+          "h": 17,
+          "text": "인생사진첩",
+          "style": "Title",
+          "color": "accent",
+          "align": "left",
+          "name": "Title"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 46,
+          "w": 161,
+          "h": 12,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Subtitle",
+          "color": "muted",
+          "align": "left",
+          "name": "Subtitle"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 66,
+          "w": 161,
+          "h": 0.2,
+          "fill": "accent",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 79,
+          "w": 51,
+          "h": 32,
+          "asset_id": "W01",
+          "name": "W01",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 80,
+          "y": 79,
+          "w": 51,
+          "h": 32,
+          "asset_id": "W03",
+          "name": "W03",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 115,
+          "w": 51,
+          "h": 32,
+          "asset_id": "W05",
+          "name": "W05",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 80,
+          "y": 115,
+          "w": 51,
+          "h": 32,
+          "asset_id": "W07",
+          "name": "W07",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 135,
+          "y": 115,
+          "w": 51,
+          "h": 32,
+          "asset_id": "W09",
+          "name": "W09",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 151,
+          "w": 51,
+          "h": 32,
+          "asset_id": "W11",
+          "name": "W11",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 80,
+          "y": 151,
+          "w": 51,
+          "h": 32,
+          "asset_id": "W13",
+          "name": "W13",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 135,
+          "y": 151,
+          "w": 51,
+          "h": 32,
+          "asset_id": "W15",
+          "name": "W15",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 80,
+          "y": 187,
+          "w": 51,
+          "h": 32,
+          "asset_id": "W17",
+          "name": "W17",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 135,
+          "y": 187,
+          "w": 51,
+          "h": 32,
+          "asset_id": "W19",
+          "name": "W19",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 240,
+          "w": 12,
+          "h": 10,
+          "asset_id": "ORG_LOGO",
+          "name": "ORG_LOGO",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "text",
+          "x": 42,
+          "y": 239,
+          "w": 144,
+          "h": 13,
+          "text": "동래구노인복지관\n재가노인지원서비스센터",
+          "style": "Small",
+          "color": "ink",
+          "align": "left",
+          "name": "Small"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 260,
+          "w": 12,
+          "h": 10,
+          "asset_id": "SUPPORT_LOGO",
+          "name": "SUPPORT_LOGO",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "text",
+          "x": 42,
+          "y": 258,
+          "w": 144,
+          "h": 15,
+          "text": "본 제작물은 부산사회복지공동모금회의\n지원으로 제작되었습니다.",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Small"
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "role": "greeting",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 16,
+          "text": "인사말",
+          "style": "PageTitle",
+          "color": "accent",
+          "align": "left",
+          "name": "PageTitle"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 49,
+          "w": 161,
+          "h": 0.15,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 67,
+          "w": 161,
+          "h": 160,
+          "text": "[센터장 인사말 원고 대기]",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "GreetingCopy"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 241,
+          "w": 161,
+          "h": 18,
+          "text": "동래구노인복지관\n재가노인지원서비스센터 센터장",
+          "style": "Small",
+          "color": "ink",
+          "align": "right",
+          "name": "Small"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 55,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "02",
+          "style": "Folio",
+          "color": "accent",
+          "align": "left",
+          "name": "Folio"
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "role": "program",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 16,
+          "text": "프로그램 소개",
+          "style": "PageTitle",
+          "color": "accent",
+          "align": "left",
+          "name": "PageTitle"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 50,
+          "w": 161,
+          "h": 27,
+          "text": "[프로그램 소개 원고 대기]",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "ProgramCopy"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 86,
+          "w": 161,
+          "h": 0.15,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 94,
+          "w": 161,
+          "h": 10,
+          "text": "출사 및 스토리텔링",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 111,
+          "w": 10,
+          "h": 7,
+          "text": "01",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 40,
+          "y": 111,
+          "w": 63,
+          "h": 12,
+          "text": "[회기 주제]",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Session_1"
+        },
+        {
+          "kind": "text",
+          "x": 108,
+          "y": 111,
+          "w": 10,
+          "h": 7,
+          "text": "02",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 123,
+          "y": 111,
+          "w": 63,
+          "h": 12,
+          "text": "[회기 주제]",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Session_2"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 131,
+          "w": 10,
+          "h": 7,
+          "text": "03",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 40,
+          "y": 131,
+          "w": 63,
+          "h": 12,
+          "text": "[회기 주제]",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Session_3"
+        },
+        {
+          "kind": "text",
+          "x": 108,
+          "y": 131,
+          "w": 10,
+          "h": 7,
+          "text": "04",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 123,
+          "y": 131,
+          "w": 63,
+          "h": 12,
+          "text": "[회기 주제]",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Session_4"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 151,
+          "w": 10,
+          "h": 7,
+          "text": "05",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 40,
+          "y": 151,
+          "w": 63,
+          "h": 12,
+          "text": "[회기 주제]",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Session_5"
+        },
+        {
+          "kind": "text",
+          "x": 108,
+          "y": 151,
+          "w": 10,
+          "h": 7,
+          "text": "06",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 123,
+          "y": 151,
+          "w": 63,
+          "h": 12,
+          "text": "[회기 주제]",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Session_6"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 171,
+          "w": 10,
+          "h": 7,
+          "text": "07",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 40,
+          "y": 171,
+          "w": 63,
+          "h": 12,
+          "text": "[회기 주제]",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Session_7"
+        },
+        {
+          "kind": "text",
+          "x": 108,
+          "y": 171,
+          "w": 10,
+          "h": 7,
+          "text": "08",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 123,
+          "y": 171,
+          "w": 63,
+          "h": 12,
+          "text": "[회기 주제]",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Session_8"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 205,
+          "w": 51,
+          "h": 48,
+          "asset_id": "ACT01",
+          "name": "ACT01",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 80,
+          "y": 205,
+          "w": 51,
+          "h": 48,
+          "asset_id": "ACT02",
+          "name": "ACT02",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 135,
+          "y": 205,
+          "w": 51,
+          "h": 48,
+          "asset_id": "ACT03",
+          "name": "ACT03",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 278,
+          "w": 55,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 85,
+          "y": 278,
+          "w": 77,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "03",
+          "style": "Folio",
+          "color": "accent",
+          "align": "right",
+          "name": "Folio"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A01",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A01",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A01",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "W01",
+          "name": "W01",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A01",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A01",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "[작품 제목]",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A01",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "작품에\n담긴\n이야기",
+          "style": "SideTitle",
+          "color": "accent_A01",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "[작가 성함]",
+          "style": "Author",
+          "color": "accent_A01",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "[작가소개 원고 대기]",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A01",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A01",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "[원고 대기]",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "04",
+          "style": "Folio",
+          "color": "accent_A01",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A01"
+    },
+    {
+      "page": 5,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 20,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 53,
+          "w": 161,
+          "h": 211,
+          "asset_id": "W02",
+          "name": "W02",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "05",
+          "style": "Folio",
+          "color": "accent_A01",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A01"
+    },
+    {
+      "page": 6,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A02",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A02",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A02",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "W03",
+          "name": "W03",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A02",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A02",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "[작품 제목]",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A02",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "작품에\n담긴\n이야기",
+          "style": "SideTitle",
+          "color": "accent_A02",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "[작가 성함]",
+          "style": "Author",
+          "color": "accent_A02",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "[작가소개 원고 대기]",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A02",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A02",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "[원고 대기]",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "06",
+          "style": "Folio",
+          "color": "accent_A02",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A02"
+    },
+    {
+      "page": 7,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 20,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 53,
+          "w": 161,
+          "h": 211,
+          "asset_id": "W04",
+          "name": "W04",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "07",
+          "style": "Folio",
+          "color": "accent_A02",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A02"
+    },
+    {
+      "page": 8,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A03",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A03",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A03",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "W05",
+          "name": "W05",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A03",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A03",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "[작품 제목]",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A03",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "작품에\n담긴\n이야기",
+          "style": "SideTitle",
+          "color": "accent_A03",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "[작가 성함]",
+          "style": "Author",
+          "color": "accent_A03",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "[작가소개 원고 대기]",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A03",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A03",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "[원고 대기]",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "08",
+          "style": "Folio",
+          "color": "accent_A03",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A03"
+    },
+    {
+      "page": 9,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 20,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 53,
+          "w": 161,
+          "h": 211,
+          "asset_id": "W06",
+          "name": "W06",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "09",
+          "style": "Folio",
+          "color": "accent_A03",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A03"
+    },
+    {
+      "page": 10,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A04",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A04",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A04",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "W07",
+          "name": "W07",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A04",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A04",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "[작품 제목]",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A04",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "작품에\n담긴\n이야기",
+          "style": "SideTitle",
+          "color": "accent_A04",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "[작가 성함]",
+          "style": "Author",
+          "color": "accent_A04",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "[작가소개 원고 대기]",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A04",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A04",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "[원고 대기]",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "10",
+          "style": "Folio",
+          "color": "accent_A04",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A04"
+    },
+    {
+      "page": 11,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 20,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 53,
+          "w": 161,
+          "h": 211,
+          "asset_id": "W08",
+          "name": "W08",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "11",
+          "style": "Folio",
+          "color": "accent_A04",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A04"
+    },
+    {
+      "page": 12,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A05",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A05",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A05",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "W09",
+          "name": "W09",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A05",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A05",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "[작품 제목]",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A05",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "작품에\n담긴\n이야기",
+          "style": "SideTitle",
+          "color": "accent_A05",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "[작가 성함]",
+          "style": "Author",
+          "color": "accent_A05",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "[작가소개 원고 대기]",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A05",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A05",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "[원고 대기]",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "12",
+          "style": "Folio",
+          "color": "accent_A05",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A05"
+    },
+    {
+      "page": 13,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 20,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 53,
+          "w": 161,
+          "h": 211,
+          "asset_id": "W10",
+          "name": "W10",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "13",
+          "style": "Folio",
+          "color": "accent_A05",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A05"
+    },
+    {
+      "page": 14,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A06",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A06",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A06",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "W11",
+          "name": "W11",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A06",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A06",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "[작품 제목]",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A06",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "작품에\n담긴\n이야기",
+          "style": "SideTitle",
+          "color": "accent_A06",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "[작가 성함]",
+          "style": "Author",
+          "color": "accent_A06",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "[작가소개 원고 대기]",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A06",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A06",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "[원고 대기]",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "14",
+          "style": "Folio",
+          "color": "accent_A06",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A06"
+    },
+    {
+      "page": 15,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 20,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 53,
+          "w": 161,
+          "h": 211,
+          "asset_id": "W12",
+          "name": "W12",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "15",
+          "style": "Folio",
+          "color": "accent_A06",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A06"
+    },
+    {
+      "page": 16,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A07",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A07",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A07",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "W13",
+          "name": "W13",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A07",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A07",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "[작품 제목]",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A07",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "작품에\n담긴\n이야기",
+          "style": "SideTitle",
+          "color": "accent_A07",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "[작가 성함]",
+          "style": "Author",
+          "color": "accent_A07",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "[작가소개 원고 대기]",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A07",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A07",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "[원고 대기]",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "16",
+          "style": "Folio",
+          "color": "accent_A07",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A07"
+    },
+    {
+      "page": 17,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 20,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 53,
+          "w": 161,
+          "h": 211,
+          "asset_id": "W14",
+          "name": "W14",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "17",
+          "style": "Folio",
+          "color": "accent_A07",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A07"
+    },
+    {
+      "page": 18,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A08",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A08",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A08",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "W15",
+          "name": "W15",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A08",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A08",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "[작품 제목]",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A08",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "작품에\n담긴\n이야기",
+          "style": "SideTitle",
+          "color": "accent_A08",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "[작가 성함]",
+          "style": "Author",
+          "color": "accent_A08",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "[작가소개 원고 대기]",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A08",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A08",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "[원고 대기]",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "18",
+          "style": "Folio",
+          "color": "accent_A08",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A08"
+    },
+    {
+      "page": 19,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 20,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 53,
+          "w": 161,
+          "h": 211,
+          "asset_id": "W16",
+          "name": "W16",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "19",
+          "style": "Folio",
+          "color": "accent_A08",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A08"
+    },
+    {
+      "page": 20,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A09",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A09",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A09",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "W17",
+          "name": "W17",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A09",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A09",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "[작품 제목]",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A09",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "작품에\n담긴\n이야기",
+          "style": "SideTitle",
+          "color": "accent_A09",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "[작가 성함]",
+          "style": "Author",
+          "color": "accent_A09",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "[작가소개 원고 대기]",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A09",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A09",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "[원고 대기]",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "20",
+          "style": "Folio",
+          "color": "accent_A09",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A09"
+    },
+    {
+      "page": 21,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 20,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 53,
+          "w": 161,
+          "h": 211,
+          "asset_id": "W18",
+          "name": "W18",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "21",
+          "style": "Folio",
+          "color": "accent_A09",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A09"
+    },
+    {
+      "page": 22,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A10",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A10",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A10",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "W19",
+          "name": "W19",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A10",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A10",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "[작품 제목]",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A10",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "작품에\n담긴\n이야기",
+          "style": "SideTitle",
+          "color": "accent_A10",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "[작가 성함]",
+          "style": "Author",
+          "color": "accent_A10",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "[작가소개 원고 대기]",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A10",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A10",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "[원고 대기]",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "22",
+          "style": "Folio",
+          "color": "accent_A10",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A10"
+    },
+    {
+      "page": 23,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 20,
+          "text": "[작품 설명 원고 대기]",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 53,
+          "w": 161,
+          "h": 211,
+          "asset_id": "W20",
+          "name": "W20",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "23",
+          "style": "Folio",
+          "color": "accent_A10",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A10"
+    },
+    {
+      "page": 24,
+      "role": "closing",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 16,
+          "text": "함께한 순간들",
+          "style": "PageTitle",
+          "color": "accent",
+          "align": "left",
+          "name": "PageTitle"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 54,
+          "w": 78,
+          "h": 35,
+          "asset_id": "ACT04",
+          "name": "ACT04",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 108,
+          "y": 54,
+          "w": 78,
+          "h": 35,
+          "asset_id": "ACT05",
+          "name": "ACT05",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 94,
+          "w": 78,
+          "h": 35,
+          "asset_id": "ACT06",
+          "name": "ACT06",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 108,
+          "y": 94,
+          "w": 78,
+          "h": 35,
+          "asset_id": "ACT07",
+          "name": "ACT07",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 134,
+          "w": 78,
+          "h": 35,
+          "asset_id": "ACT08",
+          "name": "ACT08",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "frame",
+          "x": 108,
+          "y": 134,
+          "w": 78,
+          "h": 35,
+          "asset_id": "ACT09",
+          "name": "ACT09",
+          "fit": "contain",
+          "empty_frame": true
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 185,
+          "w": 161,
+          "h": 9,
+          "text": "함께해 주신 분들",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 201,
+          "w": 161,
+          "h": 24,
+          "text": "[참여 어르신 · 강사 · 봉사자 명단 대기]",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "Draft"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 239,
+          "w": 161,
+          "h": 0.15,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 246,
+          "w": 161,
+          "h": 13,
+          "text": "동래구노인복지관\n재가노인지원서비스센터",
+          "style": "Small",
+          "color": "ink",
+          "align": "left",
+          "name": "Small"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 264,
+          "w": 161,
+          "h": 8,
+          "text": "[기관 정보 대기]",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Small"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 55,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "24",
+          "style": "Folio",
+          "color": "accent",
+          "align": "left",
+          "name": "Folio"
+        }
+      ]
+    }
+  ],
+  "demo_assets": [],
+  "demo_content": false,
+  "palette": {
+    "A01": "#A0896C",
+    "A02": "#82917A",
+    "A03": "#7B9290",
+    "A04": "#8293A3",
+    "A05": "#9390A2",
+    "A06": "#A18C97",
+    "A07": "#AD8F83",
+    "A08": "#A59574",
+    "A09": "#8E9A87",
+    "A10": "#92958C"
+  }
+};

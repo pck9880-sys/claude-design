@@ -1,6 +1,6 @@
 # 인생사진첩 — 프로젝트 전용 지시
 
-**최신 사용자 지시:** 전체24페이지 구성 승인. 한 쪽 검토 제한은 해제됐다. v007 기반으로 작가별 왼쪽 사진+소개/글, 오른쪽은 사진만 크게+바깥쪽 쪽번호. 유사 저채도10색, 사진/하단박스 정렬·모서리8mm·하단8mm 상향·15mm 안전여백 유지. 최신 output/full-v003/, data/layout_full_v003.json/.jsxinc, scripts/BuildFullAlbumV003.jsx. 사진은 추후 삽입, 원고 미수신은 대기 표시. 예시 인명·문장을 실제 작가 자료로 확대하지 않는다.
+**최신 사용자 지시:** 전체24쪽을 유지하며 작가별 오른쪽 페이지에 간단한 설명글을 상단 배치한다. 설명영역 y25/높이20mm, 사진은8mm 아래 y53부터. 오른쪽 아래 쪽번호 유지. 최신 output/full-v004/, data/layout_full_v004.json/.jsxinc, scripts/BuildFullAlbumV004.jsx. 기존15mm 여백·작가별 저채도색·왼쪽 디자인 유지. 미수신 사진은 빈 프레임, 미수신 설명은 대기 표시. 실제 고객 원고를 지어내지 않는다.
 
 먼저 `START-HERE.md`, `STATUS.md`, `brief.md`, `data/manuscript-extracted.md`, `data/input-manifest.json`을 읽는다. 상위 외주 폴더의 공통 규칙도 따른다.
 

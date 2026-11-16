@@ -1,0 +1,25 @@
+page,role,side,artist_id,color,photo_ids
+1,cover,right,,,W01 W03 W05 W07 W09 W11 W13 W15 W17 W19 ORG_LOGO SUPPORT_LOGO
+2,greeting,left,,,
+3,program,right,,,ACT01 ACT02 ACT03
+4,artist,left,A01,#A0896C,W01
+5,artist,right,A01,#A0896C,W02
+6,artist,left,A02,#82917A,W03
+7,artist,right,A02,#82917A,W04
+8,artist,left,A03,#7B9290,W05
+9,artist,right,A03,#7B9290,W06
+10,artist,left,A04,#8293A3,W07
+11,artist,right,A04,#8293A3,W08
+12,artist,left,A05,#9390A2,W09
+13,artist,right,A05,#9390A2,W10
+14,artist,left,A06,#A18C97,W11
+15,artist,right,A06,#A18C97,W12
+16,artist,left,A07,#AD8F83,W13
+17,artist,right,A07,#AD8F83,W14
+18,artist,left,A08,#A59574,W15
+19,artist,right,A08,#A59574,W16
+20,artist,left,A09,#8E9A87,W17
+21,artist,right,A09,#8E9A87,W18
+22,artist,left,A10,#92958C,W19
+23,artist,right,A10,#92958C,W20
+24,closing,left,,,ACT04 ACT05 ACT06 ACT07 ACT08 ACT09
