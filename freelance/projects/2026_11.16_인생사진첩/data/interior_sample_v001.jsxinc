@@ -1,0 +1,240 @@
+﻿var ALBUM_LAYOUT = {
+  "project": "2026_11.16_인생사진첩",
+  "sample_only": true,
+  "target_page": 4,
+  "state": "awaiting_user_design_review",
+  "spec": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "bleed_mm": 3,
+    "size_confirmed": false
+  },
+  "pages": [
+    {
+      "page": 4,
+      "role": "artist",
+      "artist_id": "A01",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 19,
+          "y": 14,
+          "w": 122,
+          "h": 6,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 157,
+          "y": 14,
+          "w": 34,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "rule",
+          "x": 19,
+          "y": 25,
+          "w": 172,
+          "h": 0.15,
+          "name": "Separator"
+        },
+        {
+          "kind": "text",
+          "x": 19,
+          "y": 35,
+          "w": 172,
+          "h": 7,
+          "text": "작가 소개",
+          "style": "Section",
+          "color": "accent",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 19,
+          "y": 47,
+          "w": 172,
+          "h": 17,
+          "text": "작가 성함",
+          "style": "Author",
+          "color": "ink",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 19,
+          "y": 70,
+          "w": 172,
+          "h": 15,
+          "text": "[작가소개글 자리]\n[추후 전달되는 원고로 교체]",
+          "style": "Intro",
+          "color": "muted",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "frame",
+          "x": 19,
+          "y": 101,
+          "w": 172,
+          "h": 129,
+          "asset_id": "W01",
+          "name": "W01"
+        },
+        {
+          "kind": "text",
+          "x": 28,
+          "y": 160,
+          "w": 154,
+          "h": 8,
+          "text": "작품 사진이 들어갈 자리",
+          "style": "PhotoNote",
+          "color": "muted",
+          "align": "center",
+          "name": "Placeholder_W01"
+        },
+        {
+          "kind": "text",
+          "x": 19,
+          "y": 242,
+          "w": 34,
+          "h": 8,
+          "text": "작품 소개",
+          "style": "Section",
+          "color": "accent",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 60,
+          "y": 239,
+          "w": 131,
+          "h": 11,
+          "text": "작품 제목",
+          "style": "WorkTitle",
+          "color": "ink",
+          "align": "left",
+          "name": "WorkTitle"
+        },
+        {
+          "kind": "text",
+          "x": 60,
+          "y": 254,
+          "w": 131,
+          "h": 17,
+          "text": "[작품 설명글 자리]\n[사진에 담긴 이야기를 넣는 영역]",
+          "style": "Description",
+          "color": "muted",
+          "align": "left",
+          "name": "Description"
+        },
+        {
+          "kind": "rule",
+          "x": 19,
+          "y": 279,
+          "w": 172,
+          "h": 0.15,
+          "name": "Separator"
+        },
+        {
+          "kind": "text",
+          "x": 19,
+          "y": 284,
+          "w": 13,
+          "h": 6,
+          "text": "04",
+          "style": "Folio",
+          "color": "ink",
+          "align": "left",
+          "name": "Folio"
+        },
+        {
+          "kind": "text",
+          "x": 150,
+          "y": 284,
+          "w": 41,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        }
+      ]
+    }
+  ],
+  "styles": {
+    "Running": [
+      9.5,
+      "Regular"
+    ],
+    "Section": [
+      11,
+      "Bold"
+    ],
+    "Author": [
+      30,
+      "Bold"
+    ],
+    "Intro": [
+      13,
+      "Regular"
+    ],
+    "WorkTitle": [
+      19,
+      "Bold"
+    ],
+    "Description": [
+      13.5,
+      "Regular"
+    ],
+    "Folio": [
+      10.5,
+      "Regular"
+    ],
+    "PhotoNote": [
+      10.5,
+      "Regular"
+    ]
+  },
+  "colors": {
+    "ink": [
+      32,
+      45,
+      43
+    ],
+    "muted": [
+      99,
+      111,
+      107
+    ],
+    "accent": [
+      96,
+      128,
+      121
+    ],
+    "soft": [
+      238,
+      242,
+      240
+    ],
+    "line": [
+      210,
+      220,
+      216
+    ]
+  }
+};

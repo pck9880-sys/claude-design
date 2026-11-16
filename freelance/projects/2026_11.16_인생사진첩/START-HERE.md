@@ -1,5 +1,8 @@
 # Claude·Codex 이어하기
 
+## 현재 먼저 할 일
+사용자가 내지 한 장을 보고 결정하겠다고 했다. output/interior-sample-v001/의 시안과 최신 피드백을 먼저 읽고 그 한 장만 수정한다. 나머지 23쪽의 새 디자인 적용은 피드백 이후에 진행. InDesign 한 쪽 생성 스크립트는 scripts/BuildInteriorSample.jsx.
+
 ## 한 문장 시작
 
 > freelance/projects/2026_11.16_인생사진첩/CLAUDE.md와 START-HERE.md를 읽고 인생사진첩을 이어서 작업해줘. 고객 HWP 원고와 최신 수신 현황을 확인하고, 다른 작업 이미지는 사용하지 마. InDesign 실행 가능 여부를 먼저 구분하고 24쪽 구조를 유지해줘.
