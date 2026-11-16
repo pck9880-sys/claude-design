@@ -1,0 +1,11 @@
+# 실명·얼굴이 담긴 고객 자료는 공개 저장소에 올리지 않는다.
+# 비공개 보관: GitHub pck9880-sys/imac-outputs Release "insaeng-album-assets" (OFFICE-SYNC.md 참고)
+links/photos/
+links/photos-cmyk/
+inputs/photos-zip/
+data/album_v00*.json
+data/album_v00*.jsxinc
+refs/user-mockups/
+source/indesign/v00*_*/
+source/indesign/인생사진첩_v0*_패키지/
+source/indesign/full_demo_v00*_*/
