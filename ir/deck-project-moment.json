@@ -95,21 +95,24 @@
           "body": [
             "100,000 RPM, 아울렛당 16m/s",
             "디자인 특허 듀얼 아울렛 — 일반 드라이어 2대 사용 효과"
-          ]
+          ],
+          "icon": "fan"
         },
         {
           "head": "NTC 스마트 센서 · 저소음",
           "body": [
             "초당 200회 온도 모니터링으로 일정 온도 유지",
             "최대 65dB (일반 드라이어 75dB)"
-          ]
+          ],
+          "icon": "thermometer"
         },
         {
           "head": "가족별 맞춤 설정",
           "body": [
             "풍속·온도·프리셋 조합, 키즈 모드·애견 모드",
             "HOT/COLD 원터치, 써큘레이션 모드"
-          ]
+          ],
+          "icon": "sliders-horizontal"
         }
       ]
     },
@@ -125,22 +128,23 @@
       "source": "한국갤럽, FnNews, 매일경제, 뉴시스, Grand View Research 등 2021~2024 보도 기준 및 환산 추정"
     },
     {
-      "type": "metrics",
+      "type": "share",
       "section": "04. 시장",
       "title": "프리미엄 포지셔닝으로 카테고리 30% 선점",
       "message": "저가형 카피캣과 달리 세련된 브랜딩으로 프리미엄 구매자를 겨냥합니다",
-      "items": [
+      "total_ref": "data/kpi.csv#standing_market",
+      "segments": [
         {
-          "value_ref": "data/kpi.csv#standing_market",
-          "label": "스탠딩 드라이어 시장 (추정)"
-        },
-        {
-          "value_ref": "data/kpi.csv#share_target",
-          "label": "목표 시장점유율"
-        },
-        {
+          "label": "프리미엄 — owooii® 목표 점유율",
+          "pct_ref": "data/kpi.csv#share_target",
           "value_ref": "data/kpi.csv#share_target_rev",
-          "label": "목표 매출"
+          "highlight": true,
+          "body": "세련되고 감각적인 브랜딩으로 프리미엄 구매자 타깃"
+        },
+        {
+          "label": "기타 시장 — 저가형 카피캣 등",
+          "pct_ref": "data/kpi.csv#other_share",
+          "value_ref": "data/kpi.csv#other_rev"
         }
       ]
     },
@@ -153,17 +157,20 @@
         {
           "label": "01 ONLINE",
           "head": "공동구매",
-          "body": "브랜드 스토리에 맞는 인플루언서와 초기 수요·인지도 확보"
+          "body": "브랜드 스토리에 맞는 인플루언서와 초기 수요·인지도 확보",
+          "icon": "users"
         },
         {
           "label": "02 ONLINE",
           "head": "D2C 직접 판매",
-          "body": "공동구매 데이터 기반 퍼포먼스 마케팅, 마진 구조 최적화"
+          "body": "공동구매 데이터 기반 퍼포먼스 마케팅, 마진 구조 최적화",
+          "icon": "shopping-bag"
         },
         {
           "label": "03 OFFLINE",
           "head": "프레스티지 플레이스먼트",
-          "body": "럭셔리 뷰티 살롱·호텔·골프 리조트에서 브랜드 경험 확대"
+          "body": "럭셔리 뷰티 살롱·호텔·골프 리조트에서 브랜드 경험 확대",
+          "icon": "hotel"
         }
       ]
     },
@@ -268,8 +275,19 @@
         "labels": {
           "revenue": "매출"
         },
-        "unit": "억원",
-        "highlight": "2029E"
+        "highlight": "2029E",
+        "cagr": [
+          "2025",
+          "2029E"
+        ],
+        "split": "2026E",
+        "notes": {
+          "2026E": "한·미 진입",
+          "2027E": "라인업 확장",
+          "2028E": "풀 브랜드",
+          "2029E": "글로벌"
+        },
+        "unit": "억원"
       },
       "source": "2023–2025 실적, 2026–2029 회사 전망"
     },

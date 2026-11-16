@@ -113,6 +113,15 @@ def resolve(ref):
     raise KeyError(f"{ref} 없음")
 
 
+INTERNAL_SRC = __import__("re").compile(r"^(원고|샘플|내부|고객 확인|TODO)")
+
+
+def cite(row):
+    """덱에 보여 줄 출처: cite 열이 있으면 그것, 없으면 source 중 내부 추적용(원고 슬라이드 N 등)은 숨김."""
+    c = (row.get("cite") or row.get("source") or "").strip()
+    return "" if INTERNAL_SRC.match(c) else c
+
+
 def num(v):
     return float(str(v).replace(",", ""))
 
@@ -183,6 +192,33 @@ def text(slide, x, y, w, h, s, size=None, role="body", color=INK, align=PP_ALIGN
         r.text = str(line)
         style_run(r, size, role, color, bold)
     return tb
+
+
+def num_text(slide, x, y, w, h, value, unit="", size=44, color=INK, align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.TOP,
+             unit_ratio=0.45, prefix=""):
+    """큰 숫자 + 작은 단위(같은 줄, 기준선 맞춤). 예: 12 + 억원, 30 + %."""
+    x, y, w, h = (int(v) for v in (x, y, w, h))
+    tb = slide.shapes.add_textbox(x, y, w, h)
+    tf = tb.text_frame
+    tf.word_wrap = False
+    tf.vertical_anchor = anchor
+    tf.margin_left = tf.margin_right = tf.margin_top = tf.margin_bottom = 0
+    p = tf.paragraphs[0]
+    p.alignment = align
+    p.line_spacing = 1.0
+    if prefix:
+        r0 = p.add_run(); r0.text = prefix
+        style_run(r0, max(size * unit_ratio, MIN["body"]), "head", color)
+    r = p.add_run(); r.text = str(value)
+    style_run(r, size, "display", color)
+    if unit:
+        u = p.add_run(); u.text = unit if unit.startswith(("%", "x", "×")) else unit
+        style_run(u, max(size * unit_ratio, MIN["body"]), "head", color)
+    return tb
+
+
+def split_value(row):
+    return fmt(row["value"]), row.get("unit", "")
 
 
 # ======================= 도형 =======================
@@ -615,27 +651,116 @@ def s_process(slide, d, idx):
     footer(slide, idx, d.get("source"))
 
 
+def plot_layout(chart, x=0.02, y=0.2, w=0.96, h=0.7):
+    """차트 안쪽(막대 영역)을 고정 위치로 — 막대 위 주석·선을 정확히 얹기 위해."""
+    pa = chart._chartSpace.chart.plotArea
+    lay = pa.find(qn("c:layout"))
+    if lay is None:
+        lay = pa.makeelement(qn("c:layout"), {})
+        pa.insert(0, lay)
+    for c in list(lay):
+        lay.remove(c)
+    ml = lay.makeelement(qn("c:manualLayout"), {})
+    for tag, val in (("layoutTarget", "inner"), ("xMode", "edge"), ("yMode", "edge"),
+                     ("x", x), ("y", y), ("w", w), ("h", h)):
+        el = ml.makeelement(qn(f"c:{tag}"), {"val": str(val)})
+        ml.append(el)
+    lay.append(ml)
+    return x, y, w, h
+
+
+def chart_extras(slide, c, rows, cats, vals, fx, fy, fw, fh, lay, vmax):
+    """막대 차트 위 장식: 실적/전망 구분선, 마일스톤 주석+작은 화살표, 비율 선(점+%)."""
+    lx, ly, lw, lh = lay
+    px, py, pw, ph = fx + fw * lx, fy + fh * ly, fw * lw, fh * lh
+    n = len(cats)
+    cx = lambda i: px + pw * (i + 0.5) / n
+    top = lambda v: py + ph * (1 - v / vmax)
+    # 실적 / 전망 구분
+    if c.get("split") in cats:
+        k = cats.index(c["split"])
+        xs = px + pw * k / n
+        seg(slide, xs, py - Inches(0.05), xs, py + ph, LINE, "hair", MSO_LINE.DASH)
+        text(slide, xs - Inches(1.2), py - Inches(0.05), Inches(1.1), Inches(0.28), c.get("split_labels", ["실적", "전망"])[0],
+             role="caption", color=MUTED, align=PP_ALIGN.RIGHT)
+        text(slide, xs + Inches(0.1), py - Inches(0.05), Inches(1.1), Inches(0.28), c.get("split_labels", ["실적", "전망"])[1],
+             role="caption", color=MUTED)
+    # 마일스톤 주석 (막대 값 라벨 위)
+    for cat, note in (c.get("notes") or {}).items():
+        if cat not in cats:
+            continue
+        i = cats.index(cat)
+        bw = pw / n * 1.6
+        ty = top(vals[i]) - Inches(0.32) - Inches(0.62)
+        ty = max(ty, fy)
+        lines = note if isinstance(note, list) else [note]
+        nx = min(max(cx(i) - bw / 2, X0), X1 - bw)          # 여백 안으로
+        text(slide, nx, ty, bw, Inches(0.55), lines, SIZE["small"], "head", INK if i < n - 1 else ACCENT,
+             PP_ALIGN.CENTER, MSO_ANCHOR.BOTTOM)
+    # 비율 선 (예: 마진 %): 막대 위쪽 띠에 점과 값
+    ln = c.get("line")
+    if ln:
+        lv = [float(str(r.get(ln["col"], "")).replace("%", "") or "nan") for r in rows]
+        ok = [(i, v) for i, v in enumerate(lv) if v == v]
+        if len(ok) > 1:
+            lo, hi = min(v for _, v in ok), max(v for _, v in ok)
+            band_top, band_h = fy + Inches(0.05), fh * ly * 0.55
+            yv = lambda v: band_top + band_h * (1 - (v - lo) / ((hi - lo) or 1))
+            for (i1, v1), (i2, v2) in zip(ok, ok[1:]):
+                seg(slide, cx(i1), yv(v1), cx(i2), yv(v2), ACCENT, "regular")
+            for i, v in ok:
+                d = Inches(0.09)
+                shape(slide, MSO_SHAPE.OVAL, cx(i) - d / 2, yv(v) - d / 2, d, d, fill=WHITE, line=ACCENT, lw="regular")
+                text(slide, cx(i) - Inches(0.5), yv(v) - Inches(0.32), Inches(1.0), Inches(0.26), f"{v:g}{ln.get('unit', '%')}",
+                     role="caption", color=ACCENT, align=PP_ALIGN.CENTER, bold=True)
+            text(slide, fx, band_top - Inches(0.02), Inches(2.4), Inches(0.26), ln.get("label", ln["col"]), role="caption", color=ACCENT)
+
+
 def s_chart(slide, d, idx):
     header(slide, d, idx)
     end = summary_bar(slide, d)
     c = d["chart"]
     rows = read_csv(c["data"])
+    cats = [r[c["x"]] for r in rows]
     cd = CategoryChartData()
-    cd.categories = [r[c["x"]] for r in rows]
+    cd.categories = cats
     for ycol in c["y"]:
         cd.add_series(c.get("labels", {}).get(ycol, ycol), [num(r[ycol]) for r in rows])
     kind = {"bar": XL_CHART_TYPE.COLUMN_CLUSTERED, "stacked": XL_CHART_TYPE.COLUMN_STACKED,
             "line": XL_CHART_TYPE.LINE_MARKERS, "hbar": XL_CHART_TYPE.BAR_CLUSTERED}[c.get("kind", "bar")]
-    top = TOP + (Inches(0.35) if c.get("unit") else 0)
-    ch = slide.shapes.add_chart(kind, int(X0), int(top), int(CW), int(end - top), cd).chart
+    top = TOP
+    # 헤드라인 숫자: CAGR (데이터에서 계산) — "매출 CAGR (2025–2029E) 157%"
+    if c.get("cagr") and len(c["y"]) == 1:
+        a_, b_ = c["cagr"]
+        va_, vb_ = num(rows[cats.index(a_)][c["y"][0]]), num(rows[cats.index(b_)][c["y"][0]])
+        yrs = cats.index(b_) - cats.index(a_)
+        cg = ((vb_ / va_) ** (1 / yrs) - 1) * 100
+        text(slide, X0, top, Inches(5), Inches(0.3), f"{c.get('labels', {}).get(c['y'][0], c['y'][0])} CAGR ({a_}–{b_})",
+             role="body", color=INK_SOFT)
+        num_text(slide, X0, top + Inches(0.3), Inches(4), Inches(0.75), f"{cg:,.0f}", "%", 40, ACCENT)
+        top += Inches(1.15)
+    elif c.get("unit"):
+        top += Inches(0.35)
+    if c.get("unit"):
+        text(slide, X1 - Inches(3), TOP, Inches(3), Inches(0.28), f"단위: {c['unit']}", role="caption", color=MUTED,
+             align=PP_ALIGN.RIGHT)
+    fx, fy, fw, fh = X0, top, CW, end - top
+    gf = slide.shapes.add_chart(kind, int(fx), int(fy), int(fw), int(fh), cd)
+    ch = gf.chart
     small = Pt(max(SIZE["small"], MIN["body"]))
     ch.font.name, ch.font.size, ch.font.color.rgb = face("body")[0], small, INK_SOFT
     ch.has_title = False
     ch.has_legend = len(c["y"]) > 1
     if ch.has_legend:
         ch.legend.position, ch.legend.include_in_layout = XL_LEGEND_POSITION.TOP, False
-    ch.value_axis.has_major_gridlines = False
-    ch.value_axis.visible = False
+    vals = [num(r[c["y"][0]]) for r in rows]
+    simple = kind == XL_CHART_TYPE.COLUMN_CLUSTERED and len(c["y"]) == 1
+    vmax = max(vals) * (1.0 if not (c.get("notes") or c.get("line")) else 1.0)
+    va = ch.value_axis
+    va.has_major_gridlines = False
+    va.visible = False
+    if simple:
+        va.minimum_scale, va.maximum_scale = 0, vmax
     ca = ch.category_axis
     ca.format.line.color.rgb, ca.format.line.width = LINE, LW["hair"]
     ca.has_major_gridlines = False
@@ -649,26 +774,34 @@ def s_chart(slide, d, idx):
     dl.font.size, dl.font.bold, dl.font.color.rgb = small, True, INK
     if kind != XL_CHART_TYPE.LINE_MARKERS:
         dl.position = XL_LABEL_POSITION.CENTER if kind == XL_CHART_TYPE.COLUMN_STACKED else XL_LABEL_POSITION.OUTSIDE_END
-        plot.gap_width = 60
+        plot.gap_width = c.get("gap", 90)
     hi = c.get("highlight")
+    split_i = cats.index(c["split"]) if c.get("split") in cats else None
     for si, series in enumerate(plot.series):
-        base = SERIES[si % len(SERIES)] if len(c["y"]) > 1 else (LINE if hi else ACCENT)
         if kind == XL_CHART_TYPE.LINE_MARKERS:
-            series.format.line.color.rgb = base if len(c["y"]) > 1 else ACCENT
+            series.format.line.color.rgb = SERIES[si % len(SERIES)] if len(c["y"]) > 1 else ACCENT
             series.format.line.width = LW["bold"]
             series.smooth = False
             continue
+        base = SERIES[si % len(SERIES)] if len(c["y"]) > 1 else (mix(C["neutral"]["500"], "#FFFFFF", 0.15) if hi else ACCENT)
         series.format.fill.solid()
         series.format.fill.fore_color.rgb = base
-        if hi and len(c["y"]) == 1:
-            for pi, cat in enumerate(cd.categories):
-                if str(cat.label) == str(hi):
-                    pt = series.points[pi]
-                    pt.format.fill.solid()
+        if len(c["y"]) == 1:
+            for pi, cat in enumerate(cats):
+                pt = series.points[pi]
+                pt.format.fill.solid()
+                if hi and str(cat) == str(hi):
                     pt.format.fill.fore_color.rgb = ACCENT
-    if c.get("unit"):
-        text(slide, X0, TOP, Inches(4), Inches(0.28), f"단위: {c['unit']}", role="caption", color=MUTED)
-    src = d.get("source") or "; ".join(sorted({r.get("source", "") for r in rows if r.get("source")}))
+                elif split_i is not None and pi >= split_i:
+                    pt.format.fill.fore_color.rgb = LINE          # 전망은 연하게
+                else:
+                    pt.format.fill.fore_color.rgb = mix(C["neutral"]["700"], "#FFFFFF", 0.35)
+    if simple:
+        extra = c.get("notes") or c.get("line")
+        head_room = min(0.45, (Inches(1.05) / fh)) if extra else 0.1    # 값 라벨 + 주석 두 줄이 들어갈 높이
+        lay = plot_layout(ch, 0.02, head_room, 0.96, 0.9 - head_room)
+        chart_extras(slide, c, rows, cats, vals, fx, fy, fw, fh, lay, vmax)
+    src = d.get("source") or "; ".join(sorted({cite(r) for r in rows if cite(r)}))
     footer(slide, idx, src or None)
 
 
@@ -691,18 +824,53 @@ def s_metrics(slide, d, idx):
             seg(slide, x, TOP, x + cw, TOP, INK if i == 0 else LINE, "bold" if i == 0 else "regular")
         elif kind != "D":
             shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, x, TOP, cw, h, fill=DARK if dark else SURFACE, radius=rad)
-        pad = SP["m"]
-        text(slide, x + pad, TOP + pad, cw - 2 * pad, Inches(1.0), f"{fmt(r['value'])}{r.get('unit', '')}",
-             44, "display", WHITE if dark else (ACCENT if i == 0 else INK))
-        divider(slide, x + pad, TOP + pad + Inches(1.1), cw - 2 * pad)
-        text(slide, x + pad, TOP + pad + Inches(1.25), cw - 2 * pad, Inches(0.8),
+        pad = 0 if kind == "F" else SP["m"]
+        num_text(slide, x + pad, TOP + SP["m"], cw - 2 * pad, Inches(1.0), fmt(r["value"]),
+                 r.get("unit", ""), 48, WHITE if dark else (ACCENT if i == 0 else INK))
+        divider(slide, x + pad, TOP + SP["m"] + Inches(1.05), cw - 2 * pad)
+        text(slide, x + pad, TOP + SP["m"] + Inches(1.2), cw - 2 * pad, Inches(0.8),
              r["label_override"] or r.get("label", r["key"]), role="body", color=PALE if dark else INK_SOFT)
         if r.get("as_of"):
-            text(slide, x + pad, TOP + h - pad - Inches(0.25), cw - 2 * pad, Inches(0.25), f"기준 {r['as_of']}",
+            text(slide, x + pad, TOP + SP["m"] + Inches(1.6), cw - 2 * pad, Inches(0.25), f"기준 {r['as_of']}",
                  role="caption", color=MUTED)
-        if r.get("source"):
-            srcs.add(r["source"])
+        if cite(r):
+            srcs.add(cite(r))
     footer(slide, idx, d.get("source") or "; ".join(sorted(srcs)) or None)
+
+
+NUMERIC = __import__("re").compile(r"^[~+\-약 ]*[\d,.]+\s*(%|억원|억|만원|만 대|만|대|원|x|배)?$")
+
+
+def table_editorial(slide, rows, cols, labels, hi, top, end):
+    """박스 없는 표: 굵은 위 선 + 가는 행 구분선, 숫자 열은 오른쪽 정렬, 강조 행은 연한 띠 + 굵게."""
+    n_r = len(rows) + 1
+    row_h = min(Inches(0.55), (end - top) / n_r)
+    first_w = CW * (0.22 if len(cols) > 3 else 0.3)
+    rest = (CW - first_w) / max(len(cols) - 1, 1)
+    is_num = [all(NUMERIC.match(str(r[c]).strip() or "0") for r in rows) for c in cols]
+    seg(slide, X0, top, X1, top, INK, "bold")
+    for i in range(n_r):
+        y = top + row_h * i
+        hl = i > 0 and hi and rows[i - 1][cols[0]] == hi
+        if hl:
+            rect(slide, X0, y + Inches(0.03), CW, row_h - Inches(0.06), ACCENT_SOFT)
+        for j, col in enumerate(cols):
+            x = X0 if j == 0 else X0 + first_w + rest * (j - 1)
+            w = first_w if j == 0 else rest
+            val = labels.get(col, col) if i == 0 else rows[i - 1][col]
+            al = PP_ALIGN.RIGHT if (j > 0 and is_num[j]) else PP_ALIGN.LEFT
+            pad = SP["s"]
+            if i == 0:
+                text(slide, x + pad, y, w - 2 * pad, row_h, val, SIZE["small"], "head", MUTED, al, MSO_ANCHOR.MIDDLE)
+            else:
+                role = "head" if (hl or j == 0) else "body"
+                text(slide, x + pad, y, w - 2 * pad, row_h, val, SIZE["small"], role, ACCENT if hl and j == 0 else INK,
+                     al, MSO_ANCHOR.MIDDLE)
+        if 0 < i < n_r - 1:
+            seg(slide, X0, y + row_h, X1, y + row_h, LINE_SOFT, "hair")
+        elif i == 0:
+            seg(slide, X0, y + row_h, X1, y + row_h, LINE, "hair")
+    seg(slide, X0, top + row_h * n_r, X1, top + row_h * n_r, LINE, "hair")
 
 
 def s_table(slide, d, idx):
@@ -711,6 +879,11 @@ def s_table(slide, d, idx):
     rows = read_csv(d["table"]["data"])
     cols = d["table"].get("columns") or [k for k in rows[0] if k != "source"]
     hi = d["table"].get("highlight_row")
+    if STY["card"] == "F":
+        table_editorial(slide, rows, cols, d["table"].get("labels", {}), hi, TOP, end)
+        srcs = sorted({cite(r) for r in rows if cite(r)})
+        footer(slide, idx, d.get("source") or "; ".join(srcs) or None)
+        return
     n_r, n_c = len(rows) + 1, len(cols)
     row_h = min(Inches(0.5), int((end - TOP) / n_r))
     tbl = slide.shapes.add_table(n_r, n_c, int(X0), int(TOP), int(CW), int(row_h * n_r)).table
@@ -726,7 +899,7 @@ def s_table(slide, d, idx):
                 for run in p.runs:
                     style_run(run, SIZE["small"], "head" if (i == 0 or (is_hi and j == 0)) else "body",
                               WHITE if i == 0 else INK)
-    srcs = sorted({r.get("source", "") for r in rows if r.get("source")})
+    srcs = sorted({cite(r) for r in rows if cite(r)})
     footer(slide, idx, d.get("source") or "; ".join(srcs) or None)
 
 
@@ -761,7 +934,7 @@ def s_ask(slide, d, idx):
     bg(slide, DARK)
     r = resolve(d["amount_ref"])
     text(slide, X0, Y0, CW, Inches(0.7), d["title"], SIZE["title"], "title", WHITE)
-    text(slide, X0, Y0 + Inches(0.9), CW, Inches(1.4), f"{fmt(r['value'])}{r.get('unit', '')}", 72, "display", WHITE)
+    num_text(slide, X0, Y0 + Inches(0.9), CW, Inches(1.4), fmt(r["value"]), r.get("unit", ""), 80, WHITE)
     if d.get("message"):
         text(slide, X0, Y0 + Inches(2.35), Inches(8), Inches(0.6), d["message"], SIZE["subtitle"], "body", PALE)
     if d.get("use_of_funds"):
@@ -837,11 +1010,11 @@ def s_tam(slide, d, idx):
     for i, r in enumerate(rows):
         y = ty + rowh * i
         text(slide, tx, y, tw, Inches(0.35), r.get("label") or r["segment"], role="body", color=INK_SOFT)
-        text(slide, tx, y + Inches(0.35), tw, Inches(0.7), f"{fmt(r['size'])}{unit}", 32, "display",
-             ACCENT if i == len(rows) - 1 else INK)
+        num_text(slide, tx, y + Inches(0.35), tw, Inches(0.7), fmt(r["size"]), unit, 34,
+                 ACCENT if i == len(rows) - 1 else INK)
         if i < len(rows) - 1:
             divider(slide, tx, y + rowh - SP["s"], tw)
-    srcs = sorted({r.get("source", "") for r in rows if r.get("source")})
+    srcs = sorted({cite(r) for r in rows if cite(r)})
     footer(slide, idx, d.get("source") or "; ".join(srcs) or None)
 
 
@@ -880,7 +1053,7 @@ def s_compare(slide, d, idx):
                  c_, PP_ALIGN.CENTER, MSO_ANCHOR.MIDDLE)
         if i < n_r - 1:
             divider(slide, X0, y + row_h, CW)
-    srcs = sorted({r.get("source", "") for r in rows if r.get("source")})
+    srcs = sorted({cite(r) for r in rows if cite(r)})
     footer(slide, idx, d.get("source") or "; ".join(srcs) or None)
 
 
@@ -985,7 +1158,7 @@ def s_gallery(slide, d, idx):
         y = TOP
         for ref in d.get("stats", [])[:2]:
             r = resolve(ref)
-            text(slide, X0, y, lw, Inches(0.9), f"{fmt(r['value'])}{r.get('unit', '')}", 48, "display", INK)
+            num_text(slide, X0, y, lw, Inches(0.9), fmt(r["value"]), r.get("unit", ""), 52, INK)
             text(slide, X0, y + Inches(0.9), lw, Inches(0.35), r.get("label", ""), role="body", color=INK_SOFT)
             y += Inches(1.45)
         if d.get("quote"):
@@ -1011,10 +1184,46 @@ def s_gallery(slide, d, idx):
     footer(slide, idx, d.get("source"))
 
 
+def s_share(slide, d, idx):
+    """100% 가로 막대로 비중 표현. total_ref(전체), segments [{label, pct_ref, value_ref, highlight}]."""
+    header(slide, d, idx)
+    end = summary_bar(slide, d)
+    y = TOP
+    if d.get("total_ref"):
+        t = resolve(d["total_ref"])
+        text(slide, X0, y, Inches(5), Inches(0.3), t.get("label", ""), role="body", color=INK_SOFT)
+        num_text(slide, X0, y + Inches(0.3), Inches(5), Inches(0.8), fmt(t["value"]), t.get("unit", ""), 40, INK)
+        y += Inches(1.35)
+    segs = d["segments"]
+    pcts = [num(resolve(sg["pct_ref"])["value"]) for sg in segs]
+    tot = sum(pcts) or 1
+    bar_h = Inches(0.62)
+    x = X0
+    for sg, pc in zip(segs, pcts):
+        w = CW * pc / tot
+        hl = sg.get("highlight")
+        rect(slide, x, y, w - (Inches(0.04) if x + w < X1 - 10 else 0), bar_h, ACCENT if hl else LINE_SOFT)
+        num_text(slide, x + SP["m"], y, w - SP["m"], bar_h, fmt(pc), "%", 22, WHITE if hl else INK_SOFT,
+                 anchor=MSO_ANCHOR.MIDDLE)
+        ty = y + bar_h + SP["m"]
+        seg(slide, x, ty, x + min(w, Inches(3.2)) - SP["s"], ty, INK if hl else LINE, "bold" if hl else "regular")
+        text(slide, x, ty + SP["s"], min(w, Inches(3.5)), Inches(0.3), sg["label"], role="body",
+             color=INK if hl else INK_SOFT, bold=bool(hl))
+        if sg.get("value_ref"):
+            v = resolve(sg["value_ref"])
+            num_text(slide, x, ty + SP["s"] + Inches(0.32), min(w, Inches(3.5)), Inches(0.8), fmt(v["value"]),
+                     v.get("unit", ""), 40, ACCENT if hl else INK)
+        if sg.get("body"):
+            text(slide, x, ty + SP["s"] + Inches(1.15), min(w, Inches(3.5)) - SP["s"], end - ty - Inches(1.3), sg["body"],
+                 SIZE["small"], "body", INK_SOFT)
+        x += w
+    footer(slide, idx, d.get("source"))
+
+
 BUILDERS = {"cover": s_cover, "statement": s_statement, "process": s_process, "chart": s_chart,
             "metrics": s_metrics, "table": s_table, "team": s_team, "ask": s_ask, "closing": s_closing,
             "timeline": s_timeline, "tam": s_tam, "compare": s_compare, "product": s_product, "structure": s_structure,
-            "hero": s_hero, "gallery": s_gallery}
+            "hero": s_hero, "gallery": s_gallery, "share": s_share}
 
 
 def main():

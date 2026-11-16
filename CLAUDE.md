@@ -80,6 +80,8 @@
 - **스타일은 작업 전에 사용자가 고른다**: `/ir-start` 2-1단계. 카탈로그 `design-kit/ir-styles/styles.json`(표지 A–E, 상단 A–G, 연결 A–E, 카드 A–E, 이미지 A–C, 글머리·구분선·요약 바), 보기 이미지 `design-kit/ir-styles/previews/`. 선택은 `output/ir-<작업명>/style.json`.
 - **글자·간격·선 고정값**: 최소 글자 크기·자간·행간은 선택한 typography 값, 간격은 `fixed.spacing_cm`(0.2/0.4/0.6/1.0/1.5cm), 선 굵기는 0.5/0.8/1.6pt만. `check_style.py`가 검사한다.
 - **레퍼런스는 둘 다 같은 비중**: `refs/ir/portfolio/`(사용자 작업 26건, PDF + 서식 분석용 경량 PPTX `pptx-lite/`)와 `refs/ir/samples/`(수집 상장사 IR 21건 PDF). 둘 다 GitHub에 있어 PC가 꺼져도 쓸 수 있다. 내용·수치는 다른 덱에 옮기지 않고 스타일 참고만. 새 자료는 `python tools/lite_refs.py`로 가볍게 만들어 올린다.
+- **숫자·차트 표현 (레퍼런스 기준, 자동 적용)**: 큰 숫자 + 작은 단위(예: `12`억원, `30`%), 매출 막대 차트는 `cagr`(헤드라인 CAGR, 데이터에서 계산) · `split`(실적/전망 점선, 전망은 연하게) · `notes`(막대 위 마일스톤, 원고 문구만) · `highlight`(마지막 강조) · `line`(마진 % 점선) 옵션을 우선 검토. 비중은 `share`(100% 가로 막대). 표는 에디토리얼(카드 F)이면 선 중심·숫자 오른쪽 정렬.
+- **출처 표기**: 데이터 CSV의 `source`는 내부 추적용(원고 슬라이드 N 등)이라 덱에 나오지 않는다. 덱에 보여 줄 출처는 `cite` 열이나 슬라이드 `source`에 적는다. 고객 확인 메모는 절대 덱에 넣지 않는다.
 - **PPT 여백 고정: 상하좌우 1.5cm** (`tokens.json` → `slide.margin_cm`). 제목·본문·차트·표·출처·페이지 번호·로고 모두 이 안에만. 꽉 찬 배경·장식만 예외이며 도형 이름을 `bleed:`로 시작한다. `build_deck.py`가 아닌 방법(pptx 스킬, Codex, 템플릿 직접 편집)으로 만든 PPT도 같은 기준으로 `check_margins.py`를 통과해야 한다.
 - 자동 검수 훅: `deck*.json`을 고치면 숫자 대조, `build_deck.py`를 실행하면 여백 검사가 자동으로 돈다. 실패 메시지가 나오면 그 자리에서 고친다.
 - 명령: `/ir-start <회사명> [자료 위치] [홈페이지]` 로 작업 시작, `/ir-deliver <작업명> [메모]` 로 납품 버전 확정(태그).
