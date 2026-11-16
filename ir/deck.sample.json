@@ -2,34 +2,128 @@
   "name": "sample",
   "template": null,
   "slides": [
-    {"type": "cover", "title": "흙과 손", "subtitle": "동네 공방을 예약 가능한 클래스로 바꾸는 플랫폼", "meta": "시리즈 A 투자 제안 · 샘플 데이터(가상)"},
-    {"type": "statement", "title": "공방 클래스는 찾기도, 예약하기도 어렵습니다",
-     "message": "수요는 있지만 예약 경로가 전화와 DM에 묶여 있습니다",
-     "points": [
-       {"head": "흩어진 정보", "body": "일정과 가격이 인스타그램, 블로그, 전화 문의에 나뉘어 있습니다."},
-       {"head": "수동 정산", "body": "강사와 공방이 매달 엑셀로 매출을 나눕니다."},
-       {"head": "빈 자리", "body": "취소된 자리가 다시 채워지지 않습니다."}
-     ],
-     "notes": "문제 슬라이드: 고객 인터뷰 근거가 있으면 출처로 추가"},
-    {"type": "chart", "title": "2년 만에 매출 6배",
-     "message": "공방 파트너가 늘면서 거래액이 매년 두 배 이상 성장",
-     "derived": {"6": "revenue 2025(74) / 2023(12) ≈ 6.2"},
-     "chart": {"kind": "bar", "data": "data/revenue.csv", "x": "year", "y": ["revenue"], "labels": {"revenue": "매출"}, "unit": "억원", "highlight": "2025"}},
-    {"type": "metrics", "title": "사용자가 다시 돌아옵니다",
-     "items": [{"value_ref": "data/kpi.csv#mau"}, {"value_ref": "data/kpi.csv#retention"}, {"value_ref": "data/kpi.csv#classes"}]},
-    {"type": "chart", "title": "우리가 먼저 잡을 시장",
-     "message": "전체 취미 클래스 시장 중 수도권 공방 클래스부터 시작",
-     "chart": {"kind": "hbar", "data": "data/market.csv", "x": "segment", "y": ["size"], "labels": {"size": "시장 규모"}, "unit": "억원", "highlight": "SOM"}},
-    {"type": "table", "title": "예약부터 정산까지 한 번에 되는 곳은 우리뿐",
-     "table": {"data": "data/competitors.csv", "highlight_row": "흙과 손"}},
-    {"type": "team", "title": "공방과 플랫폼을 모두 아는 팀",
-     "people": [
-       {"name": "김대표", "role": "CEO", "bio": "도예 공방 운영 경험, 예약 플랫폼 PM 출신 (샘플)"},
-       {"name": "이개발", "role": "CTO", "bio": "결제·정산 시스템 개발 리드 (샘플)"},
-       {"name": "박운영", "role": "COO", "bio": "오프라인 파트너 확장 담당 (샘플)"}
-     ]},
-    {"type": "ask", "title": "투자 유치 목표", "amount_ref": "data/kpi.csv#ask",
-     "message": "18개월 안에 공방 파트너를 전국으로 넓힙니다", "use_of_funds": "data/use_of_funds.csv"},
-    {"type": "closing", "title": "감사합니다", "message": "두 시간이면 누구나 공방의 손님이 됩니다", "contact": "contact@example.com"}
-  ]
+    {
+      "type": "cover",
+      "title": "흙과 손",
+      "subtitle": "동네 공방을 예약 가능한 클래스로 바꾸는 플랫폼",
+      "meta": "시리즈 A 투자 제안 · 샘플 데이터(가상)"
+    },
+    {
+      "type": "statement",
+      "title": "공방 클래스는 찾기도, 예약하기도 어렵습니다",
+      "message": "수요는 있지만 예약 경로가 전화와 DM에 묶여 있습니다",
+      "points": [
+        {
+          "head": "흩어진 정보",
+          "body": "일정과 가격이 인스타그램, 블로그, 전화 문의에 나뉘어 있습니다."
+        },
+        {
+          "head": "수동 정산",
+          "body": "강사와 공방이 매달 엑셀로 매출을 나눕니다."
+        },
+        {
+          "head": "빈 자리",
+          "body": "취소된 자리가 다시 채워지지 않습니다."
+        }
+      ],
+      "notes": "문제 슬라이드: 고객 인터뷰 근거가 있으면 출처로 추가"
+    },
+    {
+      "type": "chart",
+      "title": "2년 만에 매출 6배",
+      "message": "공방 파트너가 늘면서 거래액이 매년 두 배 이상 성장",
+      "derived": {
+        "6": "revenue 2025(74) / 2023(12) ≈ 6.2"
+      },
+      "chart": {
+        "kind": "bar",
+        "data": "data/revenue.csv",
+        "x": "year",
+        "y": [
+          "revenue"
+        ],
+        "labels": {
+          "revenue": "매출"
+        },
+        "unit": "억원",
+        "highlight": "2025"
+      }
+    },
+    {
+      "type": "metrics",
+      "title": "사용자가 다시 돌아옵니다",
+      "items": [
+        {
+          "value_ref": "data/kpi.csv#mau"
+        },
+        {
+          "value_ref": "data/kpi.csv#retention"
+        },
+        {
+          "value_ref": "data/kpi.csv#classes"
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "title": "우리가 먼저 잡을 시장",
+      "message": "전체 취미 클래스 시장 중 수도권 공방 클래스부터 시작",
+      "chart": {
+        "kind": "hbar",
+        "data": "data/market.csv",
+        "x": "segment",
+        "y": [
+          "size"
+        ],
+        "labels": {
+          "size": "시장 규모"
+        },
+        "unit": "억원",
+        "highlight": "SOM"
+      }
+    },
+    {
+      "type": "table",
+      "title": "예약부터 정산까지 한 번에 되는 곳은 우리뿐",
+      "table": {
+        "data": "data/competitors.csv",
+        "highlight_row": "흙과 손"
+      }
+    },
+    {
+      "type": "team",
+      "title": "공방과 플랫폼을 모두 아는 팀",
+      "people": [
+        {
+          "name": "김대표",
+          "role": "CEO",
+          "bio": "도예 공방 운영 경험, 예약 플랫폼 PM 출신 (샘플)"
+        },
+        {
+          "name": "이개발",
+          "role": "CTO",
+          "bio": "결제·정산 시스템 개발 리드 (샘플)"
+        },
+        {
+          "name": "박운영",
+          "role": "COO",
+          "bio": "오프라인 파트너 확장 담당 (샘플)"
+        }
+      ]
+    },
+    {
+      "type": "ask",
+      "title": "투자 유치 목표",
+      "amount_ref": "data/kpi.csv#ask",
+      "message": "18개월 안에 공방 파트너를 전국으로 넓힙니다",
+      "use_of_funds": "data/use_of_funds.csv"
+    },
+    {
+      "type": "closing",
+      "title": "감사합니다",
+      "message": "두 시간이면 누구나 공방의 손님이 됩니다",
+      "contact": "contact@example.com"
+    }
+  ],
+  "tokens": "output/ir-sample/tokens.json"
 }

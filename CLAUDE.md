@@ -70,6 +70,15 @@
 - 레퍼런스는 링크·요약·구조 분석만 `refs/ir/`에 저장한다. 남의 덱 이미지·파일을 저장하지 않는다.
 - 스킬: 구성 `investor-pitch-deck`·`deck-narrative-arc`·`deck-outline-first`, 차트 `chart-choice`·`data-viz-deck`, 제작 `pptx`·`pptx-author`·`pro-deck-builder`, 검수 `ib-check-deck`·`deck-review-rubric`, 갱신 `deck-refresh`
 
+## 브랜드 색 (작업마다 다름)
+- 루트 `tokens.json`은 **중립 기본값**이다. 고객 작업에서는 그대로 쓰지 않는다.
+- 작업 시작 시 고객 색으로 **작업별 토큰**을 만든다: `python tools/make_tokens.py <출처> --out output/<작업폴더>/tokens.json`
+  - 출처 우선순위: ① 고객이 준 색 코드(`--primary`) ② 회사 PPT 템플릿 테마 색(`--from-pptx`) ③ 로고 이미지에서 추출(`--from-image`) ④ 기존 IR·홈페이지 캡처 이미지(`--from-image`)
+  - 색을 지어내지 않는다. 출처가 하나도 없으면 중립 기본값으로 진행하고 확인 질문에 "브랜드 색"을 넣는다.
+  - 추출 결과(후보 색)는 결과 보고에 한 줄로 남겨 사용자가 확인할 수 있게 한다.
+- IR 덱은 `deck.json`에 `"tokens": "output/<작업폴더>/tokens.json"`을 적는다. 웹·이미지 작업도 같은 파일의 색을 쓴다.
+- 흰 글씨를 올리는 버튼·강조 배경은 `primaryHover`(대비 4.5 이상 자동 보정), 넓은 면·장식은 `primary`.
+
 ## 폰트 (반드시)
 - **기본 폰트는 무조건 Pretendard.** 제목·본문·표·차트·이미지 속 글자 모두.
 - **`assets/fonts/README.md` 카탈로그에 있는 폰트만** 쓴다. 맑은 고딕·굴림·돋움·바탕·HY·한컴(HCR)·Arial·Calibri 등 시스템 기본 폰트 금지. CSS·PPT의 대체 폰트(fallback) 목록에도 넣지 않는다 (대체는 `Noto Sans KR`, 그다음 `sans-serif`).

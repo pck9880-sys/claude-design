@@ -27,7 +27,11 @@ ROOT = Path(__file__).resolve().parents[2]
 IR = ROOT / "ir"
 
 # ---------- 토큰 ----------
-tok = json.loads((ROOT / "tokens.json").read_text(encoding="utf-8"))
+# deck.json 의 "tokens"(작업별 색 파일)가 있으면 그것을, 없으면 기본 tokens.json(중립색)을 쓴다.
+_SPEC_PATH = Path(sys.argv[1] if len(sys.argv) > 1 else IR / "deck.json")
+_tok_rel = json.loads(_SPEC_PATH.read_text(encoding="utf-8")).get("tokens") if _SPEC_PATH.exists() else None
+TOKENS_PATH = ROOT / (_tok_rel or "tokens.json")
+tok = json.loads(TOKENS_PATH.read_text(encoding="utf-8"))
 C = tok["color"]
 
 
@@ -322,7 +326,7 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
     out = out_dir / "deck.pptx"
     prs.save(out)
-    print(f"생성: {out.relative_to(ROOT)} ({len(spec['slides'])}장)")
+    print(f"생성: {out.relative_to(ROOT)} ({len(spec['slides'])}장, 색: {TOKENS_PATH.relative_to(ROOT)})")
 
 
 if __name__ == "__main__":
