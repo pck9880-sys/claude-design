@@ -1,0 +1,18 @@
+{
+  "unchanged_other_slides": true,
+  "native_pie_values": [
+    "70.0",
+    "30.0"
+  ],
+  "check_margins.py": {
+    "baseline": 210,
+    "candidate": 208,
+    "new": []
+  },
+  "check_style.py": {
+    "baseline": 91,
+    "candidate": 90,
+    "new": []
+  },
+  "edited_shapes_in_safe_area": true
+}

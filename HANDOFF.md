@@ -1,5 +1,13 @@
 # HANDOFF
 
+## 프로젝트 모먼트 v9 — 7p 수정 완료 (2026-11-16)
+- 사용자 요청: 페이지별 순차 수정, 우선 7p의 70/30을 원형 그래프로 전환하고 파트별 이미지 배치. Claude 작업 시 올린 레퍼런스 참고.
+- 결과: `output/ir-project-moment/v9/deck_v9.pptx`, `deck_v9.pdf`, `7p-preview.pdf`. 30%는 확보 목표로 명시. 수치와 기존 이미지 유지.
+- 중앙 native pie + 좌측 카피캣 이미지 + 우측 owooii 화보·제품 이미지. v8의 나머지 14장 XML 및 PDF 화면 보존.
+- 검수/재생성: 같은 폴더 `review.md`, `verification.json`, `edit_slide7.py`, `finalize_pdf.py`, `verify_slide7.py`. 기존 전역 서식 경고는 남아 있으나 신규 경고 없음.
+- 개발 브랜치 `codex/project-moment-ir`. PC 경로는 아래 저장 설정과 동일하며 클라우드에서 PC에 직접 저장하지 못함.
+- 다음 작업: 사용자 7p 피드백 또는 다음 페이지 수정 요청에 따라 v9를 기준으로 이어서 수정.
+
 ## 프로젝트 모먼트 저장 설정 (2026-11-16, Codex)
 - 사용자가 최종 작업 기준을 `DECK_v8`로 지정. 실제 파일은 `output/ir-project-moment/v4/deck_v8.pptx` (15장), PDF는 같은 폴더의 `프로젝트모먼트_IR_v8.pdf`.
 - 원격 main의 `07f1bc3`에 v8이 이미 저장되어 있음을 확인. 후속 작업은 `codex/project-moment-ir` 브랜치 사용, 다음 수정본은 v9.
