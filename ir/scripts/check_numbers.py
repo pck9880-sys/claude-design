@@ -35,7 +35,7 @@ def data_numbers(data_dir="data"):
 
 SKIP_KEYS = {"type", "data", "value_ref", "amount_ref", "use_of_funds", "image", "icon", "photo", "section",
              "derived", "notes", "source", "highlight", "highlight_row", "x", "y", "unit", "kind", "labels",
-             "columns", "current", "label"}
+             "columns", "current", "label", "images", "banner", "strip", "logo", "nav", "focus", "tokens", "style"}
 
 
 def texts(node, key=None):
@@ -49,7 +49,8 @@ def texts(node, key=None):
         for v in node:
             out += texts(v, key)
     elif isinstance(node, str) and node.strip():
-        out.append(node)
+        if not __import__("re").search(r"[\/][^\s]*\.(png|jpe?g|svg|webp|gif)$", node, __import__("re").I):   # 이미지 경로 제외
+            out.append(node)
     return out
 
 
@@ -62,7 +63,7 @@ def main():
         for t in texts(s):
             for m in NUM.findall(t):
                 n = norm(m)
-                if re.fullmatch(r"(19|20)\d\d", n) or len(n) == 1:
+                if re.fullmatch(r"(19|20)\d\d", n) or len(n) == 1 or re.fullmatch(r"0\d", m):   # 연도·한 자리·01~09 번호
                     continue
                 if n in known or n in derived:
                     continue

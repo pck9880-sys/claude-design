@@ -359,6 +359,48 @@ def picture(slide, path, x, y, w, h, kind=None, name=None, focus=(0.5, 0.5)):
     text(slide, x, y, w, h, "이미지 자리", role="caption", color=MUTED, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 
 
+def two_tone(slide, x, y, w, h, title, size, color=None, align=PP_ALIGN.LEFT):
+    """제목을 '|'로 나눠 앞은 진하게, 뒤는 회색으로 (예: '오우이 드라이어의 | 제품 & 기술 경쟁력')."""
+    parts = [t for t in str(title).split("|")]
+    x, y, w, h = (int(v) for v in (x, y, w, h))
+    tb = slide.shapes.add_textbox(x, y, w, h)
+    tf = tb.text_frame
+    tf.word_wrap = True
+    tf.margin_left = tf.margin_right = tf.margin_top = tf.margin_bottom = 0
+    p_ = tf.paragraphs[0]
+    p_.alignment = align
+    for i, part in enumerate(parts):
+        r = p_.add_run()
+        r.text = part.strip(" ") if len(parts) == 1 else (part.rstrip(" ") + " " if i == 0 else part.strip(" "))
+        style_run(r, size, "title", (color or INK) if i == 0 else MUTED)
+    return tb
+
+
+def image_grid(slide, images, x, y, w, h, gap=None, focus=(0.5, 0.45)):
+    """이미지 여러 장을 상자 안에 격자로 (캡션 선택). images: [{image, caption, sub}] 또는 경로 문자열."""
+    imgs = [i if isinstance(i, dict) else {"image": i} for i in images]
+    n = len(imgs)
+    if not n:
+        return
+    gap = gap or SP["s"]
+    cols = {1: 1, 2: 2, 3: 3, 4: 2, 5: 3, 6: 3}.get(n, 4)
+    rows = (n + cols - 1) // cols
+    cap = any(i.get("caption") for i in imgs)
+    cap_h = (Inches(0.28) + (Inches(0.24) if any(i.get("sub") for i in imgs) else 0)) if cap else 0
+    cw = (w - gap * (cols - 1)) / cols
+    rh = (h - gap * (rows - 1)) / rows
+    for k, it in enumerate(imgs):
+        cx = x + (k % cols) * (cw + gap)
+        cy = y + (k // cols) * (rh + gap)
+        picture(slide, it.get("image"), cx, cy, cw, rh - cap_h, focus=tuple(it.get("focus", focus)))
+        if it.get("caption"):
+            text(slide, cx, cy + rh - cap_h + Inches(0.04), cw, Inches(0.26), it["caption"], SIZE["small"], "head", INK,
+                 PP_ALIGN.CENTER)
+        if it.get("sub"):
+            text(slide, cx, cy + rh - Inches(0.24), cw, Inches(0.24), it["sub"], role="caption", color=MUTED,
+                 align=PP_ALIGN.CENTER)
+
+
 # ======================= 상단(헤더) =======================
 def logo_mark(slide, y, color=MUTED):
     if SPEC.get("logo") and (ROOT / SPEC["logo"]).exists():
@@ -424,6 +466,29 @@ def header(slide, d, idx):
         if msg:
             text(slide, X0, Y0 + Inches(1.15), CW, Inches(0.45), msg, S, "body", INK_SOFT)
         divider(slide, X0, TOP - SP["s"], CW)
+    elif kind == "H":     # 로고 + 탭 메뉴(현재 섹션 강조·밑줄) + 영문 섹션 표기 + 두 가지 색 제목
+        logo = SPEC.get("logo")
+        if logo and (ROOT / logo).exists():
+            pic = slide.shapes.add_picture(str(ROOT / logo), int(X0), int(Y0 + Inches(0.05)), height=int(Inches(0.24)))
+        else:
+            text(slide, X0, Y0, Inches(3), Inches(0.3), SPEC.get("company", ""), SIZE["body"], "head", INK)
+        tabs = SPEC.get("nav", [])
+        cur = d.get("nav")
+        tab_w = Inches(0.95)
+        bar_y = Y0 + Inches(0.42)
+        for i, t in enumerate(tabs):
+            tx = X1 - tab_w * (len(tabs) - i)
+            on = t == cur
+            text(slide, tx, Y0 + Inches(0.02), tab_w, Inches(0.3), t, role="caption", color=ACCENT if on else MUTED,
+                 align=PP_ALIGN.CENTER, bold=on)
+            if on:
+                seg(slide, tx + Inches(0.12), bar_y, tx + tab_w - Inches(0.12), bar_y, ACCENT, "bold")
+        seg(slide, X0, bar_y + Inches(0.02), X1, bar_y + Inches(0.02), LINE_SOFT, "hair")
+        if d.get("kicker") or sec:
+            text(slide, X0, Y0 + Inches(0.66), CW, Inches(0.28), d.get("kicker") or sec, role="caption", color=ACCENT, bold=True)
+        two_tone(slide, X0, Y0 + Inches(0.95), CW, Inches(0.6), d["title"], T)
+        if msg:
+            text(slide, X0, Y0 + Inches(1.5), CW, Inches(0.35), msg, SIZE["body"], "body", INK_SOFT)
     else:                 # G 진행 막대 + 왼쪽 제목
         secs = SPEC.get("_sections", [])
         cur = secs.index(sec) if sec in secs else -1
@@ -466,7 +531,7 @@ def summary_bar(slide, d):
 
 
 # ======================= 카드·연결 =======================
-def card(slide, x, y, w, h, head, body, i=0, label=None, icon=None):
+def card(slide, x, y, w, h, head, body, i=0, label=None, icon=None, images=None):
     kind = STY["card"]
     rad = CH["card"]["options"][kind].get("radius", 0.06)
     pad = SP["m"]
@@ -498,6 +563,30 @@ def card(slide, x, y, w, h, head, body, i=0, label=None, icon=None):
         top += SP["s"]
         text(slide, x, top, w, y + h - top, bl, role="body", color=INK_SOFT,
              align=PP_ALIGN.CENTER if len(bl) <= 1 else PP_ALIGN.LEFT, bullets=len(bl) > 1)
+        return
+    if kind == "G":       # 1차시안: 두꺼운 테두리 직각 상자 + Point 알약 + 제목 + 글머리 + 점선 + 이미지
+        shape(slide, MSO_SHAPE.RECTANGLE, x, y, w, h, fill=WHITE, line=INK, lw="bold")
+        py = y + pad
+        if label:
+            pw = Inches(0.35) + Inches(0.085) * len(label)
+            shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, tx, py, pw, Inches(0.27), fill=ACCENT, radius=0.5)
+            text(slide, tx, py, pw, Inches(0.27), label, role="caption", color=WHITE, align=PP_ALIGN.CENTER,
+                 anchor=MSO_ANCHOR.MIDDLE, bold=True)
+            py += Inches(0.27) + SP["xs"]
+        off = icon_img(slide, icon, tx, py) if icon else 0
+        hx = tx + (off + SP["s"] if off else 0)
+        text(slide, hx, py, tw - (hx - tx), Inches(0.42), head, SIZE["body"] + 4, "head", INK)
+        py += Inches(0.42)
+        n_lines = len(bl) if bl else 0
+        body_h = Inches(0.27) * max(n_lines, 1) + SP["xs"] if bl else 0
+        if bl:
+            text(slide, tx, py, tw, body_h, bl, SIZE["small"] + 1, "body", INK_SOFT, bullets=len(bl) > 1)
+            py += body_h
+        if images:
+            py += SP["s"]
+            seg(slide, tx, py, tx + tw, py, LINE, "regular", MSO_LINE.DASH)
+            py += SP["m"]
+            image_grid(slide, images, tx, py, tw, y + h - pad - py)
         return
     if kind == "F":       # 에디토리얼: 박스 없음, 위쪽 굵은 선 + 제목 + 본문
         seg(slide, x, y, x + w, y, INK if i == 0 else LINE, "bold" if i == 0 else "regular")
@@ -556,9 +645,10 @@ def cards_row(slide, items, top, bottom, connectors=False):
     cw = (CW - gap * (n - 1)) / n
     for i, it in enumerate(items):
         x = X0 + i * (cw + gap)
-        card(slide, x, top, cw, bottom - top, it.get("head", ""), it.get("body", ""), i, it.get("label"), it.get("icon"))
+        card(slide, x, top, cw, bottom - top, it.get("head", ""), it.get("body", ""), i, it.get("label"), it.get("icon"),
+             it.get("images"))
         if connectors and i < n - 1:
-            cy = top + SP["m"] + Inches(0.55) if STY["card"] == "F" else top + (bottom - top) / 2
+            cy = top + SP["m"] + Inches(0.55) if STY["card"] == "F" else (top + Inches(0.6) if STY["card"] == "G" else top + (bottom - top) / 2)
             connector(slide, x + cw, x + cw + gap, cy)
 
 
@@ -812,6 +902,14 @@ def s_metrics(slide, d, idx):
     n, gap = len(items), SP["l"]
     cw = (CW - gap * (n - 1)) / n
     h = min(end - TOP, Inches(3.0))
+    if d.get("strip"):        # 아래쪽 이미지 띠: 남는 여백을 사진으로
+        h = min(h, Inches(2.25))
+        sy = TOP + h + SP["l"]
+        image_grid(slide, d["strip"], X0, sy, CW, end - sy, focus=(0.5, 0.3)) if len(d["strip"]) <= 6 else None
+        if len(d["strip"]) > 6:
+            k = len(d["strip"]); sw = (CW - SP["s"] * (k - 1)) / k
+            for j, im in enumerate(d["strip"]):
+                picture(slide, im if isinstance(im, str) else im["image"], X0 + j * (sw + SP["s"]), sy, sw, end - sy, focus=(0.5, 0.3))
     kind = STY["card"]
     rad = CH["card"]["options"][kind]["radius"]
     dark = kind == "E"
@@ -822,11 +920,15 @@ def s_metrics(slide, d, idx):
             shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, x, TOP, cw, h, fill=WHITE, line=LINE, lw="regular", radius=min(rad, 0.08))
         elif kind == "F":
             seg(slide, x, TOP, x + cw, TOP, INK if i == 0 else LINE, "bold" if i == 0 else "regular")
+        elif kind == "G":
+            shape(slide, MSO_SHAPE.RECTANGLE, x, TOP, cw, h, fill=WHITE, line=INK, lw="bold")
         elif kind != "D":
             shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, x, TOP, cw, h, fill=DARK if dark else SURFACE, radius=rad)
         pad = 0 if kind == "F" else SP["m"]
+        if r.get("_label_pill"):
+            pass
         num_text(slide, x + pad, TOP + SP["m"], cw - 2 * pad, Inches(1.0), fmt(r["value"]),
-                 r.get("unit", ""), 48, WHITE if dark else (ACCENT if i == 0 else INK))
+                 r.get("unit", ""), 48 if n <= 3 else 36, WHITE if dark else (ACCENT if i == 0 else INK))
         divider(slide, x + pad, TOP + SP["m"] + Inches(1.05), cw - 2 * pad)
         text(slide, x + pad, TOP + SP["m"] + Inches(1.2), cw - 2 * pad, Inches(0.8),
              r["label_override"] or r.get("label", r["key"]), role="body", color=PALE if dark else INK_SOFT)
@@ -844,7 +946,7 @@ NUMERIC = __import__("re").compile(r"^[~+\-약 ]*[\d,.]+\s*(%|억원|억|만원|
 def table_editorial(slide, rows, cols, labels, hi, top, end):
     """박스 없는 표: 굵은 위 선 + 가는 행 구분선, 숫자 열은 오른쪽 정렬, 강조 행은 연한 띠 + 굵게."""
     n_r = len(rows) + 1
-    row_h = min(Inches(0.55), (end - top) / n_r)
+    row_h = min(Inches(1.0), (end - top) / n_r)      # 행이 적으면 늘려서 아래 빈 공간을 줄임
     first_w = CW * (0.22 if len(cols) > 3 else 0.3)
     rest = (CW - first_w) / max(len(cols) - 1, 1)
     is_num = [all(NUMERIC.match(str(r[c]).strip() or "0") for r in rows) for c in cols]
@@ -879,6 +981,19 @@ def s_table(slide, d, idx):
     rows = read_csv(d["table"]["data"])
     cols = d["table"].get("columns") or [k for k in rows[0] if k != "source"]
     hi = d["table"].get("highlight_row")
+    top_ = TOP
+    if d.get("banner"):
+        bh = Inches(0.75)
+        picture(slide, d["banner"], X0, TOP, CW, bh, focus=(0.5, 0.5))
+        if d.get("banner_label"):
+            text(slide, X0 + SP["m"], TOP, Inches(5), bh, d["banner_label"], SIZE["subtitle"] + 2, "head", WHITE,
+                 anchor=MSO_ANCHOR.MIDDLE)
+        top_ = TOP + bh + SP["m"]
+    if STY["card"] in ("F", "G"):
+        table_editorial(slide, rows, cols, d["table"].get("labels", {}), hi, top_, end)
+        srcs = sorted({cite(r) for r in rows if cite(r)})
+        footer(slide, idx, d.get("source") or "; ".join(srcs) or None)
+        return
     if STY["card"] == "F":
         table_editorial(slide, rows, cols, d["table"].get("labels", {}), hi, TOP, end)
         srcs = sorted({cite(r) for r in rows if cite(r)})
@@ -907,7 +1022,7 @@ def s_team(slide, d, idx):
     header(slide, d, idx)
     people = d["people"][:6]
     has_photo = any(p.get("photo") for p in people)
-    per_row = 4 if len(people) <= 4 else 3
+    per_row = (len(people) if len(people) <= 5 else 3) if STY["card"] == "G" else (4 if len(people) <= 4 else 3)
     rows = (len(people) + per_row - 1) // per_row
     gap = SP["l"]
     cw = (CW - gap * (per_row - 1)) / per_row
@@ -919,13 +1034,19 @@ def s_team(slide, d, idx):
         if has_photo:
             picture(slide, p.get("photo"), x, y0, ph, ph)
         y = y0 + (ph + SP["s"] if has_photo else 0)
-        seg(slide, x, y, x + cw, y, INK if i == 0 else LINE, "bold" if i == 0 else "regular")
-        y += SP["s"]
-        text(slide, x, y, cw, Inches(0.4), p["name"], SIZE["body"] + 3, "head")
-        text(slide, x, y + Inches(0.4), cw, Inches(0.3), p["role"], role="caption", color=ACCENT, bold=True)
+        if STY["card"] == "G":
+            shape(slide, MSO_SHAPE.RECTANGLE, x, y0, cw, rh, fill=WHITE, line=INK, lw="bold")
+            x, cw_ = x + SP["m"], cw - 2 * SP["m"]
+            y += SP["m"]
+        else:
+            seg(slide, x, y, x + cw, y, INK if i == 0 else LINE, "bold" if i == 0 else "regular")
+            cw_ = cw
+            y += SP["s"]
+        text(slide, x, y, cw_, Inches(0.4), p["name"], SIZE["body"] + 3, "head")
+        text(slide, x, y + Inches(0.4), cw_, Inches(0.3), p["role"], role="caption", color=ACCENT, bold=True)
         bio = p.get("bio", "")
         by = y + Inches(0.4) + Inches(0.3) + SP["s"]
-        text(slide, x, by, cw, y0 + rh - by, bio, SIZE["small"], "body", INK_SOFT,
+        text(slide, x, by, cw_, y0 + rh - by - SP["s"], bio, SIZE["small"], "body", INK_SOFT,
              bullets=isinstance(bio, list) and len(bio) > 1)
     footer(slide, idx)
 
@@ -1170,17 +1291,27 @@ def s_gallery(slide, d, idx):
     rows = (n + per_row - 1) // per_row
     gap = SP["m"]
     cw = (X1 - x0 - gap * (per_row - 1)) / per_row
-    cap_h = Inches(0.38) + (Inches(0.7) if any(it.get("body") for it in items) else 0)
-    rh = (end - TOP - SP["m"] * (rows - 1)) / rows
-    ih = rh - cap_h - SP["s"]
-    for i, it in enumerate(items):
-        x = x0 + (i % per_row) * (cw + gap)
-        y = TOP + (i // per_row) * (rh + SP["m"])
-        picture(slide, it.get("image"), x, y, cw, ih, focus=tuple(it.get("focus", (0.5, 0.4))))
-        cy = y + ih + SP["s"]
-        text(slide, x, cy, cw, Inches(0.33), it.get("caption", ""), SIZE["small"], "head", INK)
-        if it.get("body"):
-            text(slide, x, cy + Inches(0.36), cw, cap_h - Inches(0.36), it["body"], SIZE["small"], "body", INK_SOFT)
+
+    def cap_of(row_items):
+        if not any(it.get("caption") for it in row_items):
+            return 0
+        return Inches(0.36) + (Inches(0.3) if any(it.get("body") for it in row_items) else 0)
+
+    row_items = [items[r * per_row:(r + 1) * per_row] for r in range(rows)]
+    caps = [cap_of(ri) for ri in row_items]
+    img_total = end - TOP - gap * (rows - 1) - sum(caps) - SP["s"] * sum(1 for c_ in caps if c_)
+    ih = img_total / rows
+    y = TOP
+    for r, ri in enumerate(row_items):
+        for j, it in enumerate(ri):
+            x = x0 + j * (cw + gap)
+            picture(slide, it.get("image"), x, y, cw, ih, focus=tuple(it.get("focus", (0.5, 0.4))))
+            if caps[r]:
+                cy = y + ih + SP["s"]
+                text(slide, x, cy, cw, Inches(0.33), it.get("caption", ""), SIZE["small"], "head", INK)
+                if it.get("body"):
+                    text(slide, x, cy + Inches(0.33), cw, Inches(0.3), it["body"], SIZE["small"], "body", INK_SOFT)
+        y += ih + (caps[r] + SP["s"] if caps[r] else 0) + gap
     footer(slide, idx, d.get("source"))
 
 
@@ -1213,9 +1344,16 @@ def s_share(slide, d, idx):
             v = resolve(sg["value_ref"])
             num_text(slide, x, ty + SP["s"] + Inches(0.32), min(w, Inches(3.5)), Inches(0.8), fmt(v["value"]),
                      v.get("unit", ""), 40, ACCENT if hl else INK)
+        by = ty + SP["s"] + Inches(1.15)
         if sg.get("body"):
-            text(slide, x, ty + SP["s"] + Inches(1.15), min(w, Inches(3.5)) - SP["s"], end - ty - Inches(1.3), sg["body"],
-                 SIZE["small"], "body", INK_SOFT)
+            text(slide, x, by, min(w, Inches(3.5)) - SP["s"], Inches(0.3), sg["body"], SIZE["small"], "body", INK_SOFT)
+        if sg.get("images"):
+            iy = by + Inches(0.4)
+            iw = w - SP["m"]
+            imgs = sg["images"]
+            k = len(imgs); sw = (iw - SP["s"] * (k - 1)) / k
+            for j, im in enumerate(imgs):
+                picture(slide, im, x + j * (sw + SP["s"]), iy, sw, end - iy, focus=(0.5, 0.35))
         x += w
     footer(slide, idx, d.get("source"))
 

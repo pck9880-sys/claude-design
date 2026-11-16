@@ -1,6 +1,17 @@
 {
   "name": "project-moment",
   "company": "PROJECT MOMENT",
+  "logo": "output/ir-project-moment/logo-owooii.png",
+  "nav": [
+    "Problem",
+    "Brand",
+    "Product",
+    "Market",
+    "Strategy",
+    "Traction",
+    "Financials",
+    "Team"
+  ],
   "tokens": "output/ir-project-moment/tokens.json",
   "style": "output/ir-project-moment/style.json",
   "data_dir": "data-project-moment",
@@ -14,39 +25,43 @@
     },
     {
       "type": "gallery",
-      "section": "01. 고객 문제",
-      "title": "매일 반복되는 모발 건조의 불편",
-      "message": "\"머리카락 말리는 데만 20분씩, 목·어깨·팔이 너무 아파요\"",
+      "nav": "Problem",
+      "kicker": "PAIN POINT",
+      "title": "“매일 매일 | 드라이 지옥”",
       "stats": [
         "data/kpi.csv#dry_day",
         "data/kpi.csv#dry_year"
       ],
-      "quote": "\"머리카락 말리는 것 때문에 씻는 일 자체가 귀찮아져요\"",
+      "quote": "Case 01 “머리카락 말리는 것 때문에 씻는 일 자체가 귀찮아져요”\nCase 02 “말리는 데만 20분씩 낭비하는데 목, 어깨, 팔이 너무 아파요”",
       "items": [
         {
-          "image": "ir/inbox/project-moment/links/01-드라이어.png",
-          "caption": "무거운 무게"
+          "image": "ir/inbox/project-moment/v1media/s02_892f8fbb.png",
+          "caption": "무거운 무게",
+          "body": "손목·어깨 피로"
         },
         {
-          "image": "ir/inbox/project-moment/links/02-양손으로-머리-말리기.png",
-          "caption": "묶인 두 손"
+          "image": "ir/inbox/project-moment/v1media/s02_ff50e782.png",
+          "caption": "묶인 두 손",
+          "body": "다른 일을 못 함"
         },
         {
-          "image": "ir/inbox/project-moment/links/03-땀-맺힌-목덜미.png",
-          "caption": "흐르는 땀"
+          "image": "ir/inbox/project-moment/v1media/s02_ac2da70a.png",
+          "caption": "흐르는 땀",
+          "body": "뜨거운 바람"
         },
         {
-          "image": "ir/inbox/project-moment/links/04-젖은-머리.png",
-          "caption": "덜 마른 헤어"
+          "image": "ir/inbox/project-moment/v1media/s02_d9cf7fd1.png",
+          "caption": "덜 마른 헤어",
+          "body": "두피·모발 손상"
         }
       ]
     },
     {
       "type": "hero",
-      "section": "02. 브랜드",
-      "title": "손은 자유롭게,\n일상은 여유롭게",
-      "message": "owooii®는 세상에서 가장 소중한 '나의 시간'이 더 가치 있게 쓰이도록, 매일의 모발 건조 시간을 소비자가 원하는 시간으로 바꿉니다.",
-      "image": "ir/inbox/project-moment/media/image2.jpeg",
+      "section": "BRAND",
+      "title": "‘소중한 나의 시간’을\n더 가치 있게",
+      "message": "owooii®는 세상에서 가장 소중한 ‘나의 시간’이 보다 가치 있게 활용되어 소비자의 삶의 질 향상과 만족을 높이는 데 기여하는 것을 목표로 합니다.",
+      "image": "ir/inbox/project-moment/v1media/s03_e9b0e540.jpg",
       "dark": true,
       "overlay": 30,
       "side": "left",
@@ -57,9 +72,9 @@
     },
     {
       "type": "gallery",
-      "section": "02. 브랜드",
-      "title": "가족 모두를 위한 핸즈프리 경험",
-      "message": "아이부터 부모님, 반려동물까지 — 두 손이 자유로운 건조 루틴",
+      "nav": "Brand",
+      "kicker": "CAMPAIGN",
+      "title": "가족 구성원 모두를 위한 | 필수 가전 아이템",
       "items": [
         {
           "image": "ir/inbox/project-moment/photos/01.png",
@@ -68,59 +83,128 @@
         },
         {
           "image": "ir/inbox/project-moment/photos/02.png",
-          "caption": "부모님을 위한 시간",
+          "caption": "효(孝)",
           "body": "FILIAL PIETY"
         },
         {
           "image": "ir/inbox/project-moment/photos/03.png",
-          "caption": "나를 위한 시간",
+          "caption": "나의 사랑하는 자녀, 그리고 나",
           "body": "CARE"
         },
         {
           "image": "ir/inbox/project-moment/photos/04.png",
-          "caption": "반려동물과 함께",
+          "caption": "교감, 반려동물과 함께",
           "body": "BOND"
+        },
+        {
+          "image": "ir/inbox/project-moment/photos/07.png",
+          "caption": ""
+        },
+        {
+          "image": "ir/inbox/project-moment/photos/06.png",
+          "caption": ""
+        },
+        {
+          "image": "ir/inbox/project-moment/photos/05.png",
+          "caption": ""
+        },
+        {
+          "image": "ir/inbox/project-moment/photos/08.png",
+          "caption": ""
         }
       ]
     },
     {
-      "type": "product",
-      "section": "03. 제품",
-      "title": "드라이어의 제품·기술 경쟁력",
-      "message": "특허 듀얼 아울렛 구조로 빠르게, 낮은 열로 손상 없이",
-      "image": "ir/inbox/project-moment/media/image10.png",
+      "type": "statement",
+      "nav": "Product",
+      "kicker": "PRODUCT & TECHNOLOGY",
+      "title": "오우이 핸즈프리 헤어 드라이어의 | 제품 & 기술 경쟁력",
       "points": [
         {
+          "label": "Point. 01",
           "head": "BLDC 듀얼 고속 모터",
           "body": [
-            "100,000 RPM, 아울렛당 16m/s",
-            "디자인 특허 듀얼 아울렛 — 일반 드라이어 2대 사용 효과"
+            "RPM 100,000",
+            "16m/s 2개 — 일반 드라이어 2대 사용 효과",
+            "디자인 특허의 듀얼 아울렛 구조"
           ],
-          "icon": "fan"
+          "images": [
+            {
+              "image": "ir/inbox/project-moment/v1media/s05_0292d091.png",
+              "caption": "일반 단일 드라이기 vs 오우이 드라이기",
+              "sub": "열로 인한 모발 손상 최소화"
+            }
+          ]
         },
         {
-          "head": "NTC 스마트 센서 · 저소음",
+          "label": "Point. 02",
+          "head": "저소음 · NTC 스마트 센서",
           "body": [
-            "초당 200회 온도 모니터링으로 일정 온도 유지",
-            "최대 65dB (일반 드라이어 75dB)"
+            "초당 200회 모니터링 → 일정 온도 유지",
+            "최대 65dB 저소음 (일반 드라이어 75dB)"
           ],
-          "icon": "thermometer"
+          "images": [
+            {
+              "image": "ir/inbox/project-moment/v1media/s05_3fa10351.png",
+              "caption": "NTC 스마트 센서"
+            },
+            {
+              "image": "ir/inbox/project-moment/v1media/s05_957983f5.png",
+              "caption": "NOISE REDUCTION"
+            }
+          ]
         },
         {
-          "head": "가족별 맞춤 설정",
+          "label": "Point. 03",
+          "head": "FUNCTIONALITY",
           "body": [
-            "풍속·온도·프리셋 조합, 키즈 모드·애견 모드",
-            "HOT/COLD 원터치, 써큘레이션 모드"
+            "3가지 풍속 · 5가지 온도 · 3가지 프리셋"
           ],
-          "icon": "sliders-horizontal"
+          "images": [
+            {
+              "image": "ir/inbox/project-moment/photos/07.png",
+              "caption": "키즈 모드",
+              "focus": [
+                0.4,
+                0.4
+              ]
+            },
+            {
+              "image": "ir/inbox/project-moment/photos/04.png",
+              "caption": "애견 모드",
+              "focus": [
+                0.35,
+                0.5
+              ]
+            },
+            {
+              "image": "ir/inbox/project-moment/photos/03.png",
+              "caption": "써큘레이션 모드",
+              "focus": [
+                0.4,
+                0.4
+              ]
+            },
+            {
+              "image": "ir/inbox/project-moment/v1media/s01_7bba20e8.jpg",
+              "caption": "HOT/COLD 모드",
+              "focus": [
+                0.4,
+                0.2
+              ]
+            }
+          ]
         }
       ]
     },
     {
       "type": "table",
-      "section": "04. 시장",
-      "title": "스탠딩 드라이어 시장 600억원 추정",
-      "message": "국내 2,200만 가구, 보급률 1% 가정 — 생활가전 보급률 대비 초기 시장",
+      "nav": "Market",
+      "kicker": "MARKET SIZE",
+      "title": "스탠딩 드라이어 | 시장 규모 추정",
+      "message": "국내 2,200만 가구 × 보급률 1% 가정 → 연 20만 대, 600억원 시장",
+      "banner": "ir/inbox/project-moment/v1media/s06_58e9dd35.png",
+      "banner_label": "2,200만 가구",
       "table": {
         "data": "data/market_compare.csv",
         "highlight_row": "스탠딩 드라이어"
@@ -129,69 +213,105 @@
     },
     {
       "type": "share",
-      "section": "04. 시장",
-      "title": "프리미엄 포지셔닝으로 카테고리 30% 선점",
-      "message": "저가형 카피캣과 달리 세련된 브랜딩으로 프리미엄 구매자를 겨냥합니다",
-      "total_ref": "data/kpi.csv#standing_market",
+      "nav": "Market",
+      "kicker": "POSITIONING",
+      "title": "세련되고 감각적인 브랜딩으로 | 프리미엄 구매자 타깃",
+      "message": "스탠딩 드라이어 시장 600억원 중 프리미엄 포지셔닝으로 30% 점유 목표",
       "segments": [
         {
-          "label": "프리미엄 — owooii® 목표 점유율",
+          "label": "owooii® 프리미엄 포지셔닝",
           "pct_ref": "data/kpi.csv#share_target",
           "value_ref": "data/kpi.csv#share_target_rev",
           "highlight": true,
-          "body": "세련되고 감각적인 브랜딩으로 프리미엄 구매자 타깃"
+          "images": [
+            "ir/inbox/project-moment/v1media/s07_58720440.png",
+            "ir/inbox/project-moment/v1media/s07_5ae87d10.png"
+          ]
         },
         {
-          "label": "기타 시장 — 저가형 카피캣 등",
+          "label": "저가형 카피캣",
           "pct_ref": "data/kpi.csv#other_share",
-          "value_ref": "data/kpi.csv#other_rev"
+          "value_ref": "data/kpi.csv#other_rev",
+          "images": [
+            "ir/inbox/project-moment/v1media/s07_0fc3bb09.png",
+            "ir/inbox/project-moment/v1media/s07_1b85d15c.png",
+            "ir/inbox/project-moment/v1media/s07_2adff248.png",
+            "ir/inbox/project-moment/v1media/s07_3af18fe6.png",
+            "ir/inbox/project-moment/v1media/s07_3e3beece.png"
+          ]
         }
       ]
     },
     {
       "type": "process",
-      "section": "05. 성장 전략",
-      "title": "온라인 수요 창출과 오프라인 경험의 선순환",
-      "message": "Flying Wheel — 공동구매로 수요를 만들고, 데이터로 직접 판매하고, 프리미엄 공간에서 경험하게 합니다",
+      "nav": "Strategy",
+      "kicker": "GO-TO-MARKET",
+      "title": "선순환 구조로 | FLYING WHEEL 진행 중",
       "steps": [
         {
-          "label": "01 ONLINE",
+          "label": "Online",
           "head": "공동구매",
-          "body": "브랜드 스토리에 맞는 인플루언서와 초기 수요·인지도 확보",
-          "icon": "users"
+          "body": [
+            "유니크한 소구 포인트로 초기 수요 창출",
+            "브랜드 스토리에 맞는 인플루언서로 인지도 확보"
+          ],
+          "images": [
+            "ir/inbox/project-moment/v1media/s08_a11278f8.png",
+            "ir/inbox/project-moment/v1media/s08_6e4e7311.png",
+            "ir/inbox/project-moment/v1media/s08_79873ad0.png"
+          ]
         },
         {
-          "label": "02 ONLINE",
-          "head": "D2C 직접 판매",
-          "body": "공동구매 데이터 기반 퍼포먼스 마케팅, 마진 구조 최적화",
-          "icon": "shopping-bag"
+          "label": "Online",
+          "head": "D2C (Direct to Customer)",
+          "body": [
+            "공동구매 데이터 기반 퍼포먼스 마케팅",
+            "유통 최소화로 마진·브랜드 컨트롤 극대화"
+          ],
+          "images": [
+            "ir/inbox/project-moment/v1media/s08_784389a5.png",
+            "ir/inbox/project-moment/v1media/s08_c285709e.png"
+          ]
         },
         {
-          "label": "03 OFFLINE",
-          "head": "프레스티지 플레이스먼트",
-          "body": "럭셔리 뷰티 살롱·호텔·골프 리조트에서 브랜드 경험 확대",
-          "icon": "hotel"
+          "label": "Offline",
+          "head": "Prestige Placement",
+          "body": [
+            "럭셔리 뷰티 살롱 · 호텔 & 골프 리조트",
+            "브랜드 익스피리언스·리테일 프레즌스 극대화"
+          ],
+          "images": [
+            "ir/inbox/project-moment/v1media/s08_00bb2cf8.png",
+            "ir/inbox/project-moment/v1media/s08_28f68619.png",
+            "ir/inbox/project-moment/v1media/s08_cebeee2c.png"
+          ]
         }
       ]
     },
     {
       "type": "table",
-      "section": "05. 성장 전략",
-      "title": "채널·마케팅·조직·제품 네 축으로 확장",
-      "message": "Growth Momentum",
+      "nav": "Strategy",
+      "kicker": "ROADMAP",
+      "title": "Growth | Momentum",
+      "message": "채널·마케팅·조직·제품 네 축으로 확장",
       "table": {
         "data": "data/growth.csv"
       }
     },
     {
       "type": "metrics",
-      "section": "06. 성과",
-      "title": "카테고리를 만들고, 지속 성장 중",
-      "message": "2024 매출 6억 → 2025 매출 12억, 영업이익 1.3억 흑자",
+      "nav": "Traction",
+      "kicker": "TRACTION",
+      "title": "카테고리 형성 및 | 지속 성장 중",
+      "message": "2024 판매 매출 6억(누적 4,000대) → 2025 판매 매출 12억 · 영업이익 1.3억",
       "items": [
         {
           "value_ref": "data/kpi.csv#rev_2025",
           "label": "2025 판매 매출"
+        },
+        {
+          "value_ref": "data/kpi.csv#op_2025",
+          "label": "2025 영업이익"
         },
         {
           "value_ref": "data/kpi.csv#units_2025",
@@ -199,72 +319,97 @@
         },
         {
           "value_ref": "data/kpi.csv#sns_views",
-          "label": "SNS 총 조회 수 (공유 10만+)"
+          "label": "SNS 총 View (공유 10만+)"
+        }
+      ],
+      "strip": [
+        "ir/inbox/project-moment/v1media/s10_5d0dfa9f.png",
+        "ir/inbox/project-moment/v1media/s10_6020565c.png",
+        "ir/inbox/project-moment/v1media/s10_94acab6b.png"
+      ]
+    },
+    {
+      "type": "statement",
+      "nav": "Product",
+      "kicker": "BUSINESS MODEL",
+      "title": "헤어케어와 모발 건조를 | 한번에",
+      "message": "디바이스로 고객을 만나고, 코스메틱으로 반복 구매",
+      "points": [
+        {
+          "label": "디바이스",
+          "head": "핸즈-프리 스탠딩 헤어드라이어",
+          "body": [
+            "고객을 처음 만나는 접점"
+          ],
+          "images": [
+            {
+              "image": "ir/inbox/project-moment/v1media/s11_0b835071.png",
+              "focus": [
+                0.5,
+                0.3
+              ]
+            }
+          ]
+        },
+        {
+          "label": "코스메틱",
+          "head": "헤어 코스메틱",
+          "body": [
+            "드라이어에 최적화된 헤어케어 · 반복 구매"
+          ],
+          "images": [
+            {
+              "image": "ir/inbox/project-moment/v1media/s11_85cf399d.png",
+              "focus": [
+                0.5,
+                0.6
+              ]
+            }
+          ]
         }
       ]
     },
     {
-      "type": "gallery",
-      "section": "07. 제품 라인업",
-      "title": "디바이스로 만나고, 코스메틱으로 반복 구매",
-      "message": "헤어케어와 모발 건조를 한 번에 — 핸즈프리 스탠딩 드라이어 & 헤어 코스메틱",
-      "items": [
+      "type": "statement",
+      "nav": "Strategy",
+      "kicker": "GROWTH STRATEGY",
+      "title": "GLOBAL EXPANSION | & CROSS SELLING",
+      "points": [
         {
-          "image": "ir/inbox/project-moment/media/image33.png",
-          "caption": "핸즈프리 스탠딩 헤어드라이어",
-          "body": "디바이스로 고객을 만나고",
-          "focus": [
-            0.5,
-            0.3
+          "label": "Cross Selling",
+          "head": "“Next K-Beauty = Hair care”",
+          "body": [
+            "K뷰티 헤어팩·드라이기 전용 에센스로 라인업 확대 (2026 하반기)",
+            "프리볼트 헤어드라이기·두피관리기 (2026 하반기)"
+          ],
+          "images": [
+            "ir/inbox/project-moment/v1media/s12_45473e41.png",
+            "ir/inbox/project-moment/v1media/s12_6ffcf45c.png",
+            "ir/inbox/project-moment/v1media/s12_ed7c5d93.png"
           ]
         },
         {
-          "image": "ir/inbox/project-moment/media/image32.png",
-          "caption": "헤어 코스메틱",
-          "body": "코스메틱으로 반복 구매",
-          "focus": [
-            0.5,
-            0.6
+          "label": "Global Expansion",
+          "head": "해외 판로 개척 (미국) : 2026년 7월 런칭",
+          "body": [
+            "헤어케어 시장 규모 세계 1위 · 모든 헤어 타입",
+            "TikTok·Reels 바이럴, 자체 AI 아바타로 소구 → 중동 확산"
+          ],
+          "images": [
+            "ir/inbox/project-moment/v1media/s12_409d8c2b.png",
+            "ir/inbox/project-moment/v1media/s12_0d921a65.png",
+            "ir/inbox/project-moment/v1media/s12_82c1ede3.png",
+            "ir/inbox/project-moment/v1media/s12_614c8e57.png"
           ]
-        }
-      ]
-    },
-    {
-      "type": "gallery",
-      "section": "08. 글로벌",
-      "title": "미국 진출과 헤어케어 라인업 확대",
-      "message": "\"Next K-Beauty = Hair care\" — 세계 1위 헤어케어 시장에서 새로운 제품 형태로",
-      "items": [
-        {
-          "image": "ir/inbox/project-moment/media/image34.png",
-          "caption": "미국 시장 진출",
-          "body": "2026년 7월 런칭 · TikTok·Reels 바이럴, AI 아바타 마케팅",
-          "focus": [
-            0.5,
-            0.25
-          ]
-        },
-        {
-          "image": "ir/inbox/project-moment/media/image35.png",
-          "caption": "코스메틱 확장",
-          "body": "헤어팩·드라이기 전용 에센스 (2026 하반기)",
-          "focus": [
-            0.5,
-            0.25
-          ]
-        },
-        {
-          "image": "ir/inbox/project-moment/media/image36.png",
-          "caption": "디바이스 다각화",
-          "body": "프리볼트 드라이어·두피관리기 (2026 하반기)"
         }
       ]
     },
     {
       "type": "chart",
-      "section": "09. 재무 전망",
-      "title": "2029년 매출 505.8억원 전망",
-      "message": "2023–2025 한국 검증(흑자 전환) → 2026 한·미 진입 → 미디어 상시판매·고마진 코스메틱으로 GP 57.2%",
+      "nav": "Financials",
+      "kicker": "FINANCIAL FORECAST",
+      "title": "Owooii 재무 포캐스트 | 2026–2029",
+      "message": "2023–2025 한국 검증(흑자) → 2026 한·미 진입(BEP) → 미디어 상시판매·고마진 코스메틱으로 GP 57.2%",
       "chart": {
         "kind": "bar",
         "data": "data/revenue.csv",
@@ -275,6 +420,7 @@
         "labels": {
           "revenue": "매출"
         },
+        "unit": "억원",
         "highlight": "2029E",
         "cagr": [
           "2025",
@@ -287,14 +433,19 @@
           "2028E": "풀 브랜드",
           "2029E": "글로벌"
         },
-        "unit": "억원"
+        "line": {
+          "col": "cosmetic",
+          "label": "코스메틱 매출 비중",
+          "unit": "%"
+        }
       },
       "source": "2023–2025 실적, 2026–2029 회사 전망"
     },
     {
       "type": "table",
-      "section": "09. 재무 전망",
-      "title": "요약 손익 전망 2026–2029",
+      "nav": "Financials",
+      "kicker": "FINANCIAL FORECAST",
+      "title": "요약 손익 | 전망 2026–2029",
       "message": "매출 성장과 함께 GP 마진 51.0% → 57.2%, 영업이익률 6.0%까지 개선",
       "table": {
         "data": "data/pnl.csv",
@@ -304,48 +455,50 @@
     },
     {
       "type": "team",
-      "section": "10. 팀",
-      "title": "소비재·브랜딩·커머스 실행 조직",
+      "nav": "Team",
+      "kicker": "LEADERSHIP",
+      "title": "TEAM",
       "people": [
         {
           "name": "이준영",
           "role": "대표 · FOUNDER",
           "bio": [
-            "효원CNC COO (인플루언서·MCN)",
-            "P&G Singapore AHQ·P&G Korea 시장전략",
-            "Pfizer 전략기획, BCG·Deloitte",
-            "미네소타 주립대 경영학"
+            "(주)프로젝트모먼트 대표 & FOUNDER (2023–)",
+            "효원CNC COO · P&G Singapore·Korea 시장전략",
+            "Pfizer 전략기획 · BCG & Deloitte",
+            "미국 미네소타 주립대 경영학"
           ]
         },
         {
           "name": "서송희",
-          "role": "이사 · 전략/대관",
+          "role": "이사",
           "bio": [
             "우나스텔라 전략·대관",
-            "호텔신라 브랜드관리, 뉴스1 기자",
-            "Georgetown MBA"
+            "호텔신라 커뮤니케이션팀 브랜드관리",
+            "뉴스1 IT·산업·국회 취재 기자",
+            "Georgetown MBA · 중앙대 사회학"
           ]
         },
         {
           "name": "최정원",
           "role": "브랜드 매니지먼트",
           "bio": [
-            "SPC Group 플랫폼·브랜딩",
-            "Grey Global NY Sr. Designer",
-            "SVA 졸업"
+            "SPC Group 플랫폼 개발 및 브랜딩",
+            "Grey Global NY Sr. Designer (P&G 브랜드)",
+            "미국 SVA 졸업"
           ]
         },
         {
           "name": "한재혁",
           "role": "커머스 & 세일즈",
           "bio": [
-            "'오슈마켓' MD",
-            "홍익대 전기전자"
+            "인플루언서 매니지먼트 ‘오슈마켓’ MD",
+            "홍익대 전기전자학과"
           ]
         },
         {
           "name": "김수정",
-          "role": "CS · 제품 & 고객 지원",
+          "role": "CS 제품 & 고객 지원",
           "bio": [
             "유아동 브랜드 비비앤다 고객지원 팀장"
           ]
@@ -353,19 +506,33 @@
       ]
     },
     {
-      "type": "product",
-      "section": "11. 사회 공헌",
-      "title": "Better Together — 일상의 변화를 더 많은 이웃에게",
-      "message": "몸이 불편한 이웃을 위한 제품 기부 활동",
-      "image": "ir/inbox/project-moment/media/image38.png",
+      "type": "statement",
+      "nav": "Team",
+      "kicker": "DONATION & SUPPORT",
+      "title": "Better | Together",
+      "message": "“사랑으로 성장하고 현재에 감사하며 어제보다 행복한 내일을 꿈꾸는 건강하고 아름다운 사회를 소망합니다.”",
       "points": [
         {
-          "head": "DONATION & SUPPORT",
-          "body": "복지관·재단과 함께 몸이 불편한 이웃에게 핸즈프리 드라이어 기부"
+          "label": "Donation",
+          "head": "몸이 불편한 이웃을 위한 제품 기부",
+          "body": [
+            "혼자 머리를 말리기 어려운 이웃에게 핸즈프리 드라이어 지원"
+          ],
+          "images": [
+            "ir/inbox/project-moment/v1media/s15_4414b100.png",
+            "ir/inbox/project-moment/v1media/s15_f976e52a.png",
+            "ir/inbox/project-moment/v1media/s15_0a1d36b7.png"
+          ]
         },
         {
-          "head": "우리가 바라는 사회",
-          "body": "사랑으로 성장하고 현재에 감사하며, 어제보다 행복한 내일을 꿈꾸는 건강하고 아름다운 사회"
+          "label": "Support",
+          "head": "함께하는 기관",
+          "body": [
+            "복지관·재단과 함께하는 기부 활동"
+          ],
+          "images": [
+            "ir/inbox/project-moment/media/image39.png"
+          ]
         }
       ]
     }
