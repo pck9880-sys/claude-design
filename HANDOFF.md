@@ -1,5 +1,14 @@
 # HANDOFF
 
+## 외주 Adobe 공통 환경 (2026-11-16)
+- 사용자 요청: GitHub 외주 폴더, Claude·휴대폰 이어하기, InDesign·Illustrator·Photoshop 활용.
+- 구성: `freelance/README.md`, `CLAUDE.md`, `AGENTS.md`, `HANDOFF.md`, 프로젝트별 source/links/output/requests 구조, 템플릿·문서·Windows 설정/진단 스크립트·무수정 probe.jsx.
+- GitHub 위치: 기존 비공개 `claude-design` 저장소, `codex/project-moment-ir` 브랜치의 `freelance/`. 별도 저장소나 폴더별 접근 제어는 아님. 외부 협업자 초대하지 않음.
+- 사용자 확인: PC 세 Adobe 앱 설치·로그인 완료. 세션에서는 PC·Claude 모바일 연결을 직접 확인하지 못함.
+- PC 권장 새 체크아웃: `C:\Users\admin\Projects\freelance-design` (기존 Desktop 원본·IR-개발 보존). 설치 스크립트 실행은 사용자 PC에서 필요.
+- 모먼트 v9 7p는 사용자 품질 지적 시안임을 STATUS.md에 명시. v8을 기준으로 레퍼런스를 다시 검토해야 함. 이번 환경 구성에서는 추가 시안 제작하지 않음.
+- 다음 작업: `freelance/HANDOFF.md`를 읽고 실제 PC·모바일 연결과 Adobe 실행 점검부터 이어가기.
+
 ## 프로젝트 모먼트 v9 — 7p 수정 완료 (2026-11-16)
 - 사용자 요청: 페이지별 순차 수정, 우선 7p의 70/30을 원형 그래프로 전환하고 파트별 이미지 배치. Claude 작업 시 올린 레퍼런스 참고.
 - 결과: `output/ir-project-moment/v9/deck_v9.pptx`, `deck_v9.pdf`, `7p-preview.pdf`. 30%는 확보 목표로 명시. 수치와 기존 이미지 유지.

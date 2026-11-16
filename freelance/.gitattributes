@@ -1,0 +1,10 @@
+projects/**/*.psd filter=lfs diff=lfs merge=lfs -text
+projects/**/*.psb filter=lfs diff=lfs merge=lfs -text
+projects/**/*.ai filter=lfs diff=lfs merge=lfs -text
+projects/**/*.indd filter=lfs diff=lfs merge=lfs -text
+projects/**/*.tif filter=lfs diff=lfs merge=lfs -text
+projects/**/*.tiff filter=lfs diff=lfs merge=lfs -text
+*.md text eol=lf
+*.json text eol=lf
+*.jsx text eol=lf
+*.ps1 text eol=crlf

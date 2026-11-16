@@ -1,0 +1,11 @@
+**/private/**
+**/work/**
+**/logs/**
+!**/.gitkeep
+workstation-health.json
+*.idlk
+*.tmp
+*.bak
+~$*
+.DS_Store
+Thumbs.db
