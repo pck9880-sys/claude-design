@@ -1,0 +1,5 @@
+Chewy
+Copyright (c) 2010 by Font Diner, Inc DBA Sideshow. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 http://www.apache.org/licenses/LICENSE-2.0
+(폰트 파일 내부 라이선스 정보에서 추출)

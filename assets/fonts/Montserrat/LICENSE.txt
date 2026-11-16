@@ -1,0 +1,5 @@
+Montserrat
+Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org https://openfontlicense.org
+(폰트 파일 내부 라이선스 정보에서 추출)

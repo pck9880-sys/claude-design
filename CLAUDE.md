@@ -70,6 +70,13 @@
 - 레퍼런스는 링크·요약·구조 분석만 `refs/ir/`에 저장한다. 남의 덱 이미지·파일을 저장하지 않는다.
 - 스킬: 구성 `investor-pitch-deck`·`deck-narrative-arc`·`deck-outline-first`, 차트 `chart-choice`·`data-viz-deck`, 제작 `pptx`·`pptx-author`·`pro-deck-builder`, 검수 `ib-check-deck`·`deck-review-rubric`, 갱신 `deck-refresh`
 
+## 폰트 (반드시)
+- **기본 폰트는 무조건 Pretendard.** 제목·본문·표·차트·이미지 속 글자 모두.
+- **`assets/fonts/README.md` 카탈로그에 있는 폰트만** 쓴다. 맑은 고딕·굴림·돋움·바탕·HY·한컴(HCR)·Arial·Calibri 등 시스템 기본 폰트 금지. CSS·PPT의 대체 폰트(fallback) 목록에도 넣지 않는다 (대체는 `Noto Sans KR`, 그다음 `sans-serif`).
+- 디자인 폰트는 카탈로그 "추천 목록"에서 작업 톤에 맞춰 **1종만** 골라 강조 자리에만 쓰고, 고른 이유를 결과 보고에 한 줄 남긴다.
+- 영문 전용 폰트(Montserrat, Orbitron 등)에 한글을 넣지 않는다.
+- 클라우드 세션에서 렌더 전에 `python tools/install_fonts.py`를 한 번 실행한다.
+
 ## 디자인 원칙
 - 색·간격·radius·그림자는 `tokens.json` 값만 사용, 임의 HEX·매직 넘버 금지
 - 실제 카피 사용 (lorem ipsum 금지). 카피가 없으면 brief 톤에 맞춰 쓰고 표시해 둘 것

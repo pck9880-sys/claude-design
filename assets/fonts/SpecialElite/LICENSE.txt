@@ -1,0 +1,5 @@
+Special Elite
+Copyright (c) 2010 by Brian J. Bonislawsky DBA Astigmatic (AOETI). All rights reserved. Available under the Apache 2.0 licence.http://www.apache.org/licenses/LICENSE-2.0.html
+
+Licensed under the Apache License, Version 2.0 http://www.apache.org/licenses/LICENSE-2.0
+(폰트 파일 내부 라이선스 정보에서 추출)

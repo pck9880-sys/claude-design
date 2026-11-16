@@ -1,0 +1,5 @@
+DOSPilgi
+Copyright (c) 2022 Damheo Lee
+
+MIT License https://opensource.org/licenses/mit-license.php
+(폰트 파일 내부 라이선스 정보에서 추출)
