@@ -20,7 +20,7 @@ if target.exists():raise SystemExit('book-data.json이 이미 있어 덮어쓰�
 target.write_text(json.dumps(book,ensure_ascii=False,indent=2),encoding='utf-8')
 (data/'book-data.jsxinc').write_text('var BOOK_DATA = '+json.dumps(book,ensure_ascii=False,indent=2)+';\n',encoding='utf-8-sig')
 with (data/'asset-mapping.csv').open('w',encoding='utf-8-sig',newline='') as f:
- w=csv.DictWriter(f,fieldnames=list(assets[0]));w.writeheader();w.writerows(assets)
+ w=csv.DictWriter(f,fieldnames=list(assets[0]),lineterminator='\n');w.writeheader();w.writerows(assets)
 rows=[]
 for p in sorted((root/'inputs').rglob('*')):
  if p.is_file():rows.append({'name':p.name,'path':p.relative_to(root).as_posix(),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'role':'manuscript' if p.suffix=='.hwp' else 'cover_reference_only','status':'received'})
@@ -28,6 +28,6 @@ for n in ['활동사진 (2).Zip','작품사진 20장 (1).Zip']:
  rows.append({'name':n,'path':None,'bytes':None,'sha256':None,'role':'activity_photos' if n.startswith('활동') else 'artwork_photos','status':'blocked_transfer_limit_over_32MiB'})
 (data/'input-manifest.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
 with (data/'page-plan.csv').open('w',encoding='utf-8-sig',newline='') as f:
- w=csv.writer(f);w.writerow(['page','role','artist_id','side','assets','content'])
+ w=csv.writer(f,lineterminator="\n");w.writerow(['page','role','artist_id','side','assets','content'])
  for p in pages:w.writerow([p['page'],p['role'],p.get('artist_id',''),p.get('side',''),';'.join(p['asset_ids']),p.get('content','')])
 print('24쪽 구성·10명·20작품 자리·9활동사진 자리 준비. 매핑은 미확정.')
