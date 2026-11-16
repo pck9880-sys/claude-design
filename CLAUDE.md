@@ -24,6 +24,23 @@
 - 검수: `impeccable`(디자인 품질), `web-design-guidelines`(접근성)
 - 상세 프롬프트 모음: `design-kit/prompts/`
 
+## GPT(Codex) 자동 위임
+`python tools/gpt.py ...` 로 GPT에 일을 맡긴다. 사용자가 따로 말하지 않아도 아래 기준으로 판단해 바로 실행하고, 결과는 Claude가 검토한 뒤 반영한다.
+
+| 상황 | 위임 | 명령 |
+|---|---|---|
+| **이미지가 필요할 때 (무조건)** — 히어로·배경·제품 연출·IR 표지·아이콘 일러스트 등 | GPT | `image "프롬프트" --out assets/generated/<작업명>-<용도>.png` |
+| 검색어가 3개 이상이거나 여러 출처 비교가 필요한 서칭 | GPT 병렬 + Claude 검토 | `research --batch 질문.txt --out-dir refs/research/<작업명>` |
+| 레퍼런스 사례 수집 (IR·디자인) | GPT가 수집, Claude가 선별·요약 | `research "..." --out refs/ir/<작업명>-gpt.md` |
+| 긴 문서 여러 개(합계 30쪽 이상)·엑셀 여러 시트 정리 | GPT 초안 + Claude 대조 | `organize --task "..." --in <파일들> --out <결과>.md` |
+| 짧은 서칭(검색 1–2번), 짧은 문서, 코드·디자인 구현, 최종 판단 | Claude 혼자 | — |
+
+- 이미지 프롬프트는 5요소로 쓴다: 주제 / 구도 / 환경 / 스타일(tokens.json 색) / 기술 사양(비율, 글자 없음). 사람 얼굴·실존 브랜드·로고는 요청이 있을 때만.
+- 서칭·정리를 맡기는 동안 Claude는 기다리지 말고 다른 단계(구성, 레이아웃)를 진행한다 (`run_in_background`).
+- GPT 결과는 초안이다. 링크 몇 개를 직접 열어 확인하고, 숫자는 원문과 대조한 뒤 쓴다.
+- Codex·API 키가 없는 환경(일부 클라우드 세션)에서는 실패 메시지가 나온다. 그때는 Claude 혼자 하고, 이미지는 자리표시로 두고 `HANDOFF.md`에 "PC에서 이미지 생성 필요"를 적는다.
+- 호출 기록: `tools/gpt-log.jsonl`
+
 ## IR 덱 작업
 - 절차는 `design-kit/prompts/06-ir.md`, 폴더 설명은 `ir/README.md`를 따른다.
 - **숫자는 `ir/data/*.csv`에만 근거**. 원문에 없는 수치·고객사·인용을 만들지 않는다. 계산한 수치는 슬라이드의 `derived`에 근거를 적는다.

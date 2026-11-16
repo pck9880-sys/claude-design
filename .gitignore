@@ -5,3 +5,4 @@ screenshots/
 *.log
 ir/inbox/*
 !ir/inbox/.gitkeep
+tools/gpt-log.jsonl

@@ -35,5 +35,13 @@
 - 남은 것: Pretendard를 PC에 설치하면 PowerPoint에서도 같은 폰트로 보임 (`assets/fonts/Pretendard/*.otf` 더블클릭 → 설치)
 - `ir/data/*.csv`의 현재 값은 **가상 샘플**. 실제 작업 시작 시 교체
 
-## 5. 다음 세션 첫 지시 예시
+## 5. GPT(Codex) 연동 (완료, 2026-11-16)
+- 같은 저장소 사용: Codex는 `AGENTS.md` → `CLAUDE.md` 규칙을 따름
+- Claude 자동 위임: `tools/gpt.py` (image / research / organize). 기준은 `CLAUDE.md` "GPT(Codex) 자동 위임"
+- PC: Codex CLI 0.169.0 설치, ChatGPT 로그인 사용 (API 키 불필요)
+- 클라우드 Claude 세션: Codex 로그인이 없어 GPT 호출 불가 → 환경 변수 `OPENAI_API_KEY`를 넣으면 API로 동작 (API 경로는 미시험)
+- 시험 통과: 이미지 생성, 병렬 서칭 2건, 자료 정리 1건
+- 참고 자료: `refs/ir/seed-ir-mistakes.md` (시드 IR에서 투자자가 지적하는 실수, GPT 조사)
+
+## 6. 다음 세션 첫 지시 예시
 "HANDOFF.md 읽고 이어서 해줘"
