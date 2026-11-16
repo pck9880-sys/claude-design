@@ -21,7 +21,7 @@ from pptx.chart.data import CategoryChartData
 from pptx.dml.color import RGBColor
 from pptx.enum.chart import XL_CHART_TYPE, XL_LEGEND_POSITION, XL_LABEL_POSITION
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
-from pptx.util import Inches, Pt, Emu
+from pptx.util import Inches, Pt, Emu, Cm
 
 ROOT = Path(__file__).resolve().parents[2]
 IR = ROOT / "ir"
@@ -52,10 +52,16 @@ SERIES = [ACCENT, rgb(C["neutral"]["700"]), rgb(C["neutral"]["300"]), rgb(C["neu
 FONT = tok["font"]["family"]["heading"].split(",")[0].strip().strip('"')   # tokens.json의 첫 번째 폰트
 
 W, H = Inches(13.333), Inches(7.5)
-M = Inches(0.6)                     # 좌우 여백
-CW = W - 2 * M                      # 본문 폭
-TOP = Inches(2.35)                  # 본문 시작
-BOTTOM = Inches(6.75)               # 본문 끝
+# ---------- 여백(안전 영역) — tokens.json "slide.margin_cm" 고정값, 모든 요소는 이 안에만 ----------
+_mg = tok.get("slide", {}).get("margin_cm", {"top": 1.5, "right": 1.5, "bottom": 1.5, "left": 1.5})
+MT, MR, MB, ML = (Cm(_mg[k]) for k in ("top", "right", "bottom", "left"))
+X0, X1, Y0, Y1 = ML, W - MR, MT, H - MB      # 안전 영역 경계
+M = X0                                       # (호환) 왼쪽 시작점
+CW = X1 - X0                                 # 본문 폭
+FOOT_H = Inches(0.3)
+FOOT_Y = Y1 - FOOT_H                         # 출처·페이지 번호 줄 (안전 영역 맨 아래)
+TOP = Y0 + Inches(1.85)                      # 본문 시작 (제목+메시지 아래)
+BOTTOM = FOOT_Y - Inches(0.25)               # 본문 끝 (꼬리말 위)
 
 
 # ---------- 데이터 ----------
@@ -112,36 +118,38 @@ def _ea_font(run):
         el.set("typeface", FONT)
 
 
-def rect(slide, x, y, w, h, fill):
+def rect(slide, x, y, w, h, fill, name=None):
     from pptx.enum.shapes import MSO_SHAPE
     s = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, x, y, w, h)
     s.fill.solid()
     s.fill.fore_color.rgb = fill
     s.line.fill.background()
     s.shadow.inherit = False
+    if name:
+        s.name = name   # "bleed:" 로 시작하면 여백 검사 예외(꽉 찬 배경·장식)
     return s
 
 
 def header(slide, d):
-    text(slide, M, Inches(0.55), CW, Inches(0.9), d["title"], size=30, bold=True)
+    text(slide, X0, Y0, CW, Inches(0.9), d["title"], size=30, bold=True)
     if d.get("message"):
-        text(slide, M, Inches(1.45), CW, Inches(0.7), d["message"], size=17, color=INK_SOFT)
+        text(slide, X0, Y0 + Inches(0.95), CW, Inches(0.7), d["message"], size=17, color=INK_SOFT)
 
 
 def footer(slide, idx, source=None):
     if source:
-        text(slide, M, Inches(7.0), Inches(10), Inches(0.3), f"출처: {source}", size=10, color=MUTED)
-    text(slide, W - M - Inches(1), Inches(7.0), Inches(1), Inches(0.3), str(idx), size=10, color=MUTED, align=PP_ALIGN.RIGHT)
+        text(slide, X0, FOOT_Y, CW - Inches(1.2), FOOT_H, f"출처: {source}", size=10, color=MUTED)
+    text(slide, X1 - Inches(1), FOOT_Y, Inches(1), FOOT_H, str(idx), size=10, color=MUTED, align=PP_ALIGN.RIGHT)
 
 
 # ---------- 슬라이드 타입 ----------
 def s_cover(slide, d, idx):
-    rect(slide, 0, 0, Inches(0.25), H, ACCENT)
-    text(slide, Inches(1.1), Inches(2.4), Inches(11), Inches(1.6), d["title"], size=44, bold=True)
+    rect(slide, 0, 0, Inches(0.25), H, ACCENT, name="bleed:cover-bar")
+    text(slide, X0, Inches(2.4), CW, Inches(1.6), d["title"], size=44, bold=True)
     if d.get("subtitle"):
-        text(slide, Inches(1.1), Inches(4.05), Inches(10), Inches(0.8), d["subtitle"], size=20, color=INK_SOFT)
+        text(slide, X0, Inches(4.05), CW, Inches(0.8), d["subtitle"], size=20, color=INK_SOFT)
     if d.get("meta"):
-        text(slide, Inches(1.1), Inches(6.4), Inches(10), Inches(0.4), d["meta"], size=12, color=MUTED)
+        text(slide, X0, FOOT_Y, CW, FOOT_H, d["meta"], size=12, color=MUTED)
 
 
 def s_statement(slide, d, idx):
@@ -155,7 +163,7 @@ def s_statement(slide, d, idx):
         x = M + i * (cw + gap)
         rect(slide, x, TOP, cw, Emu(Inches(0.06)), ACCENT if i == 0 else LINE)
         text(slide, x, TOP + Inches(0.3), cw, Inches(0.6), p["head"], size=20, bold=True)
-        text(slide, x, TOP + Inches(1.0), cw, Inches(2.8), p.get("body", ""), size=16, color=INK_SOFT)
+        text(slide, x, TOP + Inches(1.0), cw, BOTTOM - TOP - Inches(1.0), p.get("body", ""), size=16, color=INK_SOFT)
     footer(slide, idx, d.get("source"))
 
 
@@ -276,25 +284,25 @@ def s_team(slide, d, idx):
              align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
         text(slide, x, TOP + Inches(1.55), cw, Inches(0.5), p["name"], size=20, bold=True)
         text(slide, x, TOP + Inches(2.05), cw, Inches(0.4), p["role"], size=15, color=ACCENT)
-        text(slide, x, TOP + Inches(2.55), cw, Inches(1.8), p.get("bio", ""), size=14, color=INK_SOFT)
+        text(slide, x, TOP + Inches(2.55), cw, BOTTOM - TOP - Inches(2.55), p.get("bio", ""), size=14, color=INK_SOFT)
     footer(slide, idx)
 
 
 def s_ask(slide, d, idx):
-    rect(slide, 0, 0, W, H, DARK)
+    rect(slide, 0, 0, W, H, DARK, name="bleed:background")
     r = resolve(d["amount_ref"])
-    text(slide, M, Inches(0.8), CW, Inches(0.8), d["title"], size=30, bold=True, color=WHITE)
-    text(slide, M, Inches(1.9), CW, Inches(1.4), f"{fmt(r['value'])}{r.get('unit', '')}", size=72, bold=True, color=WHITE)
+    text(slide, X0, Y0, CW, Inches(0.8), d["title"], size=30, bold=True, color=WHITE)
+    text(slide, X0, Y0 + Inches(1.1), CW, Inches(1.4), f"{fmt(r['value'])}{r.get('unit', '')}", size=72, bold=True, color=WHITE)
     if d.get("message"):
-        text(slide, M, Inches(3.4), Inches(7), Inches(0.8), d["message"], size=18, color=rgb(C["neutral"]["300"]))
+        text(slide, X0, Y0 + Inches(2.6), Inches(7), Inches(0.8), d["message"], size=18, color=rgb(C["neutral"]["300"]))
     if d.get("use_of_funds"):
         rows = read_csv(d["use_of_funds"])
-        y = Inches(4.5)
+        y = Y0 + Inches(3.6)
         for row in rows:
             text(slide, M, y, Inches(5), Inches(0.45), row["label"], size=16, color=WHITE)
             text(slide, M + Inches(5), y, Inches(1.5), Inches(0.45), f"{fmt(row['value'])}{row.get('unit', '%')}", size=16, bold=True, color=WHITE, align=PP_ALIGN.RIGHT)
             y += Inches(0.5)
-    text(slide, W - M - Inches(1), Inches(7.0), Inches(1), Inches(0.3), str(idx), size=10, color=rgb(C["neutral"]["500"]), align=PP_ALIGN.RIGHT)
+    text(slide, X1 - Inches(1), FOOT_Y, Inches(1), FOOT_H, str(idx), size=10, color=rgb(C["neutral"]["500"]), align=PP_ALIGN.RIGHT)
 
 
 def s_closing(slide, d, idx):
@@ -302,7 +310,7 @@ def s_closing(slide, d, idx):
     if d.get("message"):
         text(slide, M, Inches(3.9), CW, Inches(1.0), d["message"], size=18, color=INK_SOFT)
     if d.get("contact"):
-        text(slide, M, Inches(6.2), CW, Inches(0.4), d["contact"], size=14, color=MUTED)
+        text(slide, X0, FOOT_Y, CW, FOOT_H, d["contact"], size=14, color=MUTED)
 
 
 BUILDERS = {"cover": s_cover, "statement": s_statement, "chart": s_chart, "metrics": s_metrics,

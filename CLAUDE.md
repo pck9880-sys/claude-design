@@ -64,7 +64,10 @@
 ## IR 덱 작업
 - 절차는 `design-kit/prompts/06-ir.md`, 폴더 설명은 `ir/README.md`를 따른다.
 - **숫자는 `ir/data/*.csv`에만 근거**. 원문에 없는 수치·고객사·인용을 만들지 않는다. 계산한 수치는 슬라이드의 `derived`에 근거를 적는다.
-- 완료 전 `check_numbers.py` 통과 + `render.py` 미리보기 이미지를 직접 확인.
+- 완료 전 `check_numbers.py` 통과 + `check_margins.py` 통과 + `render.py` 미리보기 이미지를 직접 확인.
+- **PPT 여백 고정: 상하좌우 1.5cm** (`tokens.json` → `slide.margin_cm`). 제목·본문·차트·표·출처·페이지 번호·로고 모두 이 안에만. 꽉 찬 배경·장식만 예외이며 도형 이름을 `bleed:`로 시작한다. `build_deck.py`가 아닌 방법(pptx 스킬, Codex, 템플릿 직접 편집)으로 만든 PPT도 같은 기준으로 `check_margins.py`를 통과해야 한다.
+- 자동 검수 훅: `deck*.json`을 고치면 숫자 대조, `build_deck.py`를 실행하면 여백 검사가 자동으로 돈다. 실패 메시지가 나오면 그 자리에서 고친다.
+- 명령: `/ir-start <회사명> [자료 위치] [홈페이지]` 로 작업 시작, `/ir-deliver <작업명> [메모]` 로 납품 버전 확정(태그).
 - **고객사 홈페이지 조사는 매번 한다** (`06-ir.md` 2-1단계): `tools/site_scan.py`로 색·로고·인용 문구·숫자 후보를 모으고 `check.md`로 정리. 홈페이지 숫자도 고객 확인 전에는 확정 값으로 쓰지 않는다.
 - PC의 문서·다운로드·바탕화면·OneDrive는 **읽기만** 한다. 필요한 파일은 `ir/inbox/`로 복사해서 쓴다.
 - `ir/inbox/`는 고객 원본이라 GitHub에 올라가지 않는다 (.gitignore).
