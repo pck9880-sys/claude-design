@@ -45,7 +45,7 @@ SURFACE = rgb(C["neutral"]["50"])
 WHITE = rgb("#FFFFFF")
 DARK = rgb(C["brand"].get("secondary", C["text"]["primary"]))
 SERIES = [ACCENT, rgb(C["neutral"]["700"]), rgb(C["neutral"]["300"]), rgb(C["neutral"]["500"])]
-FONT = "Pretendard"
+FONT = tok["font"]["family"]["heading"].split(",")[0].strip().strip('"')   # tokens.json의 첫 번째 폰트
 
 W, H = Inches(13.333), Inches(7.5)
 M = Inches(0.6)                     # 좌우 여백
