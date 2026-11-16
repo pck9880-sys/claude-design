@@ -5,11 +5,16 @@
   "requires_personal_pc_off": true,
   "proposed_backend": "adobe_firefly_services",
   "python_role": "job_orchestration_and_api_client",
-  "status": "feasibility_checked_not_deployed",
+  "status": "manuscript_received_layout_script_prepared_not_executed",
   "api_entitlements_verified": false,
   "cost_verified": false,
   "credentials_configured": false,
   "worker_deployed": false,
   "native_execution_verified": false,
-  "source_assets_received": false
+  "source_assets_received": false,
+  "api_console_observation": "InDesign API and Illustrator API disabled in user screenshot",
+  "manuscript_received": true,
+  "cover_reference_received": true,
+  "photo_archives_received": false,
+  "desktop_install_requested": false
 }

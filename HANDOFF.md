@@ -1,5 +1,12 @@
 # HANDOFF
 
+## 인생사진첩 고객자료 수신·제작 준비 (2026-11-16)
+- HWP 원고와 남산정 표지 레퍼런스 PDF를 프로젝트 inputs/에 저장·분석. 24p·10명 각2p.
+- 활동사진/작품사진 ZIP은 각각 32MiB 전송 한도로 미수신·GitHub 업로드 미완료. 다른 작업의 08.png는 사용하지 않음.
+- 프로젝트 전용 CLAUDE.md/START-HERE.md, 페이지·자산 데이터와 InDesign 검토 구조 JSX 준비. 실제 InDesign 실행·INDD/IDML/PDF 생성은 미완료.
+- 인사말·작가소개·작품 문구·사진 매핑·기관/지원 로고·인쇄 사양 대기. 바탕화면 설치 요청 없음.
+- 최신 사실은 freelance/projects/2026_11.16_인생사진첩/STATUS.md 기준.
+
 ## 인생사진첩 서버 백그라운드 요구 (2026-11-16)
 - 신규 폴더 `freelance/projects/2026_11.16_인생사진첩/`. InDesign 메인, Illustrator 보조.
 - 사용자 요구는 개인 PC가 꺼져도 서버에서 처리하는 방식. Adobe 계정·앱 구매 확인.

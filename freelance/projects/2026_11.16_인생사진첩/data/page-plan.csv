@@ -1,0 +1,25 @@
+﻿page,role,artist_id,side,assets,content
+1,cover,,,W01;W03;W05;W07;W09;W11;W13;W15;W17;W19,인생사진첩 / 프레임에 담긴 나의 세상
+2,greeting,,,,센터장 인사말 (원고 대기)
+3,program,,,ACT01;ACT02;ACT03,프로그램 소개·출사 및 스토리텔링 8회기 주제
+4,artist,A01,left,W01,
+5,artist,A01,right,W02,
+6,artist,A02,left,W03,
+7,artist,A02,right,W04,
+8,artist,A03,left,W05,
+9,artist,A03,right,W06,
+10,artist,A04,left,W07,
+11,artist,A04,right,W08,
+12,artist,A05,left,W09,
+13,artist,A05,right,W10,
+14,artist,A06,left,W11,
+15,artist,A06,right,W12,
+16,artist,A07,left,W13,
+17,artist,A07,right,W14,
+18,artist,A08,left,W15,
+19,artist,A08,right,W16,
+20,artist,A09,left,W17,
+21,artist,A09,right,W18,
+22,artist,A10,left,W19,
+23,artist,A10,right,W20,
+24,closing,,,ACT04;ACT05;ACT06;ACT07;ACT08;ACT09,함께한 순간들 / 참여 어르신·강사·봉사자·기관 정보

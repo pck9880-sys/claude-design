@@ -1,0 +1,660 @@
+﻿var BOOK_DATA = {
+  "project": "2026_11.16_인생사진첩",
+  "title": "인생사진첩",
+  "subtitle": "프레임에 담긴 나의 세상",
+  "organization": "동래구노인복지관 재가노인지원서비스센터",
+  "support_note": "본 제작물은 부산사회복지공동모금회의 지원으로 제작되었습니다.",
+  "greeting": "",
+  "program_intro": "",
+  "sessions": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "contributors": "",
+  "organization_info": "",
+  "pages": [
+    {
+      "page": 1,
+      "role": "cover",
+      "content": "인생사진첩 / 프레임에 담긴 나의 세상",
+      "asset_ids": [
+        "W01",
+        "W03",
+        "W05",
+        "W07",
+        "W09",
+        "W11",
+        "W13",
+        "W15",
+        "W17",
+        "W19"
+      ]
+    },
+    {
+      "page": 2,
+      "role": "greeting",
+      "content": "센터장 인사말 (원고 대기)",
+      "asset_ids": []
+    },
+    {
+      "page": 3,
+      "role": "program",
+      "content": "프로그램 소개·출사 및 스토리텔링 8회기 주제",
+      "asset_ids": [
+        "ACT01",
+        "ACT02",
+        "ACT03"
+      ]
+    },
+    {
+      "page": 4,
+      "role": "artist",
+      "artist_id": "A01",
+      "side": "left",
+      "asset_ids": [
+        "W01"
+      ]
+    },
+    {
+      "page": 5,
+      "role": "artist",
+      "artist_id": "A01",
+      "side": "right",
+      "asset_ids": [
+        "W02"
+      ]
+    },
+    {
+      "page": 6,
+      "role": "artist",
+      "artist_id": "A02",
+      "side": "left",
+      "asset_ids": [
+        "W03"
+      ]
+    },
+    {
+      "page": 7,
+      "role": "artist",
+      "artist_id": "A02",
+      "side": "right",
+      "asset_ids": [
+        "W04"
+      ]
+    },
+    {
+      "page": 8,
+      "role": "artist",
+      "artist_id": "A03",
+      "side": "left",
+      "asset_ids": [
+        "W05"
+      ]
+    },
+    {
+      "page": 9,
+      "role": "artist",
+      "artist_id": "A03",
+      "side": "right",
+      "asset_ids": [
+        "W06"
+      ]
+    },
+    {
+      "page": 10,
+      "role": "artist",
+      "artist_id": "A04",
+      "side": "left",
+      "asset_ids": [
+        "W07"
+      ]
+    },
+    {
+      "page": 11,
+      "role": "artist",
+      "artist_id": "A04",
+      "side": "right",
+      "asset_ids": [
+        "W08"
+      ]
+    },
+    {
+      "page": 12,
+      "role": "artist",
+      "artist_id": "A05",
+      "side": "left",
+      "asset_ids": [
+        "W09"
+      ]
+    },
+    {
+      "page": 13,
+      "role": "artist",
+      "artist_id": "A05",
+      "side": "right",
+      "asset_ids": [
+        "W10"
+      ]
+    },
+    {
+      "page": 14,
+      "role": "artist",
+      "artist_id": "A06",
+      "side": "left",
+      "asset_ids": [
+        "W11"
+      ]
+    },
+    {
+      "page": 15,
+      "role": "artist",
+      "artist_id": "A06",
+      "side": "right",
+      "asset_ids": [
+        "W12"
+      ]
+    },
+    {
+      "page": 16,
+      "role": "artist",
+      "artist_id": "A07",
+      "side": "left",
+      "asset_ids": [
+        "W13"
+      ]
+    },
+    {
+      "page": 17,
+      "role": "artist",
+      "artist_id": "A07",
+      "side": "right",
+      "asset_ids": [
+        "W14"
+      ]
+    },
+    {
+      "page": 18,
+      "role": "artist",
+      "artist_id": "A08",
+      "side": "left",
+      "asset_ids": [
+        "W15"
+      ]
+    },
+    {
+      "page": 19,
+      "role": "artist",
+      "artist_id": "A08",
+      "side": "right",
+      "asset_ids": [
+        "W16"
+      ]
+    },
+    {
+      "page": 20,
+      "role": "artist",
+      "artist_id": "A09",
+      "side": "left",
+      "asset_ids": [
+        "W17"
+      ]
+    },
+    {
+      "page": 21,
+      "role": "artist",
+      "artist_id": "A09",
+      "side": "right",
+      "asset_ids": [
+        "W18"
+      ]
+    },
+    {
+      "page": 22,
+      "role": "artist",
+      "artist_id": "A10",
+      "side": "left",
+      "asset_ids": [
+        "W19"
+      ]
+    },
+    {
+      "page": 23,
+      "role": "artist",
+      "artist_id": "A10",
+      "side": "right",
+      "asset_ids": [
+        "W20"
+      ]
+    },
+    {
+      "page": 24,
+      "role": "closing",
+      "content": "함께한 순간들 / 참여 어르신·강사·봉사자·기관 정보",
+      "asset_ids": [
+        "ACT04",
+        "ACT05",
+        "ACT06",
+        "ACT07",
+        "ACT08",
+        "ACT09"
+      ]
+    }
+  ],
+  "artists": [
+    {
+      "id": "A01",
+      "name": "",
+      "bio": "",
+      "left_asset": "W01",
+      "right_asset": "W02",
+      "cover_asset": "W01",
+      "mapping_confirmed": false
+    },
+    {
+      "id": "A02",
+      "name": "",
+      "bio": "",
+      "left_asset": "W03",
+      "right_asset": "W04",
+      "cover_asset": "W03",
+      "mapping_confirmed": false
+    },
+    {
+      "id": "A03",
+      "name": "",
+      "bio": "",
+      "left_asset": "W05",
+      "right_asset": "W06",
+      "cover_asset": "W05",
+      "mapping_confirmed": false
+    },
+    {
+      "id": "A04",
+      "name": "",
+      "bio": "",
+      "left_asset": "W07",
+      "right_asset": "W08",
+      "cover_asset": "W07",
+      "mapping_confirmed": false
+    },
+    {
+      "id": "A05",
+      "name": "",
+      "bio": "",
+      "left_asset": "W09",
+      "right_asset": "W10",
+      "cover_asset": "W09",
+      "mapping_confirmed": false
+    },
+    {
+      "id": "A06",
+      "name": "",
+      "bio": "",
+      "left_asset": "W11",
+      "right_asset": "W12",
+      "cover_asset": "W11",
+      "mapping_confirmed": false
+    },
+    {
+      "id": "A07",
+      "name": "",
+      "bio": "",
+      "left_asset": "W13",
+      "right_asset": "W14",
+      "cover_asset": "W13",
+      "mapping_confirmed": false
+    },
+    {
+      "id": "A08",
+      "name": "",
+      "bio": "",
+      "left_asset": "W15",
+      "right_asset": "W16",
+      "cover_asset": "W15",
+      "mapping_confirmed": false
+    },
+    {
+      "id": "A09",
+      "name": "",
+      "bio": "",
+      "left_asset": "W17",
+      "right_asset": "W18",
+      "cover_asset": "W17",
+      "mapping_confirmed": false
+    },
+    {
+      "id": "A10",
+      "name": "",
+      "bio": "",
+      "left_asset": "W19",
+      "right_asset": "W20",
+      "cover_asset": "W19",
+      "mapping_confirmed": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "W01",
+      "kind": "artwork",
+      "artist_id": "A01",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W02",
+      "kind": "artwork",
+      "artist_id": "A01",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W03",
+      "kind": "artwork",
+      "artist_id": "A02",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W04",
+      "kind": "artwork",
+      "artist_id": "A02",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W05",
+      "kind": "artwork",
+      "artist_id": "A03",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W06",
+      "kind": "artwork",
+      "artist_id": "A03",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W07",
+      "kind": "artwork",
+      "artist_id": "A04",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W08",
+      "kind": "artwork",
+      "artist_id": "A04",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W09",
+      "kind": "artwork",
+      "artist_id": "A05",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W10",
+      "kind": "artwork",
+      "artist_id": "A05",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W11",
+      "kind": "artwork",
+      "artist_id": "A06",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W12",
+      "kind": "artwork",
+      "artist_id": "A06",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W13",
+      "kind": "artwork",
+      "artist_id": "A07",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W14",
+      "kind": "artwork",
+      "artist_id": "A07",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W15",
+      "kind": "artwork",
+      "artist_id": "A08",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W16",
+      "kind": "artwork",
+      "artist_id": "A08",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W17",
+      "kind": "artwork",
+      "artist_id": "A09",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W18",
+      "kind": "artwork",
+      "artist_id": "A09",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W19",
+      "kind": "artwork",
+      "artist_id": "A10",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "W20",
+      "kind": "artwork",
+      "artist_id": "A10",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip_and_mapping"
+    },
+    {
+      "id": "ACT01",
+      "kind": "activity",
+      "artist_id": "",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip"
+    },
+    {
+      "id": "ACT02",
+      "kind": "activity",
+      "artist_id": "",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip"
+    },
+    {
+      "id": "ACT03",
+      "kind": "activity",
+      "artist_id": "",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip"
+    },
+    {
+      "id": "ACT04",
+      "kind": "activity",
+      "artist_id": "",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip"
+    },
+    {
+      "id": "ACT05",
+      "kind": "activity",
+      "artist_id": "",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip"
+    },
+    {
+      "id": "ACT06",
+      "kind": "activity",
+      "artist_id": "",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip"
+    },
+    {
+      "id": "ACT07",
+      "kind": "activity",
+      "artist_id": "",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip"
+    },
+    {
+      "id": "ACT08",
+      "kind": "activity",
+      "artist_id": "",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip"
+    },
+    {
+      "id": "ACT09",
+      "kind": "activity",
+      "artist_id": "",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "awaiting_zip"
+    },
+    {
+      "id": "ORG_LOGO",
+      "kind": "logo",
+      "artist_id": "",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "not_received"
+    },
+    {
+      "id": "SUPPORT_LOGO",
+      "kind": "logo",
+      "artist_id": "",
+      "path": "",
+      "title": "",
+      "description": "",
+      "status": "not_received"
+    }
+  ],
+  "spec": {
+    "page_count": 24,
+    "width_mm": 210,
+    "height_mm": 297,
+    "bleed_mm": 3,
+    "size_confirmed": false,
+    "bleed_confirmed": false,
+    "facing_pages": true,
+    "font": "Pretendard",
+    "font_style": "Regular",
+    "heading_style": "Bold",
+    "body_pt": 14,
+    "caption_pt": 12,
+    "font_note": "판형 A4·도련 3mm는 검토용 임시값. 인쇄 사양 확인 전 확정 금지."
+  },
+  "colors": {
+    "ink": [
+      23,
+      26,
+      31
+    ],
+    "muted": [
+      89,
+      96,
+      102
+    ],
+    "line": [
+      215,
+      219,
+      220
+    ],
+    "soft": [
+      245,
+      246,
+      245
+    ]
+  },
+  "production_state": "layout_preparation_missing_photos_and_copy"
+};
