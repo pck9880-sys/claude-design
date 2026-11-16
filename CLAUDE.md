@@ -24,6 +24,15 @@
 - 검수: `impeccable`(디자인 품질), `web-design-guidelines`(접근성)
 - 상세 프롬프트 모음: `design-kit/prompts/`
 
+## IR 덱 작업
+- 절차는 `design-kit/prompts/06-ir.md`, 폴더 설명은 `ir/README.md`를 따른다.
+- **숫자는 `ir/data/*.csv`에만 근거**. 원문에 없는 수치·고객사·인용을 만들지 않는다. 계산한 수치는 슬라이드의 `derived`에 근거를 적는다.
+- 완료 전 `check_numbers.py` 통과 + `render.py` 미리보기 이미지를 직접 확인.
+- PC의 문서·다운로드·바탕화면·OneDrive는 **읽기만** 한다. 필요한 파일은 `ir/inbox/`로 복사해서 쓴다.
+- `ir/inbox/`는 고객 원본이라 GitHub에 올라가지 않는다 (.gitignore).
+- 레퍼런스는 링크·요약·구조 분석만 `refs/ir/`에 저장한다. 남의 덱 이미지·파일을 저장하지 않는다.
+- 스킬: 구성 `investor-pitch-deck`·`deck-narrative-arc`·`deck-outline-first`, 차트 `chart-choice`·`data-viz-deck`, 제작 `pptx`·`pptx-author`·`pro-deck-builder`, 검수 `ib-check-deck`·`deck-review-rubric`, 갱신 `deck-refresh`
+
 ## 디자인 원칙
 - 색·간격·radius·그림자는 `tokens.json` 값만 사용, 임의 HEX·매직 넘버 금지
 - 실제 카피 사용 (lorem ipsum 금지). 카피가 없으면 brief 톤에 맞춰 쓰고 표시해 둘 것

@@ -25,8 +25,15 @@
 - **tokens.json**: 아직 예시 값. primary `#E8572A` 위 흰 글씨는 대비 3.6:1로 기준 미달 → 버튼용 진한 색을 따로 정할 것
 - `assets/`, `refs/`에 실제 브랜드 자료 넣기
 
-## 4. 다음 작업 (예정)
-- IR(투자자 설명) 디자인용 스킬·소스 조사 → 목록 보고 → 허가 후 다운로드·자동화 세팅
+## 4. IR 자동화 (완료, 2026-11-16)
+- 스킬 15개 추가: pptx, pptx-author, ib-check-deck, deck-refresh, pitch-deck, sector-overview, comps-analysis (Anthropic) / investor-pitch-deck, deck-narrative-arc, deck-outline-first, deck-review-rubric, chart-choice (pm-claude-skills) / data-viz-deck, pro-deck-builder / ppt-creator
+- 도구: python-pptx·pymupdf·pdfplumber·python-docx·openpyxl, LibreOffice, Pretendard 폰트(`assets/fonts/Pretendard`)
+- 스크립트: `ir/scripts/` (자료 추출, 서식 분석, 덱 생성, 렌더, 숫자 대조) — 사용법 `ir/README.md`
+- 절차: `design-kit/prompts/06-ir.md`, 조사서 양식: `ir/needs-survey.md`
+- 권한: 웹 검색 자동, 문서·다운로드·바탕화면·OneDrive 읽기 자동(쓰기 금지)
+- 시험: `ir/deck.sample.json` + 가상 데이터 → `output/ir-sample/` (PPTX, PDF, 미리보기 9장) 통과
+- 남은 것: Pretendard를 PC에 설치하면 PowerPoint에서도 같은 폰트로 보임 (`assets/fonts/Pretendard/*.otf` 더블클릭 → 설치)
+- `ir/data/*.csv`의 현재 값은 **가상 샘플**. 실제 작업 시작 시 교체
 
 ## 5. 다음 세션 첫 지시 예시
 "HANDOFF.md 읽고 이어서 해줘"
