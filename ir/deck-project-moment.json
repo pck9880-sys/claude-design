@@ -5,103 +5,351 @@
   "style": "output/ir-project-moment/style.json",
   "data_dir": "data-project-moment",
   "slides": [
-    {"type": "cover", "title": "PROJECT MOMENT", "subtitle": "일상의 불편을 바꾸는 프리미엄 소비재 경험 — owooii® 핸즈프리 스탠딩 드라이어 & 헤어 코스메틱",
-     "meta": "Investor Relations", "image": "ir/inbox/project-moment/media/image.jpeg"},
-
-    {"type": "gallery", "section": "01. 고객 문제", "title": "매일 반복되는 모발 건조의 불편",
-     "message": "\"머리카락 말리는 데만 20분씩, 목·어깨·팔이 너무 아파요\"",
-     "stats": ["data/kpi.csv#dry_day", "data/kpi.csv#dry_year"],
-     "quote": "\"머리카락 말리는 것 때문에 씻는 일 자체가 귀찮아져요\"",
-     "items": [
-       {"image": "ir/inbox/project-moment/links/01-드라이어.png", "caption": "무거운 무게"},
-       {"image": "ir/inbox/project-moment/links/02-양손으로-머리-말리기.png", "caption": "묶인 두 손"},
-       {"image": "ir/inbox/project-moment/links/03-땀-맺힌-목덜미.png", "caption": "흐르는 땀"},
-       {"image": "ir/inbox/project-moment/links/04-젖은-머리.png", "caption": "덜 마른 헤어"}]},
-
-    {"type": "hero", "section": "02. 브랜드", "title": "손은 자유롭게,\n일상은 여유롭게",
-     "message": "owooii®는 세상에서 가장 소중한 '나의 시간'이 더 가치 있게 쓰이도록, 매일의 모발 건조 시간을 소비자가 원하는 시간으로 바꿉니다.",
-     "image": "ir/inbox/project-moment/media/image2.jpeg", "dark": true, "overlay": 30, "side": "left", "focus": [0.7, 0.5]},
-
-    {"type": "gallery", "section": "02. 브랜드", "title": "가족 모두를 위한 핸즈프리 경험",
-     "message": "아이부터 부모님, 반려동물까지 — 두 손이 자유로운 건조 루틴",
-     "items": [
-       {"image": "ir/inbox/project-moment/photos/01.png", "caption": "아빠의 육아일기", "body": "NURTURE"},
-       {"image": "ir/inbox/project-moment/photos/02.png", "caption": "부모님을 위한 시간", "body": "FILIAL PIETY"},
-       {"image": "ir/inbox/project-moment/photos/03.png", "caption": "나를 위한 시간", "body": "CARE"},
-       {"image": "ir/inbox/project-moment/photos/04.png", "caption": "반려동물과 함께", "body": "BOND"}]},
-
-    {"type": "product", "section": "03. 제품", "title": "드라이어의 제품·기술 경쟁력",
-     "message": "특허 듀얼 아울렛 구조로 빠르게, 낮은 열로 손상 없이",
-     "image": "ir/inbox/project-moment/media/image10.png",
-     "points": [
-       {"head": "BLDC 듀얼 고속 모터", "body": ["100,000 RPM, 아울렛당 16m/s", "디자인 특허 듀얼 아울렛 — 일반 드라이어 2대 사용 효과"]},
-       {"head": "NTC 스마트 센서 · 저소음", "body": ["초당 200회 온도 모니터링으로 일정 온도 유지", "최대 65dB (일반 드라이어 75dB)"]},
-       {"head": "가족별 맞춤 설정", "body": ["풍속·온도·프리셋 조합, 키즈 모드·애견 모드", "HOT/COLD 원터치, 써큘레이션 모드"]}]},
-
-    {"type": "table", "section": "04. 시장", "title": "스탠딩 드라이어 시장 600억원 추정",
-     "message": "국내 2,200만 가구, 보급률 1% 가정 — 생활가전 보급률 대비 초기 시장",
-     "table": {"data": "data/market_compare.csv", "highlight_row": "스탠딩 드라이어"},
-     "source": "한국갤럽, FnNews, 매일경제, 뉴시스, Grand View Research 등 2021~2024 보도 기준 및 환산 추정"},
-
-    {"type": "metrics", "section": "04. 시장", "title": "프리미엄 포지셔닝으로 카테고리 30% 선점",
-     "message": "저가형 카피캣과 달리 세련된 브랜딩으로 프리미엄 구매자를 겨냥합니다",
-     "items": [{"value_ref": "data/kpi.csv#standing_market", "label": "스탠딩 드라이어 시장 (추정)"},
-               {"value_ref": "data/kpi.csv#share_target", "label": "목표 시장점유율"},
-               {"value_ref": "data/kpi.csv#share_target_rev", "label": "목표 매출"}]},
-
-    {"type": "process", "section": "05. 성장 전략", "title": "온라인 수요 창출과 오프라인 경험의 선순환",
-     "message": "Flying Wheel — 공동구매로 수요를 만들고, 데이터로 직접 판매하고, 프리미엄 공간에서 경험하게 합니다",
-     "steps": [
-       {"label": "01 ONLINE", "head": "공동구매", "body": "브랜드 스토리에 맞는 인플루언서와 초기 수요·인지도 확보"},
-       {"label": "02 ONLINE", "head": "D2C 직접 판매", "body": "공동구매 데이터 기반 퍼포먼스 마케팅, 마진 구조 최적화"},
-       {"label": "03 OFFLINE", "head": "프레스티지 플레이스먼트", "body": "럭셔리 뷰티 살롱·호텔·골프 리조트에서 브랜드 경험 확대"}]},
-
-    {"type": "table", "section": "05. 성장 전략", "title": "채널·마케팅·조직·제품 네 축으로 확장",
-     "message": "Growth Momentum",
-     "table": {"data": "data/growth.csv"}},
-
-    {"type": "metrics", "section": "06. 성과", "title": "카테고리를 만들고, 지속 성장 중",
-     "message": "2024 매출 6억 → 2025 매출 12억, 영업이익 1.3억 흑자",
-     "items": [{"value_ref": "data/kpi.csv#rev_2025", "label": "2025 판매 매출"},
-               {"value_ref": "data/kpi.csv#units_2025", "label": "누적 판매 대수"},
-               {"value_ref": "data/kpi.csv#sns_views", "label": "SNS 총 조회 수 (공유 10만+)"}]},
-
-    {"type": "gallery", "section": "07. 제품 라인업", "title": "디바이스로 만나고, 코스메틱으로 반복 구매",
-     "message": "헤어케어와 모발 건조를 한 번에 — 핸즈프리 스탠딩 드라이어 & 헤어 코스메틱",
-     "items": [
-       {"image": "ir/inbox/project-moment/media/image33.png", "caption": "핸즈프리 스탠딩 헤어드라이어", "body": "디바이스로 고객을 만나고", "focus": [0.5, 0.3]},
-       {"image": "ir/inbox/project-moment/media/image32.png", "caption": "헤어 코스메틱", "body": "코스메틱으로 반복 구매", "focus": [0.5, 0.6]}]},
-
-    {"type": "gallery", "section": "08. 글로벌", "title": "미국 진출과 헤어케어 라인업 확대",
-     "message": "\"Next K-Beauty = Hair care\" — 세계 1위 헤어케어 시장에서 새로운 제품 형태로",
-     "items": [
-       {"image": "ir/inbox/project-moment/media/image34.png", "caption": "미국 시장 진출", "body": "2026년 7월 런칭 · TikTok·Reels 바이럴, AI 아바타 마케팅", "focus": [0.5, 0.25]},
-       {"image": "ir/inbox/project-moment/media/image35.png", "caption": "코스메틱 확장", "body": "헤어팩·드라이기 전용 에센스 (2026 하반기)", "focus": [0.5, 0.25]},
-       {"image": "ir/inbox/project-moment/media/image36.png", "caption": "디바이스 다각화", "body": "프리볼트 드라이어·두피관리기 (2026 하반기)"}]},
-
-    {"type": "chart", "section": "09. 재무 전망", "title": "2029년 매출 505.8억원 전망",
-     "message": "2023–2025 한국 검증(흑자 전환) → 2026 한·미 진입 → 미디어 상시판매·고마진 코스메틱으로 GP 57.2%",
-     "chart": {"kind": "bar", "data": "data/revenue.csv", "x": "year", "y": ["revenue"], "labels": {"revenue": "매출"},
-               "unit": "억원", "highlight": "2029E"},
-     "source": "2023–2025 실적, 2026–2029 회사 전망"},
-
-    {"type": "table", "section": "09. 재무 전망", "title": "요약 손익 전망 2026–2029",
-     "message": "매출 성장과 함께 GP 마진 51.0% → 57.2%, 영업이익률 6.0%까지 개선",
-     "table": {"data": "data/pnl.csv", "highlight_row": "영업이익"}, "source": "회사 전망 (단위: 억원)"},
-
-    {"type": "team", "section": "10. 팀", "title": "소비재·브랜딩·커머스 실행 조직",
-     "people": [
-       {"name": "이준영", "role": "대표 · FOUNDER", "bio": ["효원CNC COO (인플루언서·MCN)", "P&G Singapore AHQ·P&G Korea 시장전략", "Pfizer 전략기획, BCG·Deloitte", "미네소타 주립대 경영학"]},
-       {"name": "서송희", "role": "이사 · 전략/대관", "bio": ["우나스텔라 전략·대관", "호텔신라 브랜드관리, 뉴스1 기자", "Georgetown MBA"]},
-       {"name": "최정원", "role": "브랜드 매니지먼트", "bio": ["SPC Group 플랫폼·브랜딩", "Grey Global NY Sr. Designer", "SVA 졸업"]},
-       {"name": "한재혁", "role": "커머스 & 세일즈", "bio": ["'오슈마켓' MD", "홍익대 전기전자"]},
-       {"name": "김수정", "role": "CS · 제품 & 고객 지원", "bio": ["유아동 브랜드 비비앤다 고객지원 팀장"]}]},
-
-    {"type": "product", "section": "11. 사회 공헌", "title": "Better Together — 일상의 변화를 더 많은 이웃에게",
-     "message": "몸이 불편한 이웃을 위한 제품 기부 활동",
-     "image": "ir/inbox/project-moment/media/image38.png",
-     "points": [
-       {"head": "DONATION & SUPPORT", "body": "복지관·재단과 함께 몸이 불편한 이웃에게 핸즈프리 드라이어 기부"},
-       {"head": "우리가 바라는 사회", "body": "사랑으로 성장하고 현재에 감사하며, 어제보다 행복한 내일을 꿈꾸는 건강하고 아름다운 사회"}]}
+    {
+      "type": "cover",
+      "title": "PROJECT\nMOMENT",
+      "subtitle": "일상의 불편을 바꾸는 프리미엄 소비재 경험 — owooii® 핸즈프리 스탠딩 드라이어 & 헤어 코스메틱",
+      "meta": "Investor Relations",
+      "image": "ir/inbox/project-moment/media/cover-wide.jpg"
+    },
+    {
+      "type": "gallery",
+      "section": "01. 고객 문제",
+      "title": "매일 반복되는 모발 건조의 불편",
+      "message": "\"머리카락 말리는 데만 20분씩, 목·어깨·팔이 너무 아파요\"",
+      "stats": [
+        "data/kpi.csv#dry_day",
+        "data/kpi.csv#dry_year"
+      ],
+      "quote": "\"머리카락 말리는 것 때문에 씻는 일 자체가 귀찮아져요\"",
+      "items": [
+        {
+          "image": "ir/inbox/project-moment/links/01-드라이어.png",
+          "caption": "무거운 무게"
+        },
+        {
+          "image": "ir/inbox/project-moment/links/02-양손으로-머리-말리기.png",
+          "caption": "묶인 두 손"
+        },
+        {
+          "image": "ir/inbox/project-moment/links/03-땀-맺힌-목덜미.png",
+          "caption": "흐르는 땀"
+        },
+        {
+          "image": "ir/inbox/project-moment/links/04-젖은-머리.png",
+          "caption": "덜 마른 헤어"
+        }
+      ]
+    },
+    {
+      "type": "hero",
+      "section": "02. 브랜드",
+      "title": "손은 자유롭게,\n일상은 여유롭게",
+      "message": "owooii®는 세상에서 가장 소중한 '나의 시간'이 더 가치 있게 쓰이도록, 매일의 모발 건조 시간을 소비자가 원하는 시간으로 바꿉니다.",
+      "image": "ir/inbox/project-moment/media/image2.jpeg",
+      "dark": true,
+      "overlay": 30,
+      "side": "left",
+      "focus": [
+        0.7,
+        0.5
+      ]
+    },
+    {
+      "type": "gallery",
+      "section": "02. 브랜드",
+      "title": "가족 모두를 위한 핸즈프리 경험",
+      "message": "아이부터 부모님, 반려동물까지 — 두 손이 자유로운 건조 루틴",
+      "items": [
+        {
+          "image": "ir/inbox/project-moment/photos/01.png",
+          "caption": "아빠의 육아일기",
+          "body": "NURTURE"
+        },
+        {
+          "image": "ir/inbox/project-moment/photos/02.png",
+          "caption": "부모님을 위한 시간",
+          "body": "FILIAL PIETY"
+        },
+        {
+          "image": "ir/inbox/project-moment/photos/03.png",
+          "caption": "나를 위한 시간",
+          "body": "CARE"
+        },
+        {
+          "image": "ir/inbox/project-moment/photos/04.png",
+          "caption": "반려동물과 함께",
+          "body": "BOND"
+        }
+      ]
+    },
+    {
+      "type": "product",
+      "section": "03. 제품",
+      "title": "드라이어의 제품·기술 경쟁력",
+      "message": "특허 듀얼 아울렛 구조로 빠르게, 낮은 열로 손상 없이",
+      "image": "ir/inbox/project-moment/media/image10.png",
+      "points": [
+        {
+          "head": "BLDC 듀얼 고속 모터",
+          "body": [
+            "100,000 RPM, 아울렛당 16m/s",
+            "디자인 특허 듀얼 아울렛 — 일반 드라이어 2대 사용 효과"
+          ]
+        },
+        {
+          "head": "NTC 스마트 센서 · 저소음",
+          "body": [
+            "초당 200회 온도 모니터링으로 일정 온도 유지",
+            "최대 65dB (일반 드라이어 75dB)"
+          ]
+        },
+        {
+          "head": "가족별 맞춤 설정",
+          "body": [
+            "풍속·온도·프리셋 조합, 키즈 모드·애견 모드",
+            "HOT/COLD 원터치, 써큘레이션 모드"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "section": "04. 시장",
+      "title": "스탠딩 드라이어 시장 600억원 추정",
+      "message": "국내 2,200만 가구, 보급률 1% 가정 — 생활가전 보급률 대비 초기 시장",
+      "table": {
+        "data": "data/market_compare.csv",
+        "highlight_row": "스탠딩 드라이어"
+      },
+      "source": "한국갤럽, FnNews, 매일경제, 뉴시스, Grand View Research 등 2021~2024 보도 기준 및 환산 추정"
+    },
+    {
+      "type": "metrics",
+      "section": "04. 시장",
+      "title": "프리미엄 포지셔닝으로 카테고리 30% 선점",
+      "message": "저가형 카피캣과 달리 세련된 브랜딩으로 프리미엄 구매자를 겨냥합니다",
+      "items": [
+        {
+          "value_ref": "data/kpi.csv#standing_market",
+          "label": "스탠딩 드라이어 시장 (추정)"
+        },
+        {
+          "value_ref": "data/kpi.csv#share_target",
+          "label": "목표 시장점유율"
+        },
+        {
+          "value_ref": "data/kpi.csv#share_target_rev",
+          "label": "목표 매출"
+        }
+      ]
+    },
+    {
+      "type": "process",
+      "section": "05. 성장 전략",
+      "title": "온라인 수요 창출과 오프라인 경험의 선순환",
+      "message": "Flying Wheel — 공동구매로 수요를 만들고, 데이터로 직접 판매하고, 프리미엄 공간에서 경험하게 합니다",
+      "steps": [
+        {
+          "label": "01 ONLINE",
+          "head": "공동구매",
+          "body": "브랜드 스토리에 맞는 인플루언서와 초기 수요·인지도 확보"
+        },
+        {
+          "label": "02 ONLINE",
+          "head": "D2C 직접 판매",
+          "body": "공동구매 데이터 기반 퍼포먼스 마케팅, 마진 구조 최적화"
+        },
+        {
+          "label": "03 OFFLINE",
+          "head": "프레스티지 플레이스먼트",
+          "body": "럭셔리 뷰티 살롱·호텔·골프 리조트에서 브랜드 경험 확대"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "section": "05. 성장 전략",
+      "title": "채널·마케팅·조직·제품 네 축으로 확장",
+      "message": "Growth Momentum",
+      "table": {
+        "data": "data/growth.csv"
+      }
+    },
+    {
+      "type": "metrics",
+      "section": "06. 성과",
+      "title": "카테고리를 만들고, 지속 성장 중",
+      "message": "2024 매출 6억 → 2025 매출 12억, 영업이익 1.3억 흑자",
+      "items": [
+        {
+          "value_ref": "data/kpi.csv#rev_2025",
+          "label": "2025 판매 매출"
+        },
+        {
+          "value_ref": "data/kpi.csv#units_2025",
+          "label": "누적 판매 대수"
+        },
+        {
+          "value_ref": "data/kpi.csv#sns_views",
+          "label": "SNS 총 조회 수 (공유 10만+)"
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "section": "07. 제품 라인업",
+      "title": "디바이스로 만나고, 코스메틱으로 반복 구매",
+      "message": "헤어케어와 모발 건조를 한 번에 — 핸즈프리 스탠딩 드라이어 & 헤어 코스메틱",
+      "items": [
+        {
+          "image": "ir/inbox/project-moment/media/image33.png",
+          "caption": "핸즈프리 스탠딩 헤어드라이어",
+          "body": "디바이스로 고객을 만나고",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "image": "ir/inbox/project-moment/media/image32.png",
+          "caption": "헤어 코스메틱",
+          "body": "코스메틱으로 반복 구매",
+          "focus": [
+            0.5,
+            0.6
+          ]
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "section": "08. 글로벌",
+      "title": "미국 진출과 헤어케어 라인업 확대",
+      "message": "\"Next K-Beauty = Hair care\" — 세계 1위 헤어케어 시장에서 새로운 제품 형태로",
+      "items": [
+        {
+          "image": "ir/inbox/project-moment/media/image34.png",
+          "caption": "미국 시장 진출",
+          "body": "2026년 7월 런칭 · TikTok·Reels 바이럴, AI 아바타 마케팅",
+          "focus": [
+            0.5,
+            0.25
+          ]
+        },
+        {
+          "image": "ir/inbox/project-moment/media/image35.png",
+          "caption": "코스메틱 확장",
+          "body": "헤어팩·드라이기 전용 에센스 (2026 하반기)",
+          "focus": [
+            0.5,
+            0.25
+          ]
+        },
+        {
+          "image": "ir/inbox/project-moment/media/image36.png",
+          "caption": "디바이스 다각화",
+          "body": "프리볼트 드라이어·두피관리기 (2026 하반기)"
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "section": "09. 재무 전망",
+      "title": "2029년 매출 505.8억원 전망",
+      "message": "2023–2025 한국 검증(흑자 전환) → 2026 한·미 진입 → 미디어 상시판매·고마진 코스메틱으로 GP 57.2%",
+      "chart": {
+        "kind": "bar",
+        "data": "data/revenue.csv",
+        "x": "year",
+        "y": [
+          "revenue"
+        ],
+        "labels": {
+          "revenue": "매출"
+        },
+        "unit": "억원",
+        "highlight": "2029E"
+      },
+      "source": "2023–2025 실적, 2026–2029 회사 전망"
+    },
+    {
+      "type": "table",
+      "section": "09. 재무 전망",
+      "title": "요약 손익 전망 2026–2029",
+      "message": "매출 성장과 함께 GP 마진 51.0% → 57.2%, 영업이익률 6.0%까지 개선",
+      "table": {
+        "data": "data/pnl.csv",
+        "highlight_row": "영업이익"
+      },
+      "source": "회사 전망 (단위: 억원)"
+    },
+    {
+      "type": "team",
+      "section": "10. 팀",
+      "title": "소비재·브랜딩·커머스 실행 조직",
+      "people": [
+        {
+          "name": "이준영",
+          "role": "대표 · FOUNDER",
+          "bio": [
+            "효원CNC COO (인플루언서·MCN)",
+            "P&G Singapore AHQ·P&G Korea 시장전략",
+            "Pfizer 전략기획, BCG·Deloitte",
+            "미네소타 주립대 경영학"
+          ]
+        },
+        {
+          "name": "서송희",
+          "role": "이사 · 전략/대관",
+          "bio": [
+            "우나스텔라 전략·대관",
+            "호텔신라 브랜드관리, 뉴스1 기자",
+            "Georgetown MBA"
+          ]
+        },
+        {
+          "name": "최정원",
+          "role": "브랜드 매니지먼트",
+          "bio": [
+            "SPC Group 플랫폼·브랜딩",
+            "Grey Global NY Sr. Designer",
+            "SVA 졸업"
+          ]
+        },
+        {
+          "name": "한재혁",
+          "role": "커머스 & 세일즈",
+          "bio": [
+            "'오슈마켓' MD",
+            "홍익대 전기전자"
+          ]
+        },
+        {
+          "name": "김수정",
+          "role": "CS · 제품 & 고객 지원",
+          "bio": [
+            "유아동 브랜드 비비앤다 고객지원 팀장"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "product",
+      "section": "11. 사회 공헌",
+      "title": "Better Together — 일상의 변화를 더 많은 이웃에게",
+      "message": "몸이 불편한 이웃을 위한 제품 기부 활동",
+      "image": "ir/inbox/project-moment/media/image38.png",
+      "points": [
+        {
+          "head": "DONATION & SUPPORT",
+          "body": "복지관·재단과 함께 몸이 불편한 이웃에게 핸즈프리 드라이어 기부"
+        },
+        {
+          "head": "우리가 바라는 사회",
+          "body": "사랑으로 성장하고 현재에 감사하며, 어제보다 행복한 내일을 꿈꾸는 건강하고 아름다운 사회"
+        }
+      ]
+    }
   ]
 }

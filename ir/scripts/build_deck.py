@@ -569,6 +569,30 @@ def s_cover(slide, d, idx):
         text(slide, X0, Inches(2.75), CW, Inches(1.2), big, 54, "display", WHITE, PP_ALIGN.CENTER)
         text(slide, X0, Inches(3.95), CW, Inches(0.6), tag, SIZE["subtitle"], "body", rgb(C["neutral"]["100"]), PP_ALIGN.CENTER)
         text(slide, X0, FOOT_Y - Inches(0.35), CW, FOOT_H, meta, role="caption", color=PALE, align=PP_ALIGN.CENTER)
+    elif kind == "F":     # 풀이미지 배경 + 글 (밝은 사진이면 검정 글씨, 어두우면 흰 글씨)
+        from PIL import Image, ImageStat
+        dark_txt = True
+        if img and (ROOT / img).exists():
+            li = light_image(ROOT / img)
+            pic = slide.shapes.add_picture(str(li), 0, 0, int(W), int(H))
+            fill_crop(pic, li, W, H, tuple(d.get("focus", (0.5, 0.5))))
+            pic.name = "bleed:cover-image"
+            im = Image.open(li).convert("L")
+            side = d.get("side", "left")
+            area = im.crop((0, 0, im.width // 2, im.height)) if side == "left" else im.crop((im.width // 2, 0, im.width, im.height))
+            dark_txt = ImageStat.Stat(area).mean[0] > 140
+        else:
+            bg(slide, SURFACE)
+        col = INK if dark_txt else WHITE
+        sub = INK_SOFT if dark_txt else rgb(C["neutral"]["100"])
+        tw = CW * 0.5
+        tx = X0 if d.get("side", "left") == "left" else X1 - tw
+        lines = big.splitlines() or [big]
+        th = Pt(54 * 1.08 * len(lines))
+        ty = int(H / 2 - th / 2 - Inches(0.4))
+        text(slide, tx, ty, tw, th, lines if len(lines) > 1 else big, 54, "display", col)
+        text(slide, tx, ty + th + SP["m"], tw * 0.9, Inches(1.0), tag, SIZE["subtitle"] + 2, "body", sub)
+        text(slide, tx, FOOT_Y, tw, FOOT_H, meta, role="caption", color=sub)
     else:                 # E 컬러 배경 + 대형 타이포
         bg(slide, ACCENT)
         text(slide, X0, Y0, CW * 0.6, Inches(0.8), tag, SIZE["subtitle"] + 2, "body", WHITE)
