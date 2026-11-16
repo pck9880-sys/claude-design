@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>흙과 손 원데이 도자기 클래스</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+/* Hallmark · v2.0.0 · fast · deal: manual (스크립트 실행 차단) · genre editorial · shape Long Document · signature: 두 시간을 시계처럼 읽는 타임라인 · tokens: 프로젝트 tokens.json */
+/* critique: 사진이 없어 첫 화면이 글 위주 — 실제 작업 사진이 들어오면 히어로 슬롯이 페이지의 중심이 된다 */
+/* waive 44b-photo: 사진 미제공, 슬롯으로 대체 */
+html, body { overflow-x: clip; }
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--color-page); color: var(--color-ink);
+  font-family: var(--font-body); font-size: var(--size-base); line-height: var(--lh-relaxed);
+  word-break: keep-all;
+}
+.wrap { max-width: var(--container); margin: 0 auto; padding: 0 var(--space-4); }
+@media (min-width: 768px) { .wrap { padding: 0 var(--space-8); } }
+
+a { color: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid var(--color-accent-strong); outline-offset: 3px; transition: none;
+}
+
+/* nav */
+.nav { display: flex; justify-content: space-between; align-items: center; padding: var(--space-6) 0; }
+.wordmark { font-family: var(--font-heading); font-weight: 700; font-size: var(--size-lg); text-decoration: none; }
+.nav a.small { font-size: var(--size-sm); color: var(--color-ink-soft); }
+
+/* buttons */
+.btn {
+  display: inline-block; padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: var(--color-accent-strong); color: var(--color-on-accent); text-decoration: none;
+  font-weight: 700; border: 0; font: inherit; font-weight: 700; cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out);
+}
+.btn:hover { opacity: .92; }
+.btn:active { transform: translateY(1px); }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+
+/* hero */
+.hero { display: grid; gap: var(--space-8); padding: var(--space-8) 0 var(--space-16); align-items: center; }
+@media (min-width: 900px) { .hero { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--space-12); } }
+h1, h2 { font-family: var(--font-heading); font-weight: 700; line-height: var(--lh-tight); margin: 0; overflow-wrap: break-word; min-width: 0; }
+h1 { font-size: clamp(36px, 7vw, var(--size-4xl)); letter-spacing: -0.02em; }
+h2 { font-size: clamp(28px, 4.5vw, var(--size-3xl)); letter-spacing: -0.01em; }
+.lede { font-size: var(--size-lg); color: var(--color-ink-soft); margin: var(--space-6) 0 var(--space-8); max-width: 26ch; }
+.slot {
+  aspect-ratio: 4 / 5; width: 100%; border-radius: var(--radius-md);
+  background: var(--color-line); border: 1px dashed var(--color-line-strong);
+  display: grid; place-items: center; text-align: center; color: var(--color-ink-soft);
+  font-size: var(--size-sm); padding: var(--space-6);
+}
+@media (min-width: 900px) { .slot { aspect-ratio: 5 / 4; } }
+
+/* timeline — signature */
+.section { padding: var(--space-16) 0; border-top: 1px solid var(--color-line); }
+.timeline { list-style: none; margin: var(--space-12) 0 0; padding: 0; display: grid; gap: 0; }
+.timeline li { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: var(--space-6); padding: var(--space-6) 0; border-top: 1px solid var(--color-line-strong); }
+.time { font-family: var(--font-heading); font-weight: 700; font-size: var(--size-2xl); line-height: 1; color: var(--color-accent-strong); font-variant-numeric: tabular-nums; }
+.timeline h3 { margin: 0 0 var(--space-2); font-size: var(--size-xl); line-height: var(--lh-tight); }
+.timeline p { margin: 0; color: var(--color-ink-soft); max-width: 46ch; }
+@media (min-width: 900px) {
+  .timeline { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-6); }
+  .timeline li { grid-template-columns: minmax(0, 1fr); gap: var(--space-3); }
+}
+
+/* take-home */
+.split { display: grid; gap: var(--space-8); align-items: center; }
+@media (min-width: 900px) { .split { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-16); } }
+.split .slot { aspect-ratio: 1 / 1; }
+.split p { color: var(--color-ink-soft); font-size: var(--size-lg); max-width: 32ch; }
+
+/* booking */
+.book { background: var(--color-dark); color: var(--color-on-accent); border-radius: var(--radius-md); padding: var(--space-12) var(--space-6); }
+@media (min-width: 768px) { .book { padding: var(--space-16); } }
+.book p { color: var(--color-line-strong); margin: var(--space-4) 0 var(--space-8); max-width: 34ch; }
+.form { display: grid; gap: var(--space-4); max-width: 520px; }
+@media (min-width: 600px) { .form { grid-template-columns: minmax(0, 1fr) auto; align-items: end; } }
+label { display: grid; gap: var(--space-2); font-size: var(--size-sm); }
+select {
+  font: inherit; padding: var(--space-3); border-radius: var(--radius-md);
+  border: 1px solid var(--color-line-strong); background: var(--color-surface); color: var(--color-ink);
+}
+.book .btn { background: var(--color-accent-strong); }
+.note { font-size: var(--size-sm); color: var(--color-line-strong); margin-top: var(--space-4); }
+
+footer { padding: var(--space-12) 0; font-size: var(--size-sm); color: var(--color-ink-soft); display: flex; flex-wrap: wrap; gap: var(--space-4); justify-content: space-between; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="nav">
+    <a class="wordmark" href="#">흙과 손</a>
+    <a class="small" href="#book">예약하기</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>두 시간 뒤, 내가 만든 컵</h1>
+        <p class="lede">물레 앞에 처음 앉아도 괜찮아요. 하나를 끝까지 함께 만듭니다.</p>
+        <a class="btn" href="#book">이번 달 클래스 예약</a>
+      </div>
+      <div class="slot" role="img" aria-label="사진 자리: 물레 위에서 컵을 빚는 손">사진 자리: 물레 위 손과 흙, 4:5, 1600px 이상</div>
+    </section>
+
+    <section class="section" aria-labelledby="flow">
+      <h2 id="flow">두 시간은 이렇게 흘러요</h2>
+      <ol class="timeline">
+        <li><span class="time">0:00</span><div><h3>흙 만지기</h3><p>반죽으로 손을 풀고 흙의 무게를 익혀요.</p></div></li>
+        <li><span class="time">0:30</span><div><h3>물레 성형</h3><p>강사가 옆에서 손을 잡아 가며 컵 모양을 세워요.</p></div></li>
+        <li><span class="time">1:20</span><div><h3>다듬기</h3><p>입술 닿는 가장자리와 손잡이를 정리해요.</p></div></li>
+        <li><span class="time">1:50</span><div><h3>유약 고르기</h3><p>색을 고르면 굽는 일은 공방이 맡아요.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="section split" aria-labelledby="take">
+      <div class="slot" role="img" aria-label="사진 자리: 완성된 컵">사진 자리: 구워진 컵 한 개, 1:1</div>
+      <div>
+        <h2 id="take">가져가는 건 컵 하나와 손의 감각</h2>
+        <p>가마에서 구운 뒤 완성품을 받아요. 수령 방법과 기간은 공방 안내를 따릅니다.</p>
+      </div>
+    </section>
+
+    <section class="section" id="book" aria-labelledby="booking">
+      <div class="book">
+        <h2 id="booking">이번 달 클래스 예약</h2>
+        <p>원하는 날짜를 고르면 확인 연락을 드려요.</p>
+        <form class="form" action="#" onsubmit="return false">
+          <label>날짜
+            <select name="date" required>
+              <option value="">날짜를 입력해 주세요 (공방 일정 필요)</option>
+            </select>
+          </label>
+          <button class="btn" type="submit">예약 요청</button>
+        </form>
+        <p class="note">이 양식은 아직 아무 곳에도 전송되지 않아요.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>흙과 손 원데이 클래스</span>
+    <span>주소와 연락처 입력 필요</span>
+  </footer>
+</div>
+</body>
+</html>

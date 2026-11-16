@@ -10,6 +10,8 @@
       "Bash(npm run:*)",
       "Bash(npx:*)",
       "Bash(node:*)",
+      "Bash(node .claude/skills/hallmark/scripts/theme.mjs:*)",
+      "Bash(node .claude/skills/hallmark/scripts/sloplint.mjs:*)",
       "Bash(python:*)",
       "Bash(ls:*)",
       "Bash(mkdir:*)",

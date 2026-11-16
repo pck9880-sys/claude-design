@@ -1,0 +1,29 @@
+/* tokens.json → CSS 변수 (역할 이름). 값은 tokens.json에서만 바꿀 것 */
+:root {
+  --color-accent: #E8572A;
+  --color-accent-strong: #C9461D;
+  --color-ink: #1A1816;
+  --color-ink-soft: #4A4640;
+  --color-ink-muted: #8A847B;
+  --color-line: #EDEAE5;
+  --color-line-strong: #C8C3BB;
+  --color-page: #F7F5F2;
+  --color-surface: #FFFFFF;
+  --color-on-accent: #FFFFFF;
+  --color-dark: #1F2933;
+
+  --font-heading: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-body: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+
+  --size-sm: 14px; --size-base: 16px; --size-lg: 20px; --size-xl: 24px;
+  --size-2xl: 32px; --size-3xl: 48px; --size-4xl: 64px;
+  --lh-tight: 1.2; --lh-normal: 1.5; --lh-relaxed: 1.7;
+
+  --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px;
+  --space-8: 32px; --space-12: 48px; --space-16: 64px; --space-24: 96px;
+
+  --radius-sm: 4px; --radius-md: 8px;
+  --dur-fast: 150ms; --dur-base: 250ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --container: 1120px;
+}
