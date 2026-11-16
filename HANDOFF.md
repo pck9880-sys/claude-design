@@ -1,5 +1,13 @@
 # HANDOFF
 
+## 프로젝트 모먼트 저장 설정 (2026-11-16, Codex)
+- 사용자가 최종 작업 기준을 `DECK_v8`로 지정. 실제 파일은 `output/ir-project-moment/v4/deck_v8.pptx` (15장), PDF는 같은 폴더의 `프로젝트모먼트_IR_v8.pdf`.
+- 원격 main의 `07f1bc3`에 v8이 이미 저장되어 있음을 확인. 후속 작업은 `codex/project-moment-ir` 브랜치 사용, 다음 수정본은 v9.
+- PC 저장 루트는 사용자 지정 `C:\Users\admin\Desktop\프로젝트 모먼트`. Git 설치 대상은 하위 `IR-개발` 폴더.
+- 저장 규칙과 PC 설치 스크립트: `output/ir-project-moment/SAVE-LOCATIONS.md`, `setup-local.ps1`.
+- 현재는 클라우드 작업 환경으로 PC C드라이브 직접 접근 불가. PC 설치는 아직 확인하지 못함. 자동 동기화 없음.
+- 남은 일: PC에서 설치 스크립트 실행, 사용자에게 구체적인 수정 범위를 받아 v8 사본에서 v9 개발. 이번에는 덱 내용을 수정하지 않음.
+
 마지막 갱신: 2026-11-16 (세팅 세션 종료 시점)
 
 ## 1. 현재 상태 — 세팅 완료
