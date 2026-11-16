@@ -29,6 +29,17 @@
    - **Noto Serif CJK KR**(Bold 사용): 저장소에 없으므로 PC에 설치한다. v008 패키지의 `Document fonts`에도 들어 있다.
 5. InDesign 2025, Python 3 + Pillow(`pip install pillow`). Python은 CMYK 다시 변환이나 데이터 재생성이 필요할 때만 쓴다.
 
+## Windows에서 다른 점
+- **폰트**: 저장소 `assets/fonts/Pretendard`, `assets/fonts/Montserrat`(v009 쪽번호용)을 설치한다. Noto Serif CJK KR은 따로 설치한다. 설치한 뒤 InDesign을 다시 켠다.
+- **JSX 실행**: 아이맥은 `osascript`로 실행했다. Windows에서는 InDesign의 스크립트 패널에서 실행하거나, PowerShell에서 아래처럼 실행한다. 경로는 프로젝트 안의 스크립트를 그대로 가리켜야 상대 경로 데이터를 찾는다.
+  ```
+  $id = New-Object -ComObject InDesign.Application.2025
+  $id.DoScript("C:\...\2026_11.16_인생사진첩\scripts\BuildAlbumV008.jsx", 1246973031)
+  ```
+  `1246973031`은 JavaScript 언어 값이다. 실행 버전 이름이 다르면 `InDesign.Application`으로 시도한다.
+- **CMYK 변환**: `python scripts\convert_cmyk.py`. Windows의 Adobe 기본 ICC 경로가 기본값으로 들어 있다.
+- **한글 파일명**: Release zip은 NFC + UTF-8로 묶어서 Windows에서도 깨지지 않는다(아이맥에서 확인함).
+
 ## 작업 방식 두 가지
 - **스크립트로 다시 만들기** (권장): `scripts/BuildAlbumV008.jsx`를 InDesign에서 실행하면 `source/indesign/v008_<시각>/`에 INDD가 새로 생긴다. 사진은 `links/photos-cmyk/`를 프로젝트 기준 상대 경로로 찾는다. **패키지가 없어도 된다.**
 - **손으로 고친 INDD 이어서 편집**: v008 패키지 zip을 받아서 패키지 폴더의 INDD를 연다. INDD는 사진을 절대 경로로 기억하므로 **패키지(Links 포함)로 옮겨야 링크가 깨지지 않는다.** 손으로 수정한 파일은 다시 패키지로 묶어 Release에 올린다.
