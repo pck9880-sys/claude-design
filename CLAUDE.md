@@ -61,6 +61,18 @@
 - Codex·API 키가 없는 환경(일부 클라우드 세션)에서는 실패 메시지가 나온다. 그때는 Claude 혼자 하고, 이미지는 자리표시로 두고 `HANDOFF.md`에 "PC에서 이미지 생성 필요"를 적는다.
 - 호출 기록: `tools/gpt-log.jsonl`
 
+### 아이콘 (항상 라인 아이콘, 간단·명료)
+- 먼저 Lucide 세트에서 찾는다: `python tools/icon.py find <키워드>` (`assets/icons/lucide/`, 2,055개, ISC 라이선스)
+- 딱 맞는 게 없거나 고유한 뜻이면 **GPT가 SVG로 생성**: `python tools/gpt.py icon "<뜻>" --name <영문-이름> --keywords <요소 1–3개>` → `assets/icons/custom/`
+- 규칙: 24px 격자, 선 굵기 1.75, 둥근 끝, 면 채움·글자 없음, 요소 2–6개, 한 아이콘 한 뜻. `tools/icon.py check`가 검사한다.
+- 생성 후 `python tools/icon.py sheet <svg들> --out <모음.png>`로 Lucide 아이콘과 나란히 보고, 굵기·밀도가 다르거나 뜻이 불분명하면 `--attempt 2 --fix "<문제>"`로 다시 만든다 (최대 3회).
+- 덱에서는 카드·단계·항목에 `"icon": "<이름>"`만 적으면 브랜드 색으로 자동 변환된다. 사진형 이미지 생성(`gpt.py image`)으로 아이콘을 만들지 않는다.
+
+## NAS · Everything
+- NAS 경로는 `tools/nas.json`의 `roots`. **NAS 파일은 절대 삭제·이동·덮어쓰기하지 않는다**: `tools/hooks/nas_guard.py`가 수정·삭제·이동·NAS로 복사하는 명령을 모두 차단한다. 우회하려 하지 않는다.
+- NAS는 **읽을 때마다 사용자 허가**를 받는다. 필요한 파일은 프로젝트(`ir/inbox/` 등)로 복사해서 작업한다.
+- 파일 찾기는 Everything으로 빠르게 찾는다 (연동 방식은 설정 후 이 항목에 기록).
+
 ## IR 덱 작업
 - 절차는 `design-kit/prompts/06-ir.md`, 폴더 설명은 `ir/README.md`를 따른다.
 - **숫자는 `ir/data/*.csv`에만 근거**. 원문에 없는 수치·고객사·인용을 만들지 않는다. 계산한 수치는 슬라이드의 `derived`에 근거를 적는다.

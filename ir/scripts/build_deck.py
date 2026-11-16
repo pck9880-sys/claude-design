@@ -6,7 +6,9 @@
 deck.json 최상위:
   name, company, logo(이미지 경로, 선택), tokens(작업별 색 파일), style(스타일 선택 파일 또는 객체), template(선택),
   data_dir(선택: "data-<작업명>"이면 data/ 경로를 그 폴더로 바꿔 읽음)
-슬라이드 type: cover, statement, process, chart, metrics, table, team, ask, closing
+슬라이드 type: cover, statement, process, chart, metrics, table, team, ask, closing,
+  timeline(로드맵·연혁), tam(TAM/SAM/SOM 원), compare(O/△/X 비교표), product(제품 화면+설명), structure(서비스 구조도)
+  카드·단계·항목에 icon(Lucide 이름 또는 assets/icons/custom 이름) 지정 가능
 공통 필드: title, message, section("01 문제 인식"), summary(하단 요약 바 문구), source, notes
 숫자는 data 파일만 가리킨다: value_ref "data/kpi.csv#mau", chart.data, table.data
 
@@ -237,6 +239,30 @@ def set_alpha(shp, alpha_pct):
     clr.append(clr.makeelement(qn("a:alpha"), {"val": str(int(alpha_pct * 1000))}))
 
 
+ICON_SIZE = Inches(0.42)
+
+
+def icon_img(slide, name, x, y, size=None, color=None):
+    """라인 아이콘(Lucide 이름, custom 이름, 또는 .svg 경로)을 브랜드 색 PNG로 넣는다."""
+    if not name:
+        return 0
+    size = int(size or ICON_SIZE)
+    col = "#" + str(color if color is not None else ACCENT)
+    cand = [ROOT / name, ROOT / "assets/icons/custom" / f"{name}.svg", ROOT / "assets/icons/lucide" / f"{name}.svg"]
+    svg = next((c for c in cand if c.suffix == ".svg" and c.exists()), None)
+    if not svg:
+        print(f"아이콘 없음: {name} → python tools/icon.py find ... 또는 python tools/gpt.py icon ...")
+        return 0
+    cache = ROOT / "output" / f"ir-{SPEC['name']}" / "_icons"
+    png = cache / f"{svg.stem}-{col[1:]}.png"
+    if not png.exists():
+        sys.path.insert(0, str(ROOT / "tools"))
+        import icon as _icon
+        _icon.render(str(svg), col, str(png), 256)
+    slide.shapes.add_picture(str(png), int(x), int(y), size, size)
+    return size
+
+
 def picture(slide, path, x, y, w, h, kind=None, name=None):
     """이미지 스타일(직각·둥근·원형) 적용. 파일이 없으면 같은 모양의 자리표시."""
     kind = kind or STY["image"]
@@ -366,7 +392,7 @@ def summary_bar(slide, d):
 
 
 # ======================= 카드·연결 =======================
-def card(slide, x, y, w, h, head, body, i=0, label=None):
+def card(slide, x, y, w, h, head, body, i=0, label=None, icon=None):
     kind = STY["card"]
     rad = CH["card"]["options"][kind].get("radius", 0.06)
     pad = SP["m"]
@@ -377,10 +403,15 @@ def card(slide, x, y, w, h, head, body, i=0, label=None):
         shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, x, y, w, h, fill=WHITE, line=LINE, lw="hair", radius=rad)
         shape(slide, MSO_SHAPE.ROUND_2_SAME_RECTANGLE, x, y, w, hh, fill=ACCENT if i == 0 else DARK, radius=rad * 2)
         text(slide, tx, y, tw, hh, head, SIZE["body"] + 1, "head", WHITE, anchor=MSO_ANCHOR.MIDDLE)
-        text(slide, tx, y + hh + pad, tw, h - hh - 2 * pad, bl, role="body", color=INK_SOFT, bullets=len(bl) > 1)
+        off = icon_img(slide, icon, tx, y + hh + pad)
+        off = off + SP["s"] if off else 0
+        text(slide, tx, y + hh + pad + off, tw, h - hh - 2 * pad - off, bl, role="body", color=INK_SOFT, bullets=len(bl) > 1)
         return
     if kind == "D":       # 알약 라벨(Phase형)
         lab = label or head
+        if icon:
+            icon_img(slide, icon, x + (w - ICON_SIZE) / 2, y)
+            y, h = y + ICON_SIZE + SP["s"], h - ICON_SIZE - SP["s"]
         pw = min(w, Inches(0.5) + Inches(0.12) * len(lab))
         shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, x + (w - pw) / 2, y, pw, Inches(0.36), fill=ACCENT, radius=0.5)
         text(slide, x, y, w, Inches(0.36), lab, role="caption", color=WHITE, align=PP_ALIGN.CENTER,
@@ -403,8 +434,10 @@ def card(slide, x, y, w, h, head, body, i=0, label=None):
     else:                 # E 진한 채움
         shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, x, y, w, h, fill=DARK, radius=rad)
         hc, bc = WHITE, PALE
-    text(slide, tx, y + pad, tw, Inches(0.5), head, SIZE["body"] + 2, "head", hc)
-    text(slide, tx, y + pad + Inches(0.5) + SP["xs"], tw, h - Inches(0.5) - 2 * pad - SP["xs"], bl,
+    off = icon_img(slide, icon, tx, y + pad, color=(WHITE if kind == "E" else None))
+    off = off + SP["s"] if off else 0
+    text(slide, tx, y + pad + off, tw, Inches(0.5), head, SIZE["body"] + 2, "head", hc)
+    text(slide, tx, y + pad + off + Inches(0.5) + SP["xs"], tw, h - off - Inches(0.5) - 2 * pad - SP["xs"], bl,
          role="body", color=bc, bullets=len(bl) > 1)
 
 
@@ -438,7 +471,7 @@ def cards_row(slide, items, top, bottom, connectors=False):
     cw = (CW - gap * (n - 1)) / n
     for i, it in enumerate(items):
         x = X0 + i * (cw + gap)
-        card(slide, x, top, cw, bottom - top, it.get("head", ""), it.get("body", ""), i, it.get("label"))
+        card(slide, x, top, cw, bottom - top, it.get("head", ""), it.get("body", ""), i, it.get("label"), it.get("icon"))
         if connectors and i < n - 1:
             connector(slide, x + cw, x + cw + gap, top + (bottom - top) / 2)
 
@@ -665,8 +698,176 @@ def s_closing(slide, d, idx):
         text(slide, X0, FOOT_Y, CW, FOOT_H, d["contact"], role="body", color=MUTED)
 
 
+def s_timeline(slide, d, idx):
+    """로드맵·연혁: items [{when, head, body, icon}], current(강조할 순번, 0부터)."""
+    header(slide, d, idx)
+    end = summary_bar(slide, d)
+    items = d["items"][:6]
+    n = len(items)
+    cur = d.get("current", -1)
+    y_line = TOP + Inches(0.9)
+    seg(slide, X0, y_line, X1, y_line, LINE, "regular")
+    colw = CW / n
+    for i, it in enumerate(items):
+        cx = X0 + colw * i + colw / 2
+        r = Inches(0.11) if i != cur else Inches(0.15)
+        done = cur < 0 or i <= cur
+        shape(slide, MSO_SHAPE.OVAL, cx - r, y_line - r, 2 * r, 2 * r, fill=ACCENT if done else WHITE,
+              line=ACCENT, lw="regular")
+        text(slide, cx - colw / 2, TOP, colw, Inches(0.45), it["when"], SIZE["body"] + 2, "head",
+             ACCENT if i == cur else INK, PP_ALIGN.CENTER)
+        x = cx - colw / 2 + SP["xs"]
+        w = colw - 2 * SP["xs"]
+        off = icon_img(slide, it.get("icon"), cx - ICON_SIZE / 2, y_line + SP["m"]) if it.get("icon") else 0
+        ty = y_line + SP["m"] + (off + SP["s"] if off else 0)
+        text(slide, x, ty, w, Inches(0.45), it.get("head", ""), SIZE["body"], "head", INK, PP_ALIGN.CENTER)
+        body = it.get("body", "")
+        text(slide, x, ty + Inches(0.45), w, end - ty - Inches(0.45), body, role="body", color=INK_SOFT,
+             align=PP_ALIGN.LEFT if isinstance(body, list) else PP_ALIGN.CENTER,
+             bullets=isinstance(body, list) and len(body) > 1)
+    footer(slide, idx, d.get("source"))
+
+
+def s_tam(slide, d, idx):
+    """TAM/SAM/SOM 겹친 원: data CSV (segment,size[,label,source]), unit."""
+    header(slide, d, idx)
+    end = summary_bar(slide, d)
+    rows = read_csv(d["data"])[:3]
+    avail = end - TOP
+    big = min(avail, CW * 0.48)
+    cx0 = X0 + big / 2
+    bottom_y = TOP + big
+    fills = [ACCENT_SOFT, mix(BR["primary"], "#FFFFFF", 0.6), ACCENT]
+    for i, r in enumerate(rows):
+        dia = big * (1, 0.68, 0.38)[i]
+        shape(slide, MSO_SHAPE.OVAL, cx0 - dia / 2, bottom_y - dia, dia, dia, fill=fills[i])
+        lab_y = bottom_y - dia + (Inches(0.12) if i < 2 else dia / 2 - Inches(0.2))
+        text(slide, cx0 - dia / 2, lab_y, dia, Inches(0.35), r["segment"], SIZE["small"], "head",
+             WHITE if i == 2 else INK, PP_ALIGN.CENTER)
+    tx = X0 + big + SP["xl"]
+    tw = X1 - tx
+    unit = d.get("unit", "")
+    ty = TOP + Inches(0.2)
+    rowh = (avail - Inches(0.4)) / max(len(rows), 1)
+    for i, r in enumerate(rows):
+        y = ty + rowh * i
+        text(slide, tx, y, tw, Inches(0.35), r.get("label") or r["segment"], role="body", color=INK_SOFT)
+        text(slide, tx, y + Inches(0.35), tw, Inches(0.7), f"{fmt(r['size'])}{unit}", 32, "display",
+             ACCENT if i == len(rows) - 1 else INK)
+        if i < len(rows) - 1:
+            divider(slide, tx, y + rowh - SP["s"], tw)
+    srcs = sorted({r.get("source", "") for r in rows if r.get("source")})
+    footer(slide, idx, d.get("source") or "; ".join(srcs) or None)
+
+
+def s_compare(slide, d, idx):
+    """O/△/X 비교표: data CSV(첫 열=비교 대상), highlight_row(우리 회사). 셀 값 O·△·X는 기호로 그린다."""
+    header(slide, d, idx)
+    end = summary_bar(slide, d)
+    rows = read_csv(d["data"])
+    cols = d.get("columns") or [k for k in rows[0] if k != "source"]
+    hi = d.get("highlight_row")
+    n_r, n_c = len(rows) + 1, len(cols)
+    row_h = min(Inches(0.62), (end - TOP) / n_r)
+    first_w = CW * 0.26
+    cw = (CW - first_w) / (n_c - 1)
+    for i in range(n_r):
+        y = TOP + row_h * i
+        is_hi = i > 0 and rows[i - 1][cols[0]] == hi
+        if is_hi:
+            shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, X0, y + Inches(0.04), CW, row_h - Inches(0.08),
+                  fill=ACCENT_SOFT, radius=0.2)
+        for j, col in enumerate(cols):
+            x = X0 if j == 0 else X0 + first_w + cw * (j - 1)
+            w = first_w if j == 0 else cw
+            if i == 0:
+                text(slide, x, y, w, row_h, col if j else "", SIZE["small"], "head", INK_SOFT,
+                     PP_ALIGN.LEFT if j == 0 else PP_ALIGN.CENTER, MSO_ANCHOR.MIDDLE)
+                continue
+            v = rows[i - 1][col].strip()
+            if j == 0:
+                text(slide, x + SP["s"], y, w - SP["s"], row_h, v, SIZE["body"], "head", ACCENT if is_hi else INK,
+                     anchor=MSO_ANCHOR.MIDDLE)
+                continue
+            mark = {"O": "○", "o": "○", "△": "△", "X": "✕", "x": "✕"}.get(v)
+            c_ = ACCENT if (mark == "○" and is_hi) else (INK if mark == "○" else (MUTED if mark else INK_SOFT))
+            text(slide, x, y, w, row_h, mark or v, SIZE["body"] + (4 if mark else 0), "head" if mark else "body",
+                 c_, PP_ALIGN.CENTER, MSO_ANCHOR.MIDDLE)
+        if i < n_r - 1:
+            divider(slide, X0, y + row_h, CW)
+    srcs = sorted({r.get("source", "") for r in rows if r.get("source")})
+    footer(slide, idx, d.get("source") or "; ".join(srcs) or None)
+
+
+def s_product(slide, d, idx):
+    """제품 화면 + 설명: image(왼쪽), points [{icon, head, body}](오른쪽)."""
+    header(slide, d, idx)
+    end = summary_bar(slide, d)
+    img_w = CW * 0.42
+    picture(slide, d.get("image"), X0, TOP, img_w, end - TOP)
+    tx = X0 + img_w + SP["xl"]
+    tw = X1 - tx
+    pts = d.get("points", [])[:4]
+    rowh = (end - TOP) / max(len(pts), 1)
+    for i, pt in enumerate(pts):
+        y = TOP + rowh * i
+        off = icon_img(slide, pt.get("icon"), tx, y) if pt.get("icon") else 0
+        x2 = tx + (off + SP["m"] if off else 0)
+        text(slide, x2, y, tw - (x2 - tx), Inches(0.42), pt.get("head", ""), SIZE["body"] + 2, "head")
+        body = pt.get("body", "")
+        text(slide, x2, y + Inches(0.42), tw - (x2 - tx), rowh - Inches(0.42) - SP["s"], body,
+             role="body", color=INK_SOFT, bullets=isinstance(body, list) and len(body) > 1)
+        if i < len(pts) - 1:
+            divider(slide, tx, y + rowh - SP["s"], tw)
+    footer(slide, idx, d.get("source"))
+
+
+def s_structure(slide, d, idx):
+    """서비스 구조도: left[{icon, head, body}] → center{icon, head, body} → right[...], 연결은 선택한 화살표 스타일."""
+    header(slide, d, idx)
+    end = summary_bar(slide, d)
+    gap = SP["xl"]
+    colw = (CW - 2 * gap) / 3
+    left, right, center = d.get("left", [])[:4], d.get("right", [])[:4], d.get("center", {})
+    avail = end - TOP
+    cy = TOP + avail / 2
+
+    def column(items, x):
+        n = max(len(items), 1)
+        h = (avail - SP["s"] * (n - 1)) / n
+        mids = []
+        for i, it in enumerate(items):
+            y = TOP + i * (h + SP["s"])
+            shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, x, y, colw, h, fill=WHITE, line=LINE, lw="regular", radius=0.08)
+            off = icon_img(slide, it.get("icon"), x + SP["m"], y + (h - ICON_SIZE) / 2) if it.get("icon") else 0
+            tx = x + SP["m"] + (off + SP["s"] if off else 0)
+            lines = [it.get("head", "")] + ([it["body"]] if it.get("body") else [])
+            text(slide, tx, y, colw - (tx - x) - SP["s"], h, lines, SIZE["small"], "head", INK, anchor=MSO_ANCHOR.MIDDLE)
+            mids.append(y + h / 2)
+        return mids
+
+    lm = column(left, X0)
+    rx = X0 + 2 * (colw + gap)
+    rm_ = column(right, rx)
+    ch = min(avail, Inches(2.6))
+    cx = X0 + colw + gap
+    shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, cx, cy - ch / 2, colw, ch, fill=ACCENT, radius=0.08)
+    off = icon_img(slide, center.get("icon"), cx + (colw - ICON_SIZE) / 2, cy - ch / 2 + SP["m"], color=WHITE) if center.get("icon") else 0
+    ty = cy - ch / 2 + SP["m"] + (off + SP["s"] if off else 0)
+    text(slide, cx + SP["m"], ty, colw - 2 * SP["m"], Inches(0.5), center.get("head", SPEC.get("company", "")),
+         SIZE["body"] + 4, "head", WHITE, PP_ALIGN.CENTER)
+    text(slide, cx + SP["m"], ty + Inches(0.55), colw - 2 * SP["m"], cy + ch / 2 - ty - Inches(0.55) - SP["m"],
+         center.get("body", ""), role="body", color=WHITE, align=PP_ALIGN.CENTER)
+    for y in lm:
+        connector(slide, X0 + colw, cx, y if abs(y - cy) < ch / 2 else cy)
+    for y in rm_:
+        connector(slide, cx + colw, rx, y if abs(y - cy) < ch / 2 else cy)
+    footer(slide, idx, d.get("source"))
+
+
 BUILDERS = {"cover": s_cover, "statement": s_statement, "process": s_process, "chart": s_chart,
-            "metrics": s_metrics, "table": s_table, "team": s_team, "ask": s_ask, "closing": s_closing}
+            "metrics": s_metrics, "table": s_table, "team": s_team, "ask": s_ask, "closing": s_closing,
+            "timeline": s_timeline, "tam": s_tam, "compare": s_compare, "product": s_product, "structure": s_structure}
 
 
 def main():

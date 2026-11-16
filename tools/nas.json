@@ -1,0 +1,4 @@
+{
+  "_about": "NAS 경로 목록. 여기 적힌 경로는 tools/hooks/nas_guard.py가 삭제·이동·덮어쓰기를 무조건 차단하고, settings.json ask 규칙으로 읽을 때마다 허가를 받는다.",
+  "roots": []
+}

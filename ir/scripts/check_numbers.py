@@ -33,14 +33,24 @@ def data_numbers():
     return found
 
 
-def texts(slide):
-    keys = ("title", "message", "subtitle")
-    out = [slide.get(k, "") for k in keys]
-    for p in slide.get("points", []):
-        out += [p.get("head", ""), p.get("body", "")]
-    for p in slide.get("people", []):
-        out.append(p.get("bio", ""))
-    return [t for t in out if t]
+SKIP_KEYS = {"type", "data", "value_ref", "amount_ref", "use_of_funds", "image", "icon", "photo", "section",
+             "derived", "notes", "source", "highlight", "highlight_row", "x", "y", "unit", "kind", "labels",
+             "columns", "current", "label"}
+
+
+def texts(node, key=None):
+    """슬라이드 안의 사람이 읽는 문장을 모두 모은다 (데이터 경로·아이콘 이름 등은 제외)."""
+    out = []
+    if isinstance(node, dict):
+        for k, v in node.items():
+            if k not in SKIP_KEYS:
+                out += texts(v, k)
+    elif isinstance(node, list):
+        for v in node:
+            out += texts(v, key)
+    elif isinstance(node, str) and node.strip():
+        out.append(node)
+    return out
 
 
 def main():

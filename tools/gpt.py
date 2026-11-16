@@ -197,9 +197,56 @@ def cmd_organize(a):
     print(f"저장: {out.relative_to(ROOT)}")
 
 
+# ---------------- 라인 아이콘 (SVG 코드로 생성) ----------------
+ICON_RULES = (
+    "라인 아이콘 규칙 (반드시):\n"
+    "- SVG 코드로 직접 작성. <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
+    "fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n"
+    "- 선만 사용: 면 채움·그라데이션·그림자·글자·이미지 금지\n"
+    "- 간단하고 명료하게: 도형 요소 2–6개, 한 아이콘에 한 가지 뜻만, 작은 크기(24px)에서도 알아볼 것\n"
+    "- 사방 2px 여백을 두고 가운데 정렬, 좌표는 0.5 단위 정수 위주\n"
+    "- 스타일 기준: assets/icons/lucide/ 의 아이콘 2–3개를 열어 보고 같은 선 굵기·곡률·밀도로 맞출 것\n"
+)
+
+
+def cmd_icon(a):
+    be = backend()
+    if be != "codex":
+        _sys.exit("아이콘 생성은 Codex(PC)에서만 가능. 클라우드에서는 Lucide 세트에서 고를 것: python tools/icon.py find ...")
+    out = (ROOT / "assets/icons/custom" / f"{a.name}.svg").resolve()
+    if a.attempt > 1:
+        out = out.with_name(f"{a.name}-v{a.attempt}.svg")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    rel = out.relative_to(ROOT).as_posix()
+    p = (f"다음 뜻의 라인 아이콘을 SVG 파일로 만들어 {rel} 에 저장해.\n뜻: {a.meaning}\n"
+         f"표현할 요소(이것만): {', '.join(a.keywords)}\n\n{ICON_RULES}"
+         + (f"\n이전 시안의 문제점 (반드시 고칠 것): {a.fix}\n" if a.fix else "")
+         + "다른 파일은 수정하지 말고, 저장한 경로만 한 줄로 답해.")
+    t0 = time.time()
+    tmp = out.with_suffix(".codex.txt")
+    try:
+        codex(p, tmp, sandbox="workspace-write")
+    finally:
+        tmp.unlink(missing_ok=True)
+    ok = out.exists()
+    log("icon", f"[{a.name}] {a.meaning}", rel, ok, time.time() - t0, be)
+    if not ok:
+        _sys.exit("실패: SVG가 저장되지 않음")
+    r = subprocess.run([_sys.executable, str(ROOT / "tools/icon.py"), "check", str(out)], capture_output=True,
+                       text=True, encoding="utf-8", errors="replace")
+    print(f"저장: {rel}\n{r.stdout.strip()}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     sp = ap.add_subparsers(dest="cmd", required=True)
+    ic = sp.add_parser("icon")
+    ic.add_argument("meaning", help="아이콘이 뜻하는 것 (예: 공방 클래스 실시간 예약)")
+    ic.add_argument("--name", required=True, help="파일 이름 (영문 소문자-하이픈)")
+    ic.add_argument("--keywords", nargs="+", required=True, help="그릴 요소 1–3개")
+    ic.add_argument("--attempt", type=int, default=1)
+    ic.add_argument("--fix", default="")
+    ic.set_defaults(fn=cmd_icon)
     i = sp.add_parser("image")
     i.add_argument("prompt")
     i.add_argument("--out", required=True)

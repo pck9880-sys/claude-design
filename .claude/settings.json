@@ -46,6 +46,22 @@
       "Bash(git push:*)",
       "Bash(git pull:*)",
       "Bash(git fetch:*)",
+      "Bash(git tag:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)",
+      "Bash(git switch:*)",
+      "Bash(git mv:*)",
+      "Bash(mv:*)",
+      "Bash(touch:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(grep:*)",
+      "Bash(wc:*)",
+      "Bash(du:*)",
+      "Bash(sort:*)",
+      "Bash(pwd:*)",
+      "Bash(which:*)",
       "mcp__playwright"
     ],
     "deny": [
@@ -67,6 +83,14 @@
   },
   "enabledMcpjsonServers": ["playwright"],
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|NotebookEdit|Bash|PowerShell",
+        "hooks": [
+          { "type": "command", "command": "f=\"$CLAUDE_PROJECT_DIR/tools/hooks/nas_guard.py\"; [ -f \"$f\" ] || f=\"tools/hooks/nas_guard.py\"; [ -f \"$f\" ] || exit 0; python \"$f\"", "timeout": 30 }
+        ]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "Edit|Write|MultiEdit|Bash",
