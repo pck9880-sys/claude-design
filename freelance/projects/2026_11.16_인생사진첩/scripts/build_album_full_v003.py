@@ -120,6 +120,6 @@ def page_svg(page,offset=0):
 for page in L['pages']:(OUT/f'page-{page["page"]:02d}.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">'+page_svg(page)+'</svg>')
 for left in range(2,24,2):(OUT/f'spread-{left:02d}-{left+1:02d}.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" width="422mm" height="297mm" viewBox="0 0 422 297"><rect width="422" height="297" fill="#e8e8e8"/>'+page_svg(L['pages'][left-1])+page_svg(L['pages'][left],212)+'</svg>')
 with (OUT/'page-map.csv').open('w',newline='') as f:
- writer=csv.writer(f);writer.writerow(['page','role','side','artist_id','color','photo_ids'])
+ writer=csv.writer(f,lineterminator="\n");writer.writerow(['page','role','side','artist_id','color','photo_ids'])
  for pg in L['pages']:writer.writerow([pg['page'],pg['role'],pg['side'],pg.get('artist_id',''),L['palette'].get(pg.get('artist_id',''),''),' '.join(it['asset_id'] for it in pg['items'] if it['kind']=='frame')])
 print('24쪽 구성·15mm 여백·10개 작가 펼침면·바깥쪽 쪽번호·우측 사진 전용·예시 인명 미포함 확인')
