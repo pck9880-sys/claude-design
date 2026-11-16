@@ -3,7 +3,9 @@
 PC에서는 Codex CLI(ChatGPT 로그인)를 쓰고, 없으면 OPENAI_API_KEY로 API를 쓴다.
 
 사용:
-  python tools/gpt.py image "프롬프트" --out assets/generated/hero.png [--ref 참고이미지.png] [--size 1536x1024]
+  python tools/gpt.py image "장면 설명" --keywords 키워드1 키워드2 --out assets/generated/hero.png
+        [--size 1536x1024] [--ref 참고.png] [--attempt 2 --fix "검수에서 발견한 문제"]
+        (클립아트 스타일·얼굴 금지·키워드 외 요소 금지 규칙이 항상 붙는다)
   python tools/gpt.py research "질문" --out refs/ir/조사.md
   python tools/gpt.py research --batch 질문목록.txt --out-dir refs/ir/조사 [--workers 3]
   python tools/gpt.py organize --task "할 일" --in 파일1 파일2 ... --out 결과.md
@@ -64,17 +66,49 @@ def backend():
 
 
 # ---------------- 이미지 ----------------
+def palette():
+    try:
+        c = json.loads((ROOT / "tokens.json").read_text(encoding="utf-8"))["color"]
+        return ", ".join([c["brand"]["primary"], c["brand"].get("secondary", ""), c["neutral"]["50"], c["neutral"]["700"]])
+    except Exception:  # noqa: BLE001
+        return "브랜드 색 2–3개 + 중립색"
+
+
+# 모든 이미지에 고정으로 붙는 스타일 규칙 (사용자 지정, 2026-11-16)
+STYLE = (
+    "스타일 규칙 (반드시 지킬 것):\n"
+    "1. 클립아트 느낌의 플랫 일러스트: 단순한 도형, 깔끔한 윤곽, 면 위주 채색, 그림자는 없거나 아주 약하게.\n"
+    "2. 사실적·사진 같은 표현 금지 (포토리얼, 3D 렌더, 사실적 질감, 피사계 심도 금지).\n"
+    "3. 사람 얼굴이 보이면 안 됨. 사람이 필요하면 손·뒷모습·실루엣·얼굴이 프레임 밖인 구도로만.\n"
+    "4. 키워드에 있는 요소만 그린다. 키워드와 무관한 사물·배경·장식을 추가하지 않는다.\n"
+    "5. 과하지 않게: 주요 요소 1–3개, 색 3–4개 이내, 배경은 단색 또는 아주 단순하게, 여백 충분히.\n"
+    "6. 글자·숫자·로고·워터마크 금지.\n"
+    f"7. 색은 이 팔레트 안에서: {palette()}\n"
+)
+
+
+def build_image_prompt(a):
+    kw = ", ".join(a.keywords)
+    p = (f"{STYLE}\n키워드(이것만 표현): {kw}\n장면 설명: {a.prompt}\n크기/비율: {a.size}\n")
+    if a.fix:
+        p += f"\n이전 시안의 문제점 (반드시 고칠 것): {a.fix}\n"
+    return p
+
+
+def versioned(out, attempt):
+    return out if attempt <= 1 else out.with_name(f"{out.stem}-v{attempt}{out.suffix}")
+
+
 def cmd_image(a):
-    out = (ROOT / a.out).resolve()
+    out = versioned((ROOT / a.out).resolve(), a.attempt)
     out.parent.mkdir(parents=True, exist_ok=True)
     t0, be = time.time(), backend()
+    prompt = build_image_prompt(a)
     if be == "codex":
         rel = out.relative_to(ROOT).as_posix()
-        p = (f"이미지 생성 도구로 다음 이미지를 {a.n}장 만들어 저장해.\n"
-             f"- 내용: {a.prompt}\n- 크기/비율: {a.size}\n"
-             f"- 저장 경로: {rel}" + (" (여러 장이면 파일명 뒤에 -1, -2 …)" if a.n > 1 else "") + "\n"
-             "- 이미지 안에 글자·로고·워터마크를 넣지 말 것 (요청에 있으면 예외)\n"
-             "- 참고 이미지가 첨부되면 구도·색감만 참고하고 그대로 베끼지 말 것\n"
+        p = (f"이미지 생성 도구로 아래 조건의 이미지를 {a.n}장 만들어 저장해.\n\n{prompt}\n"
+             f"저장 경로: {rel}" + (" (여러 장이면 파일명 뒤에 -1, -2 …)" if a.n > 1 else "") + "\n"
+             "참고 이미지가 첨부되면 구도·색감만 참고하고 그대로 베끼지 말 것.\n"
              "저장한 파일 경로만 줄마다 하나씩 답해.")
         tmp = out.with_suffix(".codex.txt")
         try:
@@ -86,7 +120,7 @@ def cmd_image(a):
         from openai import OpenAI
         client = OpenAI()
         model = os.environ.get("GPT_IMAGE_MODEL", "gpt-image-1")
-        r = client.images.generate(model=model, prompt=a.prompt, size=a.size, n=a.n)
+        r = client.images.generate(model=model, prompt=prompt, size=a.size, n=a.n)
         paths = []
         for i, d in enumerate(r.data, 1):
             p = out if a.n == 1 else out.with_name(f"{out.stem}-{i}{out.suffix}")
@@ -94,7 +128,11 @@ def cmd_image(a):
             paths.append(str(p.relative_to(ROOT)))
         res = "\n".join(paths)
     ok = out.exists() or any(out.parent.glob(out.stem + "-*" + out.suffix))
-    log("image", a.prompt, a.out, ok, time.time() - t0, be)
+    if ok:   # 검수·재생성 때 쓰도록 조건을 옆에 기록
+        out.with_suffix(".json").write_text(json.dumps(
+            {"keywords": a.keywords, "prompt": a.prompt, "size": a.size, "attempt": a.attempt, "fix": a.fix},
+            ensure_ascii=False, indent=1), encoding="utf-8")
+    log("image", f"[{', '.join(a.keywords)}] {a.prompt}", out.relative_to(ROOT), ok, time.time() - t0, be)
     print(res.strip() if ok else f"실패: 이미지가 저장되지 않음\n{res}")
     sys.exit(0 if ok else 1)
 
@@ -168,6 +206,9 @@ def main():
     i.add_argument("--size", default="1536x1024")
     i.add_argument("--n", type=int, default=1)
     i.add_argument("--ref", nargs="*", default=[])
+    i.add_argument("--keywords", nargs="+", required=True, help="이미지에 들어갈 요소만 (3–6개)")
+    i.add_argument("--attempt", type=int, default=1, help="재생성 회차. 2부터 파일명에 -v2 …")
+    i.add_argument("--fix", default="", help="검수에서 발견한 문제점 (재생성 때)")
     i.set_defaults(fn=cmd_image)
     r = sp.add_parser("research")
     r.add_argument("question", nargs="?")
