@@ -1,0 +1,11 @@
+EN
+EN
+EN
+EN
+plus
+mockup 1800
+poster 1800
+groups 1800: 6
+mockup 2675
+poster 2675
+groups 2675: 2

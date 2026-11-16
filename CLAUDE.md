@@ -1,0 +1,58 @@
+# 디자인 작업 규칙
+
+이 폴더는 Claude Code에 디자인 작업을 맡기는 작업 공간입니다. 모든 세션은 이 규칙을 따릅니다.
+
+## 작업 시작 전 반드시 읽을 것
+1. `brief.md` — 이번 작업의 요구사항 (비어 있거나 `<채우기>`가 남아 있으면 작업하지 말고 무엇이 필요한지 보고)
+2. `tokens.json` — 색·폰트·간격의 유일한 기준
+3. `design-decisions.md` — 이전 수정 요청에서 생긴 규칙 (있으면)
+4. `refs/` — 레퍼런스 이미지와 메모
+
+## 폴더 규칙
+- 입력: `assets/`(로고·폰트·이미지), `refs/`(레퍼런스) — 읽기만, 수정 금지
+- 출력: `output/<작업명>/` 에만 생성
+- 검증 스크린샷: `screenshots/<작업명>/`
+- 루트의 기존 파일(`kv_*.jsx`, `poster_*.png` 등)은 지시 없이 수정·삭제 금지
+
+## 스킬 사용
+- 미적 방향 스킬은 작업당 하나만: `hallmark` / `taste-skill` / `frontend-design` 중 brief에 지정된 것 (지정 없으면 hallmark)
+- 시스템·토큰: `ui-ux-pro-max`, `design-system`
+- 모션: `animate`, `design-motion-principles`
+- 검수: `impeccable`(디자인 품질), `web-design-guidelines`(접근성)
+- 상세 프롬프트 모음: `design-kit/prompts/`
+
+## 디자인 원칙
+- 색·간격·radius·그림자는 `tokens.json` 값만 사용, 임의 HEX·매직 넘버 금지
+- 실제 카피 사용 (lorem ipsum 금지). 카피가 없으면 brief 톤에 맞춰 쓰고 표시해 둘 것
+- 모든 화면에 default / hover / focus / disabled / empty / error 상태 고려
+- 375 / 768 / 1440px 반응형, `prefers-reduced-motion` 대응
+
+## 작업 범위 (가드레일)
+다음은 하지 말고 멈춘 뒤 `HANDOFF.md`에 보고:
+- 이 폴더 밖 파일 수정, 패키지 전역 설치
+- 외부 서비스에 게시·배포·업로드, git push
+- `tokens.json` 임의 변경 (변경이 필요하면 제안만)
+- brief에 없는 페이지·기능 추가
+- API 키·비밀번호 입력이나 파일에 기록
+
+## 완료 기준 (자가 평가)
+완료 전 아래 표를 `output/<작업명>/rubric-result.md`에 채우고, 하나라도 실패면 고친 뒤 재평가.
+
+| 항목 | 기준 |
+|---|---|
+| 대비 | 본문 4.5:1, 큰 글씨 3:1 이상 |
+| 반응형 | 375/768/1440에서 깨짐·가로 스크롤 없음 (Playwright 스크린샷으로 확인) |
+| 토큰 | 하드코딩 색·간격 0개 |
+| 상태 | 필요한 상태 모두 구현 |
+| 모션 | reduced-motion 대응, transform/opacity만 사용 |
+| AI티 | 선택한 미적 스킬의 점검 통과 |
+
+## 보고 방식
+- 결정마다 근거 표시: brief / 토큰 / 레퍼런스 / 스킬 규칙 / 내 판단. "내 판단"만으로 정한 것은 `output/<작업명>/decisions.md`에 모아 둘 것
+- 검증 수준 구분: 확인함(스크린샷으로 검증) / 추정함 / 못 함(이유)
+- 작업이 끝나거나 막히면 `HANDOFF.md`를 갱신:
+  1. 한 일 / 남은 일
+  2. 내가 결정해야 할 것 (선택지와 추천)
+  3. 결과 파일 경로와 스크린샷
+  4. 다음 세션이 바로 이어갈 첫 지시문
+- 내가 수정 요청을 하면 반영 후 `design-decisions.md`에 `[날짜] 요청 / 변경 / 이유 / 이후 적용할 규칙` 한 줄 추가

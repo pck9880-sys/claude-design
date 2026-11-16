@@ -1,0 +1,132 @@
+DOC 자갈치시장X동행축제_연계_이벤트_프로모션 키비주얼_1차시안.pdf
+AB 0 대지 1 0,0,841.889831543,-595.2755737305
+AB 1 아트보드 2 901.889831543,0,1743.779663086,-595.2755737305
+AB 2 아트보드 3 1803.779663086,0,2645.669494629,-595.2755737305
+AB 3 아트보드 3 사본 2678.7960379748,0,3520.68586951781,-595.2755737305
+AB 4 아트보드 3 사본 2 3559.81069368998,0,4401.70052523298,-595.2755737305
+AB 5 아트보드 3 사본 3 1803.779663086,-655.608713113315,2645.669494629,-1250.88428684382
+LAYER 레이어 1 locked=false
+== LAYER 레이어 1
+  PathItem [1912,-17,1978,-39] nm= lk=false hid=false
+  PathItem [2787,-17,2853,-39] nm= lk=false hid=false
+  PathItem [3668,-17,3734,-39] nm= lk=false hid=false
+  GroupItem [2137,-1107,2152,-1122] nm= lk=false hid=false clip=false
+    PathItem [2147,-1107,2152,-1122] nm= lk=false hid=false
+    PathItem [2137,-1117,2152,-1122] nm= lk=false hid=false
+  GroupItem [1829,-1081,1844,-1095] nm= lk=false hid=false clip=false
+    PathItem [1829,-1081,1834,-1095] nm= lk=false hid=false
+    PathItem [1829,-1081,1844,-1085] nm= lk=false hid=false
+  GroupItem [1840,-681,2609,-695] nm= lk=false hid=false clip=false
+    TextFrame [2547,-683,2609,-695] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=The first draft
+    GroupItem [1840,-681,1998,-693] nm= lk=false hid=false clip=false
+      GroupItem [1840,-681,1998,-693] nm= lk=false hid=false clip=false
+        TextFrame [1959,-681,1998,-693] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=Concept
+        TextFrame [1917,-681,1948,-693] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=Design
+        TextFrame [1840,-681,1887,-693] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=Key Visual
+  TextFrame [1849,-1194,2518,-1217] nm= lk=false hid=false kind=TextType.POINTTEXT font=MinSansVF-Black 16.3021697998047 TXT=｢Together at Jagalchi｣ Jagalchi Market × Donghaeng Festival Key Visual
+  GroupItem [1847,-1077,2609,-1188] nm= lk=false hid=false clip=false
+    PathItem [2488,-1136,2531,-1175] nm= lk=false hid=false
+    TextFrame [1847,-1132,2480,-1188] nm= lk=false hid=false kind=TextType.POINTTEXT font=GmarketSansBold 48.4754104614258 TXT=연계 이벤트 프로모션 키비주얼
+    TextFrame [1847,-1077,2609,-1133] nm= lk=false hid=false kind=TextType.POINTTEXT font=GmarketSansBold 48.4754104614258 TXT=다같이 자갈치  자갈치시장X동행축제
+  TextFrame [2724,-40,3005,-52] nm= lk=false hid=false kind=TextType.POINTTEXT font=MinSansVF-Black 8.44025993347168 TXT=｢Together at Jagalchi｣ Jagalchi Market × Donghaeng Festival Key Visual
+  TextFrame [2725,-427,2926,-550] nm= lk=false hid=false kind=TextType.AREATEXT font=WantedSansVariable-Regular 11.1600904464722 TXT=전체 비주얼은 라인일러스트 중심으로 구성하여 누구나 편하게 느낄 수 있는 귀엽고 친근한 인상을 전달합니다.   |  | 밝고 경쾌한 색감, 단순하면서도 개성 있는 캐릭터와 오브젝트를 활용해 축제의 즐거움과 대중적인 매력을 표현했습니다.
+  PathItem [2967,-214,3202,-545] nm= lk=false hid=false
+  GroupItem [3207,-183,3469,-577] nm= lk=false hid=false clip=false
+    RasterItem [3277,-280,3399,-465] nm= lk=false hid=false
+    GroupItem [3207,-183,3469,-577] nm= lk=false hid=false clip=true
+      PathItem [3210,-215,3466,-545] nm= lk=false hid=false
+      RasterItem [3207,-183,3469,-577] nm= lk=false hid=false
+  TextFrame [2871,-290,2905,-304] nm= lk=false hid=false kind=TextType.POINTTEXT font=WantedSansVariable-Black 13.0402202606201 TXT=독창성
+  TextFrame [2808,-290,2841,-304] nm= lk=false hid=false kind=TextType.POINTTEXT font=WantedSansVariable-Black 13.0402202606201 TXT=친근함
+  TextFrame [2744,-290,2778,-304] nm= lk=false hid=false kind=TextType.POINTTEXT font=WantedSansVariable-Black 13.0402202606201 TXT=입체감
+  PathItem [2850,-259,2926,-335] nm= lk=false hid=false
+  PathItem [2786,-259,2862,-335] nm= lk=false hid=false
+  PathItem [2723,-259,2799,-335] nm= lk=false hid=false
+  GroupItem [2967,-214,3202,-546] nm= lk=false hid=false clip=true
+    PathItem [2967,-215,3202,-545] nm= lk=false hid=false
+    RasterItem [2967,-214,3202,-546] nm= lk=false hid=false
+  TextFrame [2726,-371,2910,-410] nm= lk=false hid=false kind=TextType.POINTTEXT font=WantedSansVariable-Black 16.9398803710938 TXT=자갈치시장 특유의 정겨움을 | 일러스트로 풀어낸 디자인
+  TextFrame [2725,-143,2845,-176] nm= lk=false hid=false kind=TextType.POINTTEXT font=GmarketSansBold 29.0538692474365 TXT=TYPE B
+  GroupItem [2725,-26,3484,-40] nm= lk=false hid=false clip=false
+    TextFrame [3422,-27,3484,-40] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=The first draft
+    GroupItem [2725,-26,2840,-38] nm= lk=false hid=false clip=false
+      TextFrame [2740,-26,2840,-38] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=Key Visual References
+      TextFrame [2725,-26,2737,-38] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=01.
+  TextFrame [3605,-40,3886,-52] nm= lk=false hid=false kind=TextType.POINTTEXT font=MinSansVF-Black 8.44025993347168 TXT=｢Together at Jagalchi｣ Jagalchi Market × Donghaeng Festival Key Visual
+  GroupItem [334,-451,348,-466] nm= lk=false hid=false clip=false
+    PathItem [344,-451,348,-466] nm= lk=false hid=false
+    PathItem [334,-461,348,-466] nm= lk=false hid=false
+  GroupItem [25,-425,40,-440] nm= lk=false hid=false clip=false
+    PathItem [25,-425,30,-440] nm= lk=false hid=false
+    PathItem [25,-425,40,-430] nm= lk=false hid=false
+  TextFrame [3606,-427,3807,-550] nm= lk=false hid=false kind=TextType.AREATEXT font=WantedSansVariable-Regular 11.1600904464722 TXT=브라운 계열의 색상을 중심으로 구성해 따뜻하고 편안한 분위기를 만들고, 자갈치시장만의 지역적인 정서를 자연스럽게 담아냈습니다.   |  | 전통시장과 지역축제 특유의 정이 넘치는 감성을 강조해, 방문객에게 친숙하면서도 기억에 남는 축제 이미지를 전달할 수 있도록 표현했습니다.
+  PathItem [3848,-214,4083,-545] nm= lk=false hid=false
+  GroupItem [4088,-183,4350,-577] nm= lk=false hid=false clip=false
+    RasterItem [4158,-280,4280,-465] nm= lk=false hid=false
+    GroupItem [4088,-183,4350,-577] nm= lk=false hid=false clip=true
+      PathItem [4091,-215,4347,-545] nm= lk=false hid=false
+      RasterItem [4088,-183,4350,-577] nm= lk=false hid=false
+  TextFrame [3752,-290,3786,-304] nm= lk=false hid=false kind=TextType.POINTTEXT font=WantedSansVariable-Black 13.0402202606201 TXT=독창성
+  TextFrame [3689,-290,3722,-304] nm= lk=false hid=false kind=TextType.POINTTEXT font=WantedSansVariable-Black 13.0402202606201 TXT=전통미
+  TextFrame [3625,-290,3659,-304] nm= lk=false hid=false kind=TextType.POINTTEXT font=WantedSansVariable-Black 13.0402202606201 TXT=지역성
+  PathItem [3731,-259,3807,-335] nm= lk=false hid=false
+  PathItem [3667,-259,3743,-335] nm= lk=false hid=false
+  PathItem [3604,-259,3680,-335] nm= lk=false hid=false
+  GroupItem [3848,-214,4083,-546] nm= lk=false hid=false clip=true
+    PathItem [3848,-215,4083,-545] nm= lk=false hid=false
+    RasterItem [3848,-214,4083,-546] nm= lk=false hid=false
+  TextFrame [3607,-371,3810,-410] nm= lk=false hid=false kind=TextType.POINTTEXT font=WantedSansVariable-Black 16.9398803710938 TXT=따뜻한 컬러를 활용해 | 지역축제의 감성을 살린 디자인
+  TextFrame [3606,-143,3730,-176] nm= lk=false hid=false kind=TextType.POINTTEXT font=GmarketSansBold 29.0538692474365 TXT=TYPE C
+  TextFrame [1850,-427,2051,-550] nm= lk=false hid=false kind=TextType.AREATEXT font=WantedSansVariable-Regular 11.1600904464722 TXT=자갈치시장 타이틀은 글자 자체를 변형한 방식으로 제작해 시각적 주목도를 높이고, 시장의 개성을 강하게 드러냈습니다.   |  | 배경은 실사에 가까운 일러스트로 구성하여 실제 자갈치시장의 분위기와 활기를 보다 생생하게 전달하며, 현장감 있는 축제 이미지를 강조했습니다.
+  GroupItem [3606,-26,4365,-40] nm= lk=false hid=false clip=false
+    TextFrame [4303,-27,4365,-40] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=The first draft
+    GroupItem [3606,-26,3721,-38] nm= lk=false hid=false clip=false
+      TextFrame [3621,-26,3721,-38] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=Key Visual References
+      TextFrame [3606,-26,3618,-38] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=01.
+  GroupItem [1849,-26,2609,-52] nm= lk=false hid=false clip=false
+    TextFrame [2547,-27,2609,-40] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=The first draft
+    GroupItem [1849,-26,2130,-52] nm= lk=false hid=false clip=false
+      TextFrame [1849,-40,2130,-52] nm= lk=false hid=false kind=TextType.POINTTEXT font=MinSansVF-Black 8.44025993347168 TXT=｢Together at Jagalchi｣ Jagalchi Market × Donghaeng Festival Key Visual
+      TextFrame [1865,-26,1965,-38] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=Key Visual References
+      TextFrame [1850,-26,1862,-38] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=01.
+  GroupItem [36,-25,805,-40] nm= lk=false hid=false clip=false
+    TextFrame [743,-27,805,-40] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=The first draft
+    GroupItem [36,-25,194,-38] nm= lk=false hid=false clip=false
+      GroupItem [36,-25,194,-38] nm= lk=false hid=false clip=false
+        TextFrame [155,-25,194,-38] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=Concept
+        TextFrame [113,-25,144,-38] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=Design
+        TextFrame [36,-25,83,-38] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=Key Visual
+  PathItem [2092,-214,2326,-545] nm= lk=false hid=false
+  GroupItem [2332,-183,2594,-577] nm= lk=false hid=false clip=false
+    RasterItem [2402,-280,2524,-465] nm= lk=false hid=false
+    GroupItem [2332,-183,2594,-577] nm= lk=false hid=false clip=true
+      PathItem [2335,-215,2591,-545] nm= lk=false hid=false
+      RasterItem [2332,-183,2594,-577] nm= lk=false hid=false
+  TextFrame [1996,-290,2030,-304] nm= lk=false hid=false kind=TextType.POINTTEXT font=WantedSansVariable-Black 13.0402202606201 TXT=몰입감
+  TextFrame [1933,-290,1966,-304] nm= lk=false hid=false kind=TextType.POINTTEXT font=WantedSansVariable-Black 13.0402202606201 TXT=역동적
+  TextFrame [1869,-290,1903,-304] nm= lk=false hid=false kind=TextType.POINTTEXT font=WantedSansVariable-Black 13.0402202606201 TXT=현장감
+  PathItem [1975,-259,2051,-335] nm= lk=false hid=false
+  PathItem [1911,-259,1987,-335] nm= lk=false hid=false
+  PathItem [1848,-259,1924,-335] nm= lk=false hid=false
+  GroupItem [2092,-214,2326,-546] nm= lk=false hid=false clip=true
+    PathItem [2092,-215,2326,-545] nm= lk=false hid=false
+    RasterItem [2092,-214,2326,-546] nm= lk=false hid=false
+  TextFrame [1851,-371,2049,-410] nm= lk=false hid=false kind=TextType.POINTTEXT font=WantedSansVariable-Black 16.9398803710938 TXT=자갈치시장의 생동감을 | 타이포그래피로 표현한 디자인
+  TextFrame [1850,-143,1972,-176] nm= lk=false hid=false kind=TextType.POINTTEXT font=GmarketSansBold 29.0538692474365 TXT=TYPE A
+  TextFrame [45,-538,714,-561] nm= lk=false hid=false kind=TextType.POINTTEXT font=MinSansVF-Black 16.3021697998047 TXT=｢Together at Jagalchi｣ Jagalchi Market × Donghaeng Festival Key Visual
+  TextFrame [947,-544,1447,-567] nm= lk=false hid=false kind=TextType.POINTTEXT font=MinSansVF-Black 16.3021697998047 TXT=｢다같이 자갈치｣ 자갈치시장X동행축제 연계 이벤트 프로모션 키비주얼 
+  TextFrame [948,-417,1622,-533] nm= lk=false hid=false kind=TextType.POINTTEXT font=MinSansVF-Black 32.1029014587402 TXT=｢Together at Jagalchi｣ | Jagalchi Market × Donghaeng Festival | Event Promotion Key Visual
+  GroupItem [43,-422,805,-532] nm= lk=false hid=false clip=false
+    PathItem [684,-480,727,-519] nm= lk=false hid=false
+    TextFrame [43,-476,676,-532] nm= lk=false hid=false kind=TextType.POINTTEXT font=GmarketSansBold 48.4754104614258 TXT=연계 이벤트 프로모션 키비주얼
+    TextFrame [43,-422,805,-477] nm= lk=false hid=false kind=TextType.POINTTEXT font=GmarketSansBold 48.4754104614258 TXT=다같이 자갈치  자갈치시장X동행축제
+  PathItem [1437,-498,1467,-526] nm= lk=false hid=false
+  GroupItem [938,-25,1707,-40] nm= lk=false hid=false clip=false
+    TextFrame [1645,-27,1707,-40] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=The first draft
+    GroupItem [938,-25,1096,-38] nm= lk=false hid=false clip=false
+      GroupItem [938,-25,1096,-38] nm= lk=false hid=false clip=false
+        TextFrame [1057,-25,1096,-38] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=Concept
+        TextFrame [1015,-25,1046,-38] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=Design
+        TextFrame [938,-25,985,-38] nm= lk=false hid=false kind=TextType.POINTTEXT font=PretendardVariable-Medium 10 TXT=Key Visual
+  PathItem [902,0,1744,-595] nm= lk=false hid=false
+  PathItem [1804,-656,2645,-1250] nm= lk=true hid=false
