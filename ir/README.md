@@ -17,6 +17,7 @@
 
 Claude는 `design-kit/prompts/06-ir.md`의 순서를 따릅니다.
 1. 자료 수집: PC의 문서·다운로드·바탕화면에서 파일을 찾아 `inbox/`로 복사 → `python ir/scripts/extract_inbox.py`
+   - 고객사 홈페이지 조사: `python tools/site_scan.py <주소> --out output/ir-<작업명>/site` (색·로고·인용 문구·숫자 후보)
 2. 조사서 정리: 추출 텍스트를 `needs-survey.md`로 정리, 빈 칸은 확인 질문으로
 3. 서식 분석: `python ir/scripts/format_profile.py ir/templates/<파일>.pptx` → `format-profile.md`
 4. 레퍼런스 서칭: 웹 검색 → `refs/ir/<작업명>.md`
