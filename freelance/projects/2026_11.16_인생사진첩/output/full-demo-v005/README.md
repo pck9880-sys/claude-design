@@ -15,3 +15,11 @@
 재생성: `python scripts/build_demo_full_v005.py` → `python scripts/render_demo_full_v005.py`. FontTools, CairoSVG, pypdf, Pillow와 Pretendard 사용. 렌더 스크립트의 로컬 이미지 허용 옵션은 자체 생성SVG만 대상으로 한다. 외부 제공 SVG에는 적용하지 않는다.
 
 전체24쪽·텍스트 폭/높이·대기문구0·15mm여백·우측제목10곳 검사. 실제 InDesign변환본의 문서 여백/펼침면/텍스트편집성은 실물 파일 별도 확인이 필요하다. A4·도련3mm는 여전히 임시 인쇄사양이다.
+
+## Adobe 문서 변환 결과
+- 사진 포함v005 PDF 업로드 성공. 압축PDF 생성 성공: https://to.adobe.com/rwlByvWGssUAZjfPLe5TcZd8gEJV
+- INDD 최초변환: Poll HTTP404(JobId not found). 압축PDF로1회 재시도: HTTP504 실패.
+- IDML 최초변환 및 압축PDF로1회 재시도 모두 HTTP504 실패.
+- 따라서 사진·원고가 채워진 최신 INDD/IDML은 생성되지 않았다. 기존v004 INDD/IDML 링크는 사진·임의원고 없는 이전판이므로 최신 원본으로 안내하지 않는다.
+- GitHub에는 최신 사진6시트·예시원고/좌표·24쪽PDF·검토도·네이티브 생성JSX가 저장됐다. 실제 로컬InDesign 앱 실행은 미검증.
+- 오류 응답의 Adobe 도움말: https://helpx.adobe.com/firefly/web/app-integrations/adobe-connectors/adobe-for-chatgpt.html?sdid=Y2KRGHXW&mv=webpush
