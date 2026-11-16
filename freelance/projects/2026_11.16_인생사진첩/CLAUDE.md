@@ -1,6 +1,6 @@
 # 인생사진첩 — 프로젝트 전용 지시
 
-**최신 사용자 지시:** 사진은 나중에 삽입하므로 빈 프레임으로 둔다. 사진 위 원형과 글자를 없애고 InDesign 기준 상하좌우 15mm 여백으로 내지 한 장만 수정한다. 최신 시안은 output/interior-sample-v004/, 생성 스크립트 scripts/BuildInteriorSampleV004.jsx. 하단 예시 글과 세로 제목·단 편집은 유지한다. 작가별 비슷한 저채도 색상 계획은 유지하되 사용자 피드백 전 다른 페이지에 적용하지 않는다. 실제 고객 원고와 예시 글을 혼동하지 않는다.
+**최신 사용자 지시:** 페이지 번호는 왼쪽 페이지 왼쪽·오른쪽 페이지 오른쪽(바깥쪽). 사진 프레임과 하단 제목 박스의 왼쪽 선을 일치시킨다. 최신 output/interior-sample-v005/, scripts/BuildInteriorSampleV005.jsx. 사진은 빈 프레임, 원형/사진 위 글자 없음, 사방15mm 여백 유지. 한 페이지 검토 후 확대 적용. 예시 원고는 고객 원본과 구분한다.
 
 먼저 `START-HERE.md`, `STATUS.md`, `brief.md`, `data/manuscript-extracted.md`, `data/input-manifest.json`을 읽는다. 상위 외주 폴더의 공통 규칙도 따른다.
 
