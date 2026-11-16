@@ -263,14 +263,52 @@ def icon_img(slide, name, x, y, size=None, color=None):
     return size
 
 
-def picture(slide, path, x, y, w, h, kind=None, name=None):
+def light_image(path, max_px=2400):
+    """큰 사진은 2400px JPEG로 줄인 사본을 써서 PPT 용량을 낮춘다 (투명 PNG는 PNG 유지)."""
+    from PIL import Image
+    path = Path(path)
+    im = Image.open(path)
+    if max(im.size) <= max_px and path.stat().st_size < 1_500_000:
+        return path
+    cache = ROOT / "output" / f"ir-{SPEC['name']}" / "_img"
+    cache.mkdir(parents=True, exist_ok=True)
+    alpha = im.mode in ("RGBA", "LA") and im.getextrema()[-1][0] < 255
+    out = cache / (path.stem + (".png" if alpha else ".jpg"))
+    if not out.exists():
+        im.thumbnail((max_px, max_px))
+        if alpha:
+            im.save(out, optimize=True)
+        else:
+            im.convert("RGB").save(out, quality=88, optimize=True)
+    return out
+
+
+def fill_crop(pic, path, w, h, focus=(0.5, 0.5)):
+    """상자 비율에 맞춰 잘라서 채운다 (늘이지 않음). focus=(가로, 세로) 0~1, 남길 중심."""
+    from PIL import Image
+    iw, ih = Image.open(path).size
+    box, img = w / h, iw / ih
+    fx, fy = focus
+    if img > box:            # 사진이 더 넓음 → 좌우를 자름
+        cut = 1 - box / img
+        l = cut * fx
+        pic.crop_left, pic.crop_right = l, cut - l
+    elif img < box:          # 사진이 더 높음 → 위아래를 자름
+        cut = 1 - img / box
+        t = cut * fy
+        pic.crop_top, pic.crop_bottom = t, cut - t
+
+
+def picture(slide, path, x, y, w, h, kind=None, name=None, focus=(0.5, 0.5)):
     """이미지 스타일(직각·둥근·원형) 적용. 파일이 없으면 같은 모양의 자리표시."""
     kind = kind or STY["image"]
     rad = CH["image"]["options"][kind]["radius"]
     x, y, w, h = (int(v) for v in (x, y, w, h))
     p = ROOT / path if path else None
     if p and p.exists():
+        p = light_image(p)
         pic = slide.shapes.add_picture(str(p), x, y, w, h)
+        fill_crop(pic, p, w, h, focus)
         if rad:
             geom = pic._element.spPr.find(qn("a:prstGeom"))
             geom.set("prst", "ellipse" if rad == "circle" else "roundRect")
@@ -425,6 +463,17 @@ def card(slide, x, y, w, h, head, body, i=0, label=None, icon=None):
         text(slide, x, top, w, y + h - top, bl, role="body", color=INK_SOFT,
              align=PP_ALIGN.CENTER if len(bl) <= 1 else PP_ALIGN.LEFT, bullets=len(bl) > 1)
         return
+    if kind == "F":       # 에디토리얼: 박스 없음, 위쪽 굵은 선 + 제목 + 본문
+        seg(slide, x, y, x + w, y, INK if i == 0 else LINE, "bold" if i == 0 else "regular")
+        off = icon_img(slide, icon, x, y + SP["m"]) if icon else 0
+        hy = y + SP["m"] + (off + SP["s"] if off else 0)
+        if label:
+            text(slide, x, hy, w, Inches(0.3), label, role="caption", color=MUTED, bold=True)
+            hy += Inches(0.3) + SP["xs"]
+        text(slide, x, hy, w, Inches(0.5), head, SIZE["body"] + 3, "head", INK)
+        text(slide, x, hy + Inches(0.5) + SP["s"], w, y + h - hy - Inches(0.5) - SP["s"], bl, role="body",
+             color=INK_SOFT, bullets=len(bl) > 1)
+        return
     if kind == "A":       # 연한 면
         shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, x, y, w, h, fill=SURFACE, radius=rad)
         hc, bc = (ACCENT if i == 0 else INK), INK_SOFT
@@ -473,7 +522,8 @@ def cards_row(slide, items, top, bottom, connectors=False):
         x = X0 + i * (cw + gap)
         card(slide, x, top, cw, bottom - top, it.get("head", ""), it.get("body", ""), i, it.get("label"), it.get("icon"))
         if connectors and i < n - 1:
-            connector(slide, x + cw, x + cw + gap, top + (bottom - top) / 2)
+            cy = top + SP["m"] + Inches(0.55) if STY["card"] == "F" else top + (bottom - top) / 2
+            connector(slide, x + cw, x + cw + gap, cy)
 
 
 # ======================= 슬라이드 =======================
@@ -570,7 +620,8 @@ def s_chart(slide, d, idx):
     plot = ch.plots[0]
     plot.has_data_labels = True
     dl = plot.data_labels
-    dl.number_format, dl.number_format_is_linked = "#,##0", False
+    has_dec = any("." in str(r[y]) and not str(r[y]).endswith(".0") for r in rows for y in c["y"])
+    dl.number_format, dl.number_format_is_linked = ("#,##0.0" if has_dec else "#,##0"), False
     dl.font.size, dl.font.bold, dl.font.color.rgb = small, True, INK
     if kind != XL_CHART_TYPE.LINE_MARKERS:
         dl.position = XL_LABEL_POSITION.CENTER if kind == XL_CHART_TYPE.COLUMN_STACKED else XL_LABEL_POSITION.OUTSIDE_END
@@ -612,6 +663,8 @@ def s_metrics(slide, d, idx):
         x = X0 + i * (cw + gap)
         if kind in ("B", "C"):
             shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, x, TOP, cw, h, fill=WHITE, line=LINE, lw="regular", radius=min(rad, 0.08))
+        elif kind == "F":
+            seg(slide, x, TOP, x + cw, TOP, INK if i == 0 else LINE, "bold" if i == 0 else "regular")
         elif kind != "D":
             shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, x, TOP, cw, h, fill=DARK if dark else SURFACE, radius=rad)
         pad = SP["m"]
@@ -655,19 +708,27 @@ def s_table(slide, d, idx):
 
 def s_team(slide, d, idx):
     header(slide, d, idx)
-    people = d["people"][:4]
-    n, gap = len(people), SP["l"]
-    cw = (CW - gap * (n - 1)) / n
-    ph = Inches(1.3)
+    people = d["people"][:6]
+    has_photo = any(p.get("photo") for p in people)
+    per_row = 4 if len(people) <= 4 else 3
+    rows = (len(people) + per_row - 1) // per_row
+    gap = SP["l"]
+    cw = (CW - gap * (per_row - 1)) / per_row
+    rh = (BOTTOM - TOP - SP["l"] * (rows - 1)) / rows
+    ph = Inches(1.3) if has_photo else 0
     for i, p in enumerate(people):
-        x = X0 + i * (cw + gap)
-        picture(slide, p.get("photo"), x, TOP, ph, ph)
-        y = TOP + ph + SP["s"]
-        text(slide, x, y, cw, Inches(0.45), p["name"], SIZE["body"] + 4, "head")
-        text(slide, x, y + Inches(0.45), cw, Inches(0.35), p["role"], role="body", color=ACCENT)
-        divider(slide, x, y + Inches(0.88), cw)
+        x = X0 + (i % per_row) * (cw + gap)
+        y0 = TOP + (i // per_row) * (rh + SP["l"])
+        if has_photo:
+            picture(slide, p.get("photo"), x, y0, ph, ph)
+        y = y0 + (ph + SP["s"] if has_photo else 0)
+        seg(slide, x, y, x + cw, y, INK if i == 0 else LINE, "bold" if i == 0 else "regular")
+        y += SP["s"]
+        text(slide, x, y, cw, Inches(0.4), p["name"], SIZE["body"] + 3, "head")
+        text(slide, x, y + Inches(0.4), cw, Inches(0.3), p["role"], role="caption", color=ACCENT, bold=True)
         bio = p.get("bio", "")
-        text(slide, x, y + Inches(1.0), cw, BOTTOM - y - Inches(1.0), bio, role="body", color=INK_SOFT,
+        by = y + Inches(0.4) + Inches(0.3) + SP["s"]
+        text(slide, x, by, cw, y0 + rh - by, bio, SIZE["small"], "body", INK_SOFT,
              bullets=isinstance(bio, list) and len(bio) > 1)
     footer(slide, idx)
 
@@ -865,9 +926,71 @@ def s_structure(slide, d, idx):
     footer(slide, idx, d.get("source"))
 
 
+def s_hero(slide, d, idx):
+    """풀블리드 사진 + 글. side: left|right (글 위치), dark: true면 어둡게 덮고 흰 글씨."""
+    img = d.get("image")
+    dark = d.get("dark", True)
+    if img and (ROOT / img).exists():
+        li = light_image(ROOT / img)
+        pic = slide.shapes.add_picture(str(li), 0, 0, int(W), int(H))
+        fill_crop(pic, li, W, H, tuple(d.get("focus", (0.5, 0.5))))
+        pic.name = "bleed:hero-image"
+        if dark:
+            set_alpha(rect(slide, 0, 0, W, H, DARK, name="bleed:overlay"), d.get("overlay", 35))
+    else:
+        bg(slide, DARK if dark else SURFACE)
+    col, sub = (WHITE, rgb(C["neutral"]["100"])) if dark else (INK, INK_SOFT)
+    tw = CW * 0.45
+    tx = X0 if d.get("side", "left") == "left" else X1 - tw
+    if d.get("section"):
+        text(slide, tx, Y0, tw, Inches(0.28), d["section"], role="caption", color=sub, bold=True)
+    text(slide, tx, Inches(2.5), tw, Inches(1.4), d["title"], 36, "display", col)
+    if d.get("message"):
+        text(slide, tx, Inches(3.9), tw, Inches(1.6), d["message"], SIZE["body"], "body", sub)
+    text(slide, X1 - Inches(1), FOOT_Y, Inches(1), FOOT_H, str(idx), role="caption", color=sub, align=PP_ALIGN.RIGHT)
+
+
+def s_gallery(slide, d, idx):
+    """사진 여러 장(캡션·설명) + 선택: 왼쪽 큰 숫자(stats: value_ref 목록)와 인용문(quote)."""
+    header(slide, d, idx)
+    end = summary_bar(slide, d)
+    items = d["items"][:8]
+    x0 = X0
+    if d.get("stats") or d.get("quote"):
+        lw = CW * 0.3
+        y = TOP
+        for ref in d.get("stats", [])[:2]:
+            r = resolve(ref)
+            text(slide, X0, y, lw, Inches(0.9), f"{fmt(r['value'])}{r.get('unit', '')}", 48, "display", INK)
+            text(slide, X0, y + Inches(0.9), lw, Inches(0.35), r.get("label", ""), role="body", color=INK_SOFT)
+            y += Inches(1.45)
+        if d.get("quote"):
+            seg(slide, X0, y, X0 + Inches(0.6), y, INK, "bold")
+            text(slide, X0, y + SP["s"], lw, end - y - SP["s"], d["quote"], SIZE["body"], "body", INK_SOFT)
+        x0 = X0 + lw + SP["xl"]
+    n = len(items)
+    per_row = n if n <= 4 else (n + 1) // 2
+    rows = (n + per_row - 1) // per_row
+    gap = SP["m"]
+    cw = (X1 - x0 - gap * (per_row - 1)) / per_row
+    cap_h = Inches(0.38) + (Inches(0.7) if any(it.get("body") for it in items) else 0)
+    rh = (end - TOP - SP["m"] * (rows - 1)) / rows
+    ih = rh - cap_h - SP["s"]
+    for i, it in enumerate(items):
+        x = x0 + (i % per_row) * (cw + gap)
+        y = TOP + (i // per_row) * (rh + SP["m"])
+        picture(slide, it.get("image"), x, y, cw, ih, focus=tuple(it.get("focus", (0.5, 0.4))))
+        cy = y + ih + SP["s"]
+        text(slide, x, cy, cw, Inches(0.33), it.get("caption", ""), SIZE["small"], "head", INK)
+        if it.get("body"):
+            text(slide, x, cy + Inches(0.36), cw, cap_h - Inches(0.36), it["body"], SIZE["small"], "body", INK_SOFT)
+    footer(slide, idx, d.get("source"))
+
+
 BUILDERS = {"cover": s_cover, "statement": s_statement, "process": s_process, "chart": s_chart,
             "metrics": s_metrics, "table": s_table, "team": s_team, "ask": s_ask, "closing": s_closing,
-            "timeline": s_timeline, "tam": s_tam, "compare": s_compare, "product": s_product, "structure": s_structure}
+            "timeline": s_timeline, "tam": s_tam, "compare": s_compare, "product": s_product, "structure": s_structure,
+            "hero": s_hero, "gallery": s_gallery}
 
 
 def main():

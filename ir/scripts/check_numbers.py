@@ -22,9 +22,9 @@ def norm(s):
     return s.replace(",", "").rstrip("0").rstrip(".") if "." in s else s.replace(",", "")
 
 
-def data_numbers():
+def data_numbers(data_dir="data"):
     found = set()
-    for f in (IR / "data").glob("*.csv"):
+    for f in (IR / data_dir).glob("*.csv"):
         with open(f, encoding="utf-8-sig") as fh:
             for row in csv.DictReader(fh):
                 for v in row.values():
@@ -55,7 +55,7 @@ def texts(node, key=None):
 
 def main():
     spec = json.loads(Path(sys.argv[1] if len(sys.argv) > 1 else IR / "deck.json").read_text(encoding="utf-8"))
-    known = data_numbers()
+    known = data_numbers(spec.get("data_dir") or "data")
     fails = 0
     for i, s in enumerate(spec["slides"], 1):
         derived = {norm(k) for k in s.get("derived", {})}

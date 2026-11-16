@@ -43,5 +43,12 @@
 - 시험 통과: 이미지 생성, 병렬 서칭 2건, 자료 정리 1건
 - 참고 자료: `refs/ir/seed-ir-mistakes.md` (시드 IR에서 투자자가 지적하는 실수, GPT 조사)
 
-## 6. 다음 세션 첫 지시 예시
+## 6. 진행 중 작업 — 프로젝트모먼트 IR 리디자인 (v1 완료, 2026-11-16)
+- 원본: 바탕화면 `프로젝트 모먼트/` (원고·니즈조사서·레퍼런스·1차시안·사진) → 사본 `ir/inbox/project-moment/` (GitHub 제외)
+- 결과: `output/ir-project-moment/deck.pptx`, `deck.pdf` (16장), 검수 `review.md`, 조사서 `needs-survey.md`
+- 명세 `ir/deck-project-moment.json`, 데이터 `ir/data-project-moment/`, 스타일 `output/ir-project-moment/style.json`
+- 확인 필요: 2025 매출 12억 vs 11.6억, 마감·투자 단계, CI/BI 로고 원본
+- 이번에 추가된 기능: 사진 채우기 크롭·자동 축소, hero·gallery 레이아웃, 카드 F(에디토리얼), 팀 6인, 데이터 폴더별 숫자 검사
+
+## 7. 다음 세션 첫 지시 예시
 "HANDOFF.md 읽고 이어서 해줘"

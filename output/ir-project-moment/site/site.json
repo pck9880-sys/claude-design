@@ -1,0 +1,77 @@
+{
+ "site": "https://owooii.com",
+ "meta": {
+  "title": "오우이 : 에어에센스",
+  "description": "최고의 드라이 경험, 오우이가 선사합니다",
+  "og_title": "오우이 : 에어에센스",
+  "og_description": "최고의 드라이 경험, 오우이가 선사합니다",
+  "og_image": "https://cdn.imweb.me/upload/S202307104b5bee8bb6571/bef88f8a904fb.png",
+  "theme_color": "#0f0316"
+ },
+ "brand_colors": [
+  [
+   "#0F0316",
+   66
+  ],
+  [
+   "#00B8FF",
+   27
+  ],
+  [
+   "#337AB7",
+   25
+  ],
+  [
+   "#F84A71",
+   20
+  ],
+  [
+   "#3C763D",
+   14
+  ],
+  [
+   "#8A6D3B",
+   14
+  ],
+  [
+   "#A94442",
+   14
+  ],
+  [
+   "#FCF8E3",
+   9
+  ]
+ ],
+ "logo_file": "logo.png",
+ "pages": [
+  {
+   "url": "https://owooii.com",
+   "heads": [],
+   "paras": [
+    "e-mail : help@owooii.com",
+    "(주)프로젝트모먼트  | 이준영 | 102-88-02791 | 부산 연제구 월드컵대로 20 5층 2023-부산연제-0331",
+    "102-88-02791 | 부산 연제구 월드컵대로 20 5층 2023-부산연제-0331"
+   ]
+  },
+  {
+   "url": "https://owooii.com/Story",
+   "title": "owooii-air :: STORY",
+   "heads": [],
+   "paras": [
+    "오우이 가족 여러분들의 에어에센스 이야기",
+    "오우이 가족 여러분들의 에어에센스 이야기",
+    "사랑 으로 성장 하고 매사에 감사 하며",
+    "건강 하고 아름다운 사회 를 소망 합니다",
+    "Photo                                   Shuttergraphy",
+    "Video                                   PM Company & Duck Factory",
+    "Design                                 ORCD",
+    "Hair & Makeup                   Meri studio",
+    "Direct                                  Projectmoment_Brand",
+    "사랑 으로 성장 하고 현재에 감사 하며",
+    "건강 하고 아름다운 사회 를 소망 합니다",
+    "PM Company & DuckFactory"
+   ]
+  }
+ ],
+ "number_candidates": []
+}
