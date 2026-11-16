@@ -1,6 +1,6 @@
 # 인생사진첩 — 프로젝트 전용 지시
 
-**최신 사용자 지시:** 전체24쪽을 유지하며 작가별 오른쪽 페이지에 간단한 설명글을 상단 배치한다. 설명영역 y25/높이20mm, 사진은8mm 아래 y53부터. 오른쪽 아래 쪽번호 유지. 최신 output/full-v004/, data/layout_full_v004.json/.jsxinc, scripts/BuildFullAlbumV004.jsx. 기존15mm 여백·작가별 저채도색·왼쪽 디자인 유지. 미수신 사진은 빈 프레임, 미수신 설명은 대기 표시. 실제 고객 원고를 지어내지 않는다.
+**최신 사용자 지시:** 임의사진·원고를 넣어 전체24쪽이 채워진 시안으로 업로드. 사용자 명시 허용에 따라 full-demo-v005에 가상 작가10명·작품20장·소개/설명/인사말/회기/마무리 예시를 사용한다. 고객 원본과 book-data.json은 수정하지 않고 예시는 demo_content_v005.json 및 links/demo-v005에 분리. 우측상단 작품제목+설명 누락 보완. 최신 output/full-demo-v005/, scripts/BuildDemoFullAlbumV005.jsx. 현재는 검토용 예시이며 실제 고객 작품/기록으로 보고하지 않는다.
 
 먼저 `START-HERE.md`, `STATUS.md`, `brief.md`, `data/manuscript-extracted.md`, `data/input-manifest.json`을 읽는다. 상위 외주 폴더의 공통 규칙도 따른다.
 

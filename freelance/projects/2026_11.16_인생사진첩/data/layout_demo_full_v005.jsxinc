@@ -1,0 +1,4623 @@
+﻿var ALBUM_LAYOUT = {
+  "spec": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "bleed_mm": 3,
+    "size_confirmed": false,
+    "margin_mm": {
+      "top": 15,
+      "bottom": 15,
+      "left": 15,
+      "right": 15
+    },
+    "folio_position": "outside: even-left, odd-right",
+    "page_count": 24,
+    "facing_pages": true
+  },
+  "styles": {
+    "Running": [
+      9.5,
+      "Regular",
+      1.5
+    ],
+    "Book": [
+      10,
+      "Bold",
+      1.4
+    ],
+    "SideTitle": [
+      17,
+      "Bold",
+      1.25
+    ],
+    "Author": [
+      14,
+      "Bold",
+      1.45
+    ],
+    "Intro": [
+      12,
+      "Regular",
+      1.55
+    ],
+    "Section": [
+      10.5,
+      "Bold",
+      1.45
+    ],
+    "Body": [
+      11.5,
+      "Regular",
+      1.6
+    ],
+    "Quote": [
+      13,
+      "Bold",
+      1.5
+    ],
+    "Caption": [
+      9,
+      "Regular",
+      1.4
+    ],
+    "Folio": [
+      10.5,
+      "Bold",
+      1.5
+    ],
+    "Title": [
+      34,
+      "Bold",
+      1.3
+    ],
+    "Subtitle": [
+      15,
+      "Regular",
+      1.6
+    ],
+    "PageTitle": [
+      27,
+      "Bold",
+      1.4
+    ],
+    "Small": [
+      10,
+      "Regular",
+      1.5
+    ],
+    "Draft": [
+      12,
+      "Regular",
+      1.6
+    ],
+    "Label": [
+      12,
+      "Bold",
+      1.4
+    ],
+    "RightTitle": [
+      18,
+      "Bold",
+      1.4
+    ],
+    "DemoNote": [
+      8.5,
+      "Regular",
+      1.4
+    ]
+  },
+  "colors": {
+    "ink": [
+      65,
+      60,
+      53
+    ],
+    "muted": [
+      119,
+      111,
+      100
+    ],
+    "accent": [
+      160,
+      137,
+      108
+    ],
+    "line": [
+      196,
+      182,
+      163
+    ],
+    "soft": [
+      244,
+      240,
+      233
+    ],
+    "paper": [
+      255,
+      255,
+      255
+    ],
+    "white": [
+      255,
+      255,
+      255
+    ],
+    "scrim": [
+      83,
+      73,
+      58
+    ],
+    "accent_A01": [
+      160,
+      137,
+      108
+    ],
+    "accent_A02": [
+      130,
+      145,
+      122
+    ],
+    "accent_A03": [
+      123,
+      146,
+      144
+    ],
+    "accent_A04": [
+      130,
+      147,
+      163
+    ],
+    "accent_A05": [
+      147,
+      144,
+      162
+    ],
+    "accent_A06": [
+      161,
+      140,
+      151
+    ],
+    "accent_A07": [
+      173,
+      143,
+      131
+    ],
+    "accent_A08": [
+      165,
+      149,
+      116
+    ],
+    "accent_A09": [
+      142,
+      154,
+      135
+    ],
+    "accent_A10": [
+      146,
+      149,
+      140
+    ]
+  },
+  "project": "2026_11.16_인생사진첩",
+  "state": "illustrative_demo_not_client_original",
+  "pages": [
+    {
+      "page": 1,
+      "role": "cover",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 23,
+          "w": 161,
+          "h": 17,
+          "text": "인생사진첩",
+          "style": "Title",
+          "color": "accent",
+          "align": "left",
+          "name": "Title"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 46,
+          "w": 161,
+          "h": 12,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Subtitle",
+          "color": "muted",
+          "align": "left",
+          "name": "Subtitle"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 66,
+          "w": 161,
+          "h": 0.2,
+          "fill": "accent",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 79,
+          "w": 51,
+          "h": 32,
+          "asset_id": "DEMO_W01",
+          "name": "DEMO_W01",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "frame",
+          "x": 80,
+          "y": 79,
+          "w": 51,
+          "h": 32,
+          "asset_id": "DEMO_W03",
+          "name": "DEMO_W03",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 115,
+          "w": 51,
+          "h": 32,
+          "asset_id": "DEMO_W05",
+          "name": "DEMO_W05",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "frame",
+          "x": 80,
+          "y": 115,
+          "w": 51,
+          "h": 32,
+          "asset_id": "DEMO_W07",
+          "name": "DEMO_W07",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "frame",
+          "x": 135,
+          "y": 115,
+          "w": 51,
+          "h": 32,
+          "asset_id": "DEMO_W09",
+          "name": "DEMO_W09",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 151,
+          "w": 51,
+          "h": 32,
+          "asset_id": "DEMO_W11",
+          "name": "DEMO_W11",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "frame",
+          "x": 80,
+          "y": 151,
+          "w": 51,
+          "h": 32,
+          "asset_id": "DEMO_W13",
+          "name": "DEMO_W13",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "frame",
+          "x": 135,
+          "y": 151,
+          "w": 51,
+          "h": 32,
+          "asset_id": "DEMO_W15",
+          "name": "DEMO_W15",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "frame",
+          "x": 80,
+          "y": 187,
+          "w": 51,
+          "h": 32,
+          "asset_id": "DEMO_W17",
+          "name": "DEMO_W17",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "frame",
+          "x": 135,
+          "y": 187,
+          "w": 51,
+          "h": 32,
+          "asset_id": "DEMO_W19",
+          "name": "DEMO_W19",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "text",
+          "x": 42,
+          "y": 239,
+          "w": 144,
+          "h": 13,
+          "text": "동래구노인복지관\n재가노인지원서비스센터",
+          "style": "Small",
+          "color": "ink",
+          "align": "left",
+          "name": "Small"
+        },
+        {
+          "kind": "text",
+          "x": 42,
+          "y": 258,
+          "w": 144,
+          "h": 15,
+          "text": "본 제작물은 부산사회복지공동모금회의\n지원으로 제작되었습니다.",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Small"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 239,
+          "w": 14,
+          "h": 14,
+          "text": "동래구\n노인\n복지관",
+          "style": "DemoNote",
+          "color": "accent",
+          "align": "left",
+          "name": "TemporaryOrgWordmark"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 259,
+          "w": 14,
+          "h": 14,
+          "text": "사랑의\n열매",
+          "style": "DemoNote",
+          "color": "accent",
+          "align": "left",
+          "name": "TemporarySupportWordmark"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 16,
+          "w": 161,
+          "h": 5,
+          "text": "사진·인명·본문은 디자인 검토용 예시입니다.",
+          "style": "DemoNote",
+          "color": "muted",
+          "align": "left",
+          "name": "DemoContentNote"
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "role": "greeting",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 16,
+          "text": "인사말",
+          "style": "PageTitle",
+          "color": "accent",
+          "align": "left",
+          "name": "PageTitle"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 49,
+          "w": 161,
+          "h": 0.15,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 67,
+          "w": 161,
+          "h": 160,
+          "text": "사진을 찍는 일은 익숙한 일상을 새로운 눈으로 바라보는 일입니다.\n무심히 지나쳤던 골목과 창가, 작은 꽃과 나무가 카메라를 통해\n저마다의 이야기를 들려주었습니다.\n\n이 작품집에는 가까운 곳에서 아름다움을 발견하고, 자신의 시선으로\n한 장면을 골라 기록해 보는 과정의 의미를 담고자 했습니다.\n사진의 기술보다 소중한 것은 직접 바라보고 느낀 마음입니다.\n\n서로의 사진을 보고 이야기를 나누는 동안, 평범했던 하루는\n함께 기억하고 싶은 시간이 되었습니다. 한 장의 사진에 담긴\n생각과 감정이 보는 분들의 일상에도 작은 쉼이 되기를 바랍니다.\n\n새로운 도전에 마음을 열고 자신의 이야기를 사진으로 표현하는\n모든 분께 따뜻한 응원을 전합니다. 앞으로도 일상 속 작은 발견과\n즐거운 배움의 시간이 오래 이어지기를 바랍니다.\n\n한 페이지씩 천천히 넘기며 각자의 시선이 머문 자리를 함께\n걸어 주시기 바랍니다. 감사합니다.",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "GreetingCopy"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 241,
+          "w": 161,
+          "h": 18,
+          "text": "동래구노인복지관\n재가노인지원서비스센터 센터장",
+          "style": "Small",
+          "color": "ink",
+          "align": "right",
+          "name": "Small"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 55,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "02",
+          "style": "Folio",
+          "color": "accent",
+          "align": "left",
+          "name": "Folio"
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "role": "program",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 16,
+          "text": "프로그램 소개",
+          "style": "PageTitle",
+          "color": "accent",
+          "align": "left",
+          "name": "PageTitle"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 50,
+          "w": 161,
+          "h": 27,
+          "text": "카메라로 일상을 기록하고 사진 속 이야기를 나누는 시간입니다.\n가까운 동네와 자연에서 나만의 장면을 찾고, 서로의 시선을\n이해하며 사진과 글로 한 권의 이야기를 만들어 갑니다.",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "ProgramCopy"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 86,
+          "w": 161,
+          "h": 0.15,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 94,
+          "w": 161,
+          "h": 10,
+          "text": "출사 및 스토리텔링",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 111,
+          "w": 10,
+          "h": 7,
+          "text": "01",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 40,
+          "y": 111,
+          "w": 63,
+          "h": 12,
+          "text": "나의 시선 소개하기",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Session_1"
+        },
+        {
+          "kind": "text",
+          "x": 108,
+          "y": 111,
+          "w": 10,
+          "h": 7,
+          "text": "02",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 123,
+          "y": 111,
+          "w": 63,
+          "h": 12,
+          "text": "카메라와 친해지기",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Session_2"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 131,
+          "w": 10,
+          "h": 7,
+          "text": "03",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 40,
+          "y": 131,
+          "w": 63,
+          "h": 12,
+          "text": "빛과 그림자 살펴보기",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Session_3"
+        },
+        {
+          "kind": "text",
+          "x": 108,
+          "y": 131,
+          "w": 10,
+          "h": 7,
+          "text": "04",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 123,
+          "y": 131,
+          "w": 63,
+          "h": 12,
+          "text": "우리 동네 천천히 걷기",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Session_4"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 151,
+          "w": 10,
+          "h": 7,
+          "text": "05",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 40,
+          "y": 151,
+          "w": 63,
+          "h": 12,
+          "text": "자연의 색 발견하기",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Session_5"
+        },
+        {
+          "kind": "text",
+          "x": 108,
+          "y": 151,
+          "w": 10,
+          "h": 7,
+          "text": "06",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 123,
+          "y": 151,
+          "w": 63,
+          "h": 12,
+          "text": "사진 속 이야기 나누기",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Session_6"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 171,
+          "w": 10,
+          "h": 7,
+          "text": "07",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 40,
+          "y": 171,
+          "w": 63,
+          "h": 12,
+          "text": "나의 작품 고르기",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Session_7"
+        },
+        {
+          "kind": "text",
+          "x": 108,
+          "y": 171,
+          "w": 10,
+          "h": 7,
+          "text": "08",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 123,
+          "y": 171,
+          "w": 63,
+          "h": 12,
+          "text": "사진과 글 함께 엮기",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Session_8"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 205,
+          "w": 51,
+          "h": 48,
+          "asset_id": "DEMO_ACT01",
+          "name": "DEMO_ACT01",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "frame",
+          "x": 80,
+          "y": 205,
+          "w": 51,
+          "h": 48,
+          "asset_id": "DEMO_ACT02",
+          "name": "DEMO_ACT02",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "frame",
+          "x": 135,
+          "y": 205,
+          "w": 51,
+          "h": 48,
+          "asset_id": "DEMO_ACT03",
+          "name": "DEMO_ACT03",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.5,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 278,
+          "w": 55,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 85,
+          "y": 278,
+          "w": 77,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "03",
+          "style": "Folio",
+          "color": "accent",
+          "align": "right",
+          "name": "Folio"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A01",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A01",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A01",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "DEMO_W01",
+          "name": "DEMO_W01",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A01",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A01",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "작품 01  /  가을이 내려앉은 골목",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A01",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "익숙한\n하루를\n새롭게\n바라보다",
+          "style": "SideTitle",
+          "color": "accent_A01",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "김정숙 작가",
+          "style": "Author",
+          "color": "accent_A01",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "익숙한 동네를 천천히 걷습니다.\n무심코 지나쳤던 풍경에서\n새로운 이야기를 찾는 시간이 좋습니다.",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A01",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "늘 지나던 골목에 노란 잎이\n내려앉았습니다. 그 순간의 마음을\n담았습니다.",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A01",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "“늘 걷던 골목도,\n카메라로 바라보니\n새로웠습니다.”",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "04",
+          "style": "Folio",
+          "color": "accent_A01",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A01"
+    },
+    {
+      "page": 5,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 10,
+          "text": "초록 대문 앞에서",
+          "style": "RightTitle",
+          "color": "accent_A01",
+          "align": "left",
+          "name": "RightWorkTitle"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 39,
+          "w": 161,
+          "h": 18,
+          "text": "낡은 대문 곁에 놓인 국화가 먼저 인사를 건넵니다. 세월이 지나도 그 자리를 지키는 것들의\n따뜻함을 담았습니다.",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 65,
+          "w": 161,
+          "h": 199,
+          "asset_id": "DEMO_W02",
+          "name": "DEMO_W02",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.5,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "05",
+          "style": "Folio",
+          "color": "accent_A01",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A01"
+    },
+    {
+      "page": 6,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A02",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A02",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A02",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "DEMO_W03",
+          "name": "DEMO_W03",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A02",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A02",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "작품 01  /  잠시 쉬어가는 자리",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A02",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "잠시\n멈추어\n마음을\n쉬다",
+          "style": "SideTitle",
+          "color": "accent_A02",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "박영수 작가",
+          "style": "Author",
+          "color": "accent_A02",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "산책하며 계절이 바뀌는 모습을 봅니다.\n작은 쉼과 고요한 순간을\n사진 한 장에 담아 두고 싶습니다.",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A02",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "빈 벤치에 가을 햇살이 조용히\n앉았습니다. 그 순간의 마음을\n담았습니다.",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A02",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "“멈추어 바라보면\n작은 위로가\n보입니다.”",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "06",
+          "style": "Folio",
+          "color": "accent_A02",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A02"
+    },
+    {
+      "page": 7,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 10,
+          "text": "물 위에 머문 빛",
+          "style": "RightTitle",
+          "color": "accent_A02",
+          "align": "left",
+          "name": "RightWorkTitle"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 39,
+          "w": 161,
+          "h": 18,
+          "text": "물결 위로 나무와 하늘이 나란히 비쳤습니다. 잠시 바라보는 것만으로도 마음이 잔잔해지는\n오후였습니다.",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 65,
+          "w": 161,
+          "h": 199,
+          "asset_id": "DEMO_W04",
+          "name": "DEMO_W04",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "07",
+          "style": "Folio",
+          "color": "accent_A02",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A02"
+    },
+    {
+      "page": 8,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A03",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A03",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A03",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "DEMO_W05",
+          "name": "DEMO_W05",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A03",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A03",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "작품 01  /  하루의 끝에서",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A03",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "빛이\n머무는\n순간을\n담다",
+          "style": "SideTitle",
+          "color": "accent_A03",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "이순자 작가",
+          "style": "Author",
+          "color": "accent_A03",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "강과 바다를 바라보는 것을 좋아합니다.\n빛이 달라지는 순간을 기다리며\n하루의 표정을 기록합니다.",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A03",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "강가의 갈대 사이로 해가 천천히\n내려갑니다. 그 순간의 마음을\n담았습니다.",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A03",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "“하루의 끝에도\n다음 출발의 빛이\n남아 있습니다.”",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "08",
+          "style": "Folio",
+          "color": "accent_A03",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A03"
+    },
+    {
+      "page": 9,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 10,
+          "text": "바다로 가는 마음",
+          "style": "RightTitle",
+          "color": "accent_A03",
+          "align": "left",
+          "name": "RightWorkTitle"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 39,
+          "w": 161,
+          "h": 18,
+          "text": "포구에 매인 작은 배가 다음 출발을 기다립니다. 잔잔한 바다를 보며 아직 가 보고 싶은 곳을\n떠올렸습니다.",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 65,
+          "w": 161,
+          "h": 199,
+          "asset_id": "DEMO_W06",
+          "name": "DEMO_W06",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.5,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "09",
+          "style": "Folio",
+          "color": "accent_A03",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A03"
+    },
+    {
+      "page": 10,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A04",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A04",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A04",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "DEMO_W07",
+          "name": "DEMO_W07",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A04",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A04",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "작품 01  /  안개 너머의 아침",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A04",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "천천히\n걷는\n시간을\n만나다",
+          "style": "SideTitle",
+          "color": "accent_A04",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "최정호 작가",
+          "style": "Author",
+          "color": "accent_A04",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "길을 걷다 잠시 멈추는 연습을 합니다.\n익숙한 장소도 새롭게 바라보면\n또 다른 이야기를 들려줍니다.",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A04",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "안개가 산허리를 부드럽게 감싸고\n있습니다. 그 순간의 마음을\n담았습니다.",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A04",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "“기다리는 시간도\n한 장의 풍경이\n되었습니다.”",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "10",
+          "style": "Folio",
+          "color": "accent_A04",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A04"
+    },
+    {
+      "page": 11,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 10,
+          "text": "기다림의 풍경",
+          "style": "RightTitle",
+          "color": "accent_A04",
+          "align": "left",
+          "name": "RightWorkTitle"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 39,
+          "w": 161,
+          "h": 18,
+          "text": "익숙한 정류장에도 계절은 머물다 갑니다. 기다리는 시간이 길을 다시 바라보는 시간이 되었습니다.",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 65,
+          "w": 161,
+          "h": 199,
+          "asset_id": "DEMO_W08",
+          "name": "DEMO_W08",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "11",
+          "style": "Folio",
+          "color": "accent_A04",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A04"
+    },
+    {
+      "page": 12,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A05",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A05",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A05",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "DEMO_W09",
+          "name": "DEMO_W09",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A05",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A05",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "작품 01  /  담장에 그린 그림",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A05",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "가까운\n풍경에\n마음을\n열다",
+          "style": "SideTitle",
+          "color": "accent_A05",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "정옥희 작가",
+          "style": "Author",
+          "color": "accent_A05",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "오래된 담장과 초록빛을 좋아합니다.\n가까운 곳의 작은 변화를 찾아\n나만의 시선으로 남깁니다.",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A05",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "붉은 벽돌 위로 초록 잎과 그림자가\n겹쳐집니다. 그 순간의 마음을\n담았습니다.",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A05",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "“가까운 곳에서\n나만의 이야기를\n찾았습니다.”",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "12",
+          "style": "Folio",
+          "color": "accent_A05",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A05"
+    },
+    {
+      "page": 13,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 10,
+          "text": "초록 길을 따라",
+          "style": "RightTitle",
+          "color": "accent_A05",
+          "align": "left",
+          "name": "RightWorkTitle"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 39,
+          "w": 161,
+          "h": 18,
+          "text": "작은 길을 따라 걷다 보니 마음도 조금 느려집니다. 멀리 가지 않아도 가까운 곳에서 좋은 풍경을\n만납니다.",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 65,
+          "w": 161,
+          "h": 199,
+          "asset_id": "DEMO_W10",
+          "name": "DEMO_W10",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.5,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "13",
+          "style": "Folio",
+          "color": "accent_A05",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A05"
+    },
+    {
+      "page": 14,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A06",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A06",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A06",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "DEMO_W11",
+          "name": "DEMO_W11",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A06",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A06",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "작품 01  /  작은 텃밭의 안부",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A06",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "작은\n생명의\n안부를\n묻다",
+          "style": "SideTitle",
+          "color": "accent_A06",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "강명자 작가",
+          "style": "Author",
+          "color": "accent_A06",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "식물과 꽃을 돌보며 하루를 보냅니다.\n작은 생명이 자라는 순간을\n사진으로 함께 나누고 싶습니다.",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A06",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "비가 지난 텃밭에 싱싱한 초록이\n가득합니다. 그 순간의 마음을\n담았습니다.",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A06",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "“작은 꽃 한 송이가\n하루를 환하게\n만들어 줍니다.”",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "14",
+          "style": "Folio",
+          "color": "accent_A06",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A06"
+    },
+    {
+      "page": 15,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 10,
+          "text": "담장 곁의 노란 인사",
+          "style": "RightTitle",
+          "color": "accent_A06",
+          "align": "left",
+          "name": "RightWorkTitle"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 39,
+          "w": 161,
+          "h": 18,
+          "text": "나무 울타리 곁에 노란 꽃이 피었습니다. 작고 환한 빛이 평범한 산책길을 특별하게 바꾸어\n놓았습니다.",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 65,
+          "w": 161,
+          "h": 199,
+          "asset_id": "DEMO_W12",
+          "name": "DEMO_W12",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "15",
+          "style": "Folio",
+          "color": "accent_A06",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A06"
+    },
+    {
+      "page": 16,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A07",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A07",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A07",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "DEMO_W13",
+          "name": "DEMO_W13",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A07",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A07",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "작품 01  /  창가에 스민 오후",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A07",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "평범한\n오후의\n온기를\n담다",
+          "style": "SideTitle",
+          "color": "accent_A07",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "윤상철 작가",
+          "style": "Author",
+          "color": "accent_A07",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "집 안의 조용한 풍경을 살펴봅니다.\n빛과 온기가 머무는 자리에서\n소박한 행복을 발견합니다.",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A07",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "흰 커튼 사이로 들어온 빛이 나무\n창틀에 머뭅니다. 그 순간의 마음을\n담았습니다.",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A07",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "“평범한 오후에도\n오래 남는 온기가\n있습니다.”",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "16",
+          "style": "Folio",
+          "color": "accent_A07",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A07"
+    },
+    {
+      "page": 17,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 10,
+          "text": "따뜻한 한 잔",
+          "style": "RightTitle",
+          "color": "accent_A07",
+          "align": "left",
+          "name": "RightWorkTitle"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 39,
+          "w": 161,
+          "h": 18,
+          "text": "창가에 놓인 찻잔 위로 따뜻한 김이 오릅니다. 서두르지 않고 나를 돌보는 시간이 소중하게\n느껴집니다.",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 65,
+          "w": 161,
+          "h": 199,
+          "asset_id": "DEMO_W14",
+          "name": "DEMO_W14",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.5,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "17",
+          "style": "Folio",
+          "color": "accent_A07",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A07"
+    },
+    {
+      "page": 18,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A08",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A08",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A08",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "DEMO_W15",
+          "name": "DEMO_W15",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A08",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A08",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "작품 01  /  비가 남긴 이야기",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A08",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "달라진\n날씨의\n표정을\n찾다",
+          "style": "SideTitle",
+          "color": "accent_A08",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "장미숙 작가",
+          "style": "Author",
+          "color": "accent_A08",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "날씨가 달라질 때마다 길을 나섭니다.\n비 오는 날과 맑은 날의 표정을\n천천히 비교하며 사진을 찍습니다.",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A08",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "비에 젖은 돌담 곁에 우산이 기대어\n있습니다. 그 순간의 마음을\n담았습니다.",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A08",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "“날씨가 달라지면\n마음의 풍경도\n달라집니다.”",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "18",
+          "style": "Folio",
+          "color": "accent_A08",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A08"
+    },
+    {
+      "page": 19,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 10,
+          "text": "바다를 따라 걷다",
+          "style": "RightTitle",
+          "color": "accent_A08",
+          "align": "left",
+          "name": "RightWorkTitle"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 39,
+          "w": 161,
+          "h": 18,
+          "text": "푸른 바다를 따라 길이 이어집니다. 한 걸음씩 천천히 걷다 보면 새로운 풍경이 우리를 기다립니다.",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 65,
+          "w": 161,
+          "h": 199,
+          "asset_id": "DEMO_W16",
+          "name": "DEMO_W16",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "19",
+          "style": "Folio",
+          "color": "accent_A08",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A08"
+    },
+    {
+      "page": 20,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A09",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A09",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A09",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "DEMO_W17",
+          "name": "DEMO_W17",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A09",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A09",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "작품 01  /  작은 손님",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A09",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "조용한\n순간의\n빛을\n기다리다",
+          "style": "SideTitle",
+          "color": "accent_A09",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "한정희 작가",
+          "style": "Author",
+          "color": "accent_A09",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "자연 속에서 작은 움직임을 찾습니다.\n기다리는 시간을 즐기며\n순간의 빛을 담는 법을 배웁니다.",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A09",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "작은 새 한 마리가 나뭇가지에\n내려앉았습니다. 그 순간의 마음을\n담았습니다.",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A09",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "“조용히 기다리니\n작은 순간이\n다가왔습니다.”",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "20",
+          "style": "Folio",
+          "color": "accent_A09",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A09"
+    },
+    {
+      "page": 21,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 10,
+          "text": "반짝이는 오늘",
+          "style": "RightTitle",
+          "color": "accent_A09",
+          "align": "left",
+          "name": "RightWorkTitle"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 39,
+          "w": 161,
+          "h": 18,
+          "text": "흐르는 물 위에 햇빛이 잘게 부서집니다. 손에 잡히지 않아 더 오래 간직하고 싶은 반짝임입니다.",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 65,
+          "w": 161,
+          "h": 199,
+          "asset_id": "DEMO_W18",
+          "name": "DEMO_W18",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.5,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "21",
+          "style": "Folio",
+          "color": "accent_A09",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A09"
+    },
+    {
+      "page": 22,
+      "role": "artist",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 137,
+          "y": 15,
+          "w": 49,
+          "h": 6,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "accent_A10",
+          "align": "right",
+          "name": "Book"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 28,
+          "h": 0.16,
+          "fill": "accent_A10",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 17,
+          "y": 17,
+          "w": 0.16,
+          "h": 21,
+          "fill": "accent_A10",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 145,
+          "asset_id": "DEMO_W19",
+          "name": "DEMO_W19",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "block",
+          "x": 194,
+          "y": 156,
+          "w": 0.16,
+          "h": 22,
+          "fill": "accent_A10",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "block",
+          "x": 174,
+          "y": 178,
+          "w": 20,
+          "h": 0.16,
+          "fill": "accent_A10",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 174,
+          "w": 155,
+          "h": 6,
+          "text": "작품 01  /  오래 서 있는 마음",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 190,
+          "w": 32,
+          "h": 73,
+          "fill": "paper",
+          "stroke": "accent_A10",
+          "stroke_weight": 0.45,
+          "name": "framed_side_title"
+        },
+        {
+          "kind": "text",
+          "x": 29,
+          "y": 196,
+          "w": 24,
+          "h": 40,
+          "text": "오늘의\n자연에\n마음을\n기대다",
+          "style": "SideTitle",
+          "color": "accent_A10",
+          "align": "left",
+          "name": "SideTitle"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 190,
+          "w": 121,
+          "h": 9,
+          "text": "오영호 작가",
+          "style": "Author",
+          "color": "accent_A10",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 203,
+          "w": 121,
+          "h": 20,
+          "text": "나무와 꽃을 보며 마음을 쉬어 갑니다.\n오래된 것과 새로 피는 것을\n다정한 시선으로 바라봅니다.",
+          "style": "Intro",
+          "color": "ink",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "block",
+          "x": 65,
+          "y": 226,
+          "w": 121,
+          "h": 0.14,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 229,
+          "w": 56,
+          "h": 7,
+          "text": "사진에 담은 순간",
+          "style": "Section",
+          "color": "accent_A10",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 65,
+          "y": 240,
+          "w": 56,
+          "h": 24,
+          "text": "넓은 들판 한쪽에 큰 나무가 서\n있습니다. 그 순간의 마음을\n담았습니다.",
+          "style": "Body",
+          "color": "muted",
+          "align": "left",
+          "name": "Body"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 229,
+          "w": 54,
+          "h": 7,
+          "text": "작가의 한마디",
+          "style": "Section",
+          "color": "accent_A10",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 240,
+          "w": 54,
+          "h": 24,
+          "text": "“오늘도 자연에게\n천천히 살아가는\n법을 배웁니다.”",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 50,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "22",
+          "style": "Folio",
+          "color": "accent_A10",
+          "align": "left",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A10"
+    },
+    {
+      "page": 23,
+      "role": "artist",
+      "side": "right",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 10,
+          "text": "이슬을 머금은 아침",
+          "style": "RightTitle",
+          "color": "accent_A10",
+          "align": "left",
+          "name": "RightWorkTitle"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 39,
+          "w": 161,
+          "h": 18,
+          "text": "아침 이슬을 머금은 하얀 꽃이 고개를 들었습니다. 작은 생명에게서 새로운 하루를 시작할 힘을\n얻습니다.",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "RightWorkDescription"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 65,
+          "w": 161,
+          "h": 199,
+          "asset_id": "DEMO_W20",
+          "name": "DEMO_W20",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "text",
+          "x": 174,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "23",
+          "style": "Folio",
+          "color": "accent_A10",
+          "align": "right",
+          "name": "Folio"
+        }
+      ],
+      "artist_id": "A10"
+    },
+    {
+      "page": 24,
+      "role": "closing",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 25,
+          "w": 161,
+          "h": 16,
+          "text": "함께한 순간들",
+          "style": "PageTitle",
+          "color": "accent",
+          "align": "left",
+          "name": "PageTitle"
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 54,
+          "w": 78,
+          "h": 35,
+          "asset_id": "DEMO_ACT04",
+          "name": "DEMO_ACT04",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "frame",
+          "x": 108,
+          "y": 54,
+          "w": 78,
+          "h": 35,
+          "asset_id": "DEMO_ACT05",
+          "name": "DEMO_ACT05",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.5,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 94,
+          "w": 78,
+          "h": 35,
+          "asset_id": "DEMO_ACT06",
+          "name": "DEMO_ACT06",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "frame",
+          "x": 108,
+          "y": 94,
+          "w": 78,
+          "h": 35,
+          "asset_id": "DEMO_ACT07",
+          "name": "DEMO_ACT07",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "frame",
+          "x": 25,
+          "y": 134,
+          "w": 78,
+          "h": 35,
+          "asset_id": "DEMO_ACT08",
+          "name": "DEMO_ACT08",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.5,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "frame",
+          "x": 108,
+          "y": 134,
+          "w": 78,
+          "h": 35,
+          "asset_id": "DEMO_ACT09",
+          "name": "DEMO_ACT09",
+          "fit": "sheet_crop",
+          "empty_frame": false,
+          "sheet_crop": [
+            0.0,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 185,
+          "w": 161,
+          "h": 9,
+          "text": "함께해 주신 분들",
+          "style": "Label",
+          "color": "accent",
+          "align": "left",
+          "name": "Label"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 201,
+          "w": 161,
+          "h": 24,
+          "text": "참여 작가  김정숙 · 박영수 · 이순자 · 최정호 · 정옥희\n강명자 · 윤상철 · 장미숙 · 한정희 · 오영호\n사진 강사  이다은    활동 지원  함께걷기 봉사단",
+          "style": "Draft",
+          "color": "muted",
+          "align": "left",
+          "name": "Draft"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 239,
+          "w": 161,
+          "h": 0.15,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 246,
+          "w": 161,
+          "h": 13,
+          "text": "동래구노인복지관\n재가노인지원서비스센터",
+          "style": "Small",
+          "color": "ink",
+          "align": "left",
+          "name": "Small"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 264,
+          "w": 161,
+          "h": 8,
+          "text": "일상의 발견을 함께 나누는 사진·이야기 활동",
+          "style": "Small",
+          "color": "muted",
+          "align": "left",
+          "name": "Small"
+        },
+        {
+          "kind": "block",
+          "x": 25,
+          "y": 275,
+          "w": 161,
+          "h": 0.12,
+          "fill": "line",
+          "stroke": null,
+          "stroke_weight": 0,
+          "name": "line"
+        },
+        {
+          "kind": "text",
+          "x": 45,
+          "y": 278,
+          "w": 55,
+          "h": 4,
+          "text": "인생사진첩",
+          "style": "Running",
+          "color": "muted",
+          "align": "left",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 100,
+          "y": 278,
+          "w": 86,
+          "h": 4,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 277.5,
+          "w": 12,
+          "h": 4.5,
+          "text": "24",
+          "style": "Folio",
+          "color": "accent",
+          "align": "left",
+          "name": "Folio"
+        },
+        {
+          "kind": "text",
+          "x": 25,
+          "y": 16,
+          "w": 161,
+          "h": 5,
+          "text": "사진·인명·본문은 디자인 검토용 예시입니다.",
+          "style": "DemoNote",
+          "color": "muted",
+          "align": "left",
+          "name": "DemoContentNote"
+        }
+      ]
+    }
+  ],
+  "demo_assets": [
+    {
+      "id": "DEMO_W01",
+      "path": "links/demo-v005/sheet-01.png",
+      "sheet_crop": [
+        0.0,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W02",
+      "path": "links/demo-v005/sheet-01.png",
+      "sheet_crop": [
+        0.5,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W03",
+      "path": "links/demo-v005/sheet-01.png",
+      "sheet_crop": [
+        0.0,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W04",
+      "path": "links/demo-v005/sheet-01.png",
+      "sheet_crop": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W05",
+      "path": "links/demo-v005/sheet-02.png",
+      "sheet_crop": [
+        0.0,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W06",
+      "path": "links/demo-v005/sheet-02.png",
+      "sheet_crop": [
+        0.5,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W07",
+      "path": "links/demo-v005/sheet-02.png",
+      "sheet_crop": [
+        0.0,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W08",
+      "path": "links/demo-v005/sheet-02.png",
+      "sheet_crop": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W09",
+      "path": "links/demo-v005/sheet-03.png",
+      "sheet_crop": [
+        0.0,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W10",
+      "path": "links/demo-v005/sheet-03.png",
+      "sheet_crop": [
+        0.5,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W11",
+      "path": "links/demo-v005/sheet-03.png",
+      "sheet_crop": [
+        0.0,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W12",
+      "path": "links/demo-v005/sheet-03.png",
+      "sheet_crop": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W13",
+      "path": "links/demo-v005/sheet-04.png",
+      "sheet_crop": [
+        0.0,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W14",
+      "path": "links/demo-v005/sheet-04.png",
+      "sheet_crop": [
+        0.5,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W15",
+      "path": "links/demo-v005/sheet-04.png",
+      "sheet_crop": [
+        0.0,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W16",
+      "path": "links/demo-v005/sheet-04.png",
+      "sheet_crop": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W17",
+      "path": "links/demo-v005/sheet-05.png",
+      "sheet_crop": [
+        0.0,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W18",
+      "path": "links/demo-v005/sheet-05.png",
+      "sheet_crop": [
+        0.5,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W19",
+      "path": "links/demo-v005/sheet-05.png",
+      "sheet_crop": [
+        0.0,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_W20",
+      "path": "links/demo-v005/sheet-05.png",
+      "sheet_crop": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_ACT01",
+      "path": "links/demo-v005/sheet-06.png",
+      "sheet_crop": [
+        0.0,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_ACT02",
+      "path": "links/demo-v005/sheet-06.png",
+      "sheet_crop": [
+        0.0,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_ACT03",
+      "path": "links/demo-v005/sheet-06.png",
+      "sheet_crop": [
+        0.5,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_ACT04",
+      "path": "links/demo-v005/sheet-06.png",
+      "sheet_crop": [
+        0.0,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_ACT05",
+      "path": "links/demo-v005/sheet-06.png",
+      "sheet_crop": [
+        0.5,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_ACT06",
+      "path": "links/demo-v005/sheet-06.png",
+      "sheet_crop": [
+        0.0,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_ACT07",
+      "path": "links/demo-v005/sheet-06.png",
+      "sheet_crop": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_ACT08",
+      "path": "links/demo-v005/sheet-06.png",
+      "sheet_crop": [
+        0.5,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    },
+    {
+      "id": "DEMO_ACT09",
+      "path": "links/demo-v005/sheet-06.png",
+      "sheet_crop": [
+        0.0,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "pixel_width": 1254,
+      "pixel_height": 1254,
+      "source": "AI_generated_for_this_demo"
+    }
+  ],
+  "demo_content": true,
+  "palette": {
+    "A01": "#A0896C",
+    "A02": "#82917A",
+    "A03": "#7B9290",
+    "A04": "#8293A3",
+    "A05": "#9390A2",
+    "A06": "#A18C97",
+    "A07": "#AD8F83",
+    "A08": "#A59574",
+    "A09": "#8E9A87",
+    "A10": "#92958C"
+  }
+};

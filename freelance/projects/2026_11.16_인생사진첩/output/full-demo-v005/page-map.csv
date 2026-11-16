@@ -1,0 +1,25 @@
+page,role,artist_id,name,photos,top_right_title
+1,cover,,,"DEMO_W01,DEMO_W03,DEMO_W05,DEMO_W07,DEMO_W09,DEMO_W11,DEMO_W13,DEMO_W15,DEMO_W17,DEMO_W19",
+2,greeting,,,,
+3,program,,,"DEMO_ACT01,DEMO_ACT02,DEMO_ACT03",
+4,artist,A01,김정숙,DEMO_W01,
+5,artist,A01,김정숙,DEMO_W02,초록 대문 앞에서
+6,artist,A02,박영수,DEMO_W03,
+7,artist,A02,박영수,DEMO_W04,물 위에 머문 빛
+8,artist,A03,이순자,DEMO_W05,
+9,artist,A03,이순자,DEMO_W06,바다로 가는 마음
+10,artist,A04,최정호,DEMO_W07,
+11,artist,A04,최정호,DEMO_W08,기다림의 풍경
+12,artist,A05,정옥희,DEMO_W09,
+13,artist,A05,정옥희,DEMO_W10,초록 길을 따라
+14,artist,A06,강명자,DEMO_W11,
+15,artist,A06,강명자,DEMO_W12,담장 곁의 노란 인사
+16,artist,A07,윤상철,DEMO_W13,
+17,artist,A07,윤상철,DEMO_W14,따뜻한 한 잔
+18,artist,A08,장미숙,DEMO_W15,
+19,artist,A08,장미숙,DEMO_W16,바다를 따라 걷다
+20,artist,A09,한정희,DEMO_W17,
+21,artist,A09,한정희,DEMO_W18,반짝이는 오늘
+22,artist,A10,오영호,DEMO_W19,
+23,artist,A10,오영호,DEMO_W20,이슬을 머금은 아침
+24,closing,,,"DEMO_ACT04,DEMO_ACT05,DEMO_ACT06,DEMO_ACT07,DEMO_ACT08,DEMO_ACT09",
