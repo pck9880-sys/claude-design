@@ -1,0 +1,313 @@
+{
+  "project": "2026_11.16_인생사진첩",
+  "sample_only": true,
+  "target_page": 4,
+  "state": "awaiting_user_design_review",
+  "demo_content": true,
+  "demo_note": "작가명·소개·제목·설명은 사용자 허용에 따른 시안용 창작 예시. 사진은 이번 시안용 AI 생성이며 실제 어르신 작품이 아니다.",
+  "spec": {
+    "width_mm": 210,
+    "height_mm": 297,
+    "bleed_mm": 3,
+    "size_confirmed": false
+  },
+  "pages": [
+    {
+      "page": 4,
+      "role": "artist",
+      "artist_id": "DEMO_AUTHOR_01",
+      "side": "left",
+      "items": [
+        {
+          "kind": "text",
+          "x": 18,
+          "y": 13,
+          "w": 62,
+          "h": 7,
+          "text": "인생사진첩",
+          "style": "Book",
+          "color": "ink",
+          "align": "left",
+          "name": "Book"
+        },
+        {
+          "kind": "text",
+          "x": 92,
+          "y": 13,
+          "w": 100,
+          "h": 7,
+          "text": "프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        },
+        {
+          "kind": "rule",
+          "x": 18,
+          "y": 24,
+          "w": 174,
+          "h": 0.15,
+          "name": "Separator"
+        },
+        {
+          "kind": "text",
+          "x": 18,
+          "y": 30,
+          "w": 102,
+          "h": 7,
+          "text": "작가의 시선  01",
+          "style": "Section",
+          "color": "accent",
+          "align": "left",
+          "name": "Section"
+        },
+        {
+          "kind": "text",
+          "x": 18,
+          "y": 41,
+          "w": 106,
+          "h": 33,
+          "text": "빛이 머문\n오래된 골목",
+          "style": "Title",
+          "color": "ink",
+          "align": "left",
+          "name": "Title"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 32,
+          "w": 60,
+          "h": 8,
+          "text": "김정숙 작가",
+          "style": "Author",
+          "color": "ink",
+          "align": "left",
+          "name": "Author"
+        },
+        {
+          "kind": "text",
+          "x": 132,
+          "y": 45,
+          "w": 60,
+          "h": 30,
+          "text": "익숙한 동네를 천천히 걷습니다.\n무심코 지나쳤던 풍경에서\n오래된 기억과 새로운 이야기를\n발견하는 시간이 좋습니다.",
+          "style": "Intro",
+          "color": "muted",
+          "align": "left",
+          "name": "Intro"
+        },
+        {
+          "kind": "frame",
+          "x": 18,
+          "y": 84,
+          "w": 174,
+          "h": 130.5,
+          "asset_id": "DEMO_ALLEY_01",
+          "name": "DEMO_ALLEY_01"
+        },
+        {
+          "kind": "text",
+          "x": 18,
+          "y": 218,
+          "w": 126,
+          "h": 6,
+          "text": "빛이 머문 오래된 골목  ·  김정숙",
+          "style": "Caption",
+          "color": "muted",
+          "align": "left",
+          "name": "Caption"
+        },
+        {
+          "kind": "text",
+          "x": 150,
+          "y": 218,
+          "w": 42,
+          "h": 6,
+          "text": "동네를 걷다",
+          "style": "Caption",
+          "color": "muted",
+          "align": "right",
+          "name": "Caption"
+        },
+        {
+          "kind": "block",
+          "x": 0,
+          "y": 230,
+          "w": 210,
+          "h": 67,
+          "fill": "soft",
+          "name": "작품 이야기 바탕"
+        },
+        {
+          "kind": "text",
+          "x": 18,
+          "y": 240,
+          "w": 33,
+          "h": 17,
+          "text": "작가의\n한마디",
+          "style": "QuoteLabel",
+          "color": "accent",
+          "align": "left",
+          "name": "QuoteLabel"
+        },
+        {
+          "kind": "text",
+          "x": 62,
+          "y": 239,
+          "w": 130,
+          "h": 20,
+          "text": "매일 걷던 길도,\n카메라로 바라보니 새로웠습니다.",
+          "style": "Quote",
+          "color": "ink",
+          "align": "left",
+          "name": "Quote"
+        },
+        {
+          "kind": "text",
+          "x": 62,
+          "y": 260,
+          "w": 130,
+          "h": 20,
+          "text": "따뜻한 햇살과 나뭇잎 그림자가 대문에 머물렀습니다.\n평범한 하루에도 오래도록 간직하고 싶은 순간이\n있다는 걸, 사진을 찍으며 새삼 알게 되었습니다.",
+          "style": "Description",
+          "color": "muted",
+          "align": "left",
+          "name": "Description"
+        },
+        {
+          "kind": "rule",
+          "x": 18,
+          "y": 282,
+          "w": 174,
+          "h": 0.15,
+          "name": "Separator"
+        },
+        {
+          "kind": "text",
+          "x": 18,
+          "y": 286,
+          "w": 27,
+          "h": 5,
+          "text": "04",
+          "style": "Folio",
+          "color": "ink",
+          "align": "left",
+          "name": "Folio"
+        },
+        {
+          "kind": "text",
+          "x": 87,
+          "y": 286,
+          "w": 105,
+          "h": 5,
+          "text": "인생사진첩  /  프레임에 담긴 나의 세상",
+          "style": "Running",
+          "color": "muted",
+          "align": "right",
+          "name": "Running"
+        }
+      ]
+    }
+  ],
+  "styles": {
+    "Running": [
+      9.5,
+      "Regular",
+      1.5
+    ],
+    "Book": [
+      11,
+      "Bold",
+      1.5
+    ],
+    "Section": [
+      10.5,
+      "Bold",
+      1.5
+    ],
+    "Title": [
+      32,
+      "Bold",
+      1.16
+    ],
+    "Author": [
+      12,
+      "Bold",
+      1.4
+    ],
+    "Intro": [
+      12,
+      "Regular",
+      1.55
+    ],
+    "Caption": [
+      10,
+      "Regular",
+      1.4
+    ],
+    "QuoteLabel": [
+      11,
+      "Bold",
+      1.35
+    ],
+    "Quote": [
+      16,
+      "Bold",
+      1.3
+    ],
+    "Description": [
+      12,
+      "Regular",
+      1.5
+    ],
+    "Folio": [
+      10,
+      "Bold",
+      1.4
+    ]
+  },
+  "colors": {
+    "ink": [
+      38,
+      51,
+      44
+    ],
+    "muted": [
+      101,
+      109,
+      99
+    ],
+    "accent": [
+      89,
+      108,
+      88
+    ],
+    "soft": [
+      242,
+      244,
+      237
+    ],
+    "line": [
+      206,
+      213,
+      201
+    ],
+    "paper": [
+      255,
+      255,
+      255
+    ]
+  },
+  "demo_assets": [
+    {
+      "id": "DEMO_ALLEY_01",
+      "kind": "demo_generated_photo",
+      "path": "links/demo-sample/generated_alley_v001.png",
+      "title": "빛이 머문 오래된 골목",
+      "status": "demo_only_not_client_work",
+      "sha256": "be998600879a83722f913695b5b6c54f9c8cf0c6ebbfa6b08a963b8169827a69"
+    }
+  ]
+}

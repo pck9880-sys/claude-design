@@ -1,5 +1,11 @@
 # 외주 작업실 핸드오프
 
+## 최신 — 인생사진첩 완성형 한 장 예시 v002
+- 사용자 요청으로 임의 텍스트·사진을 넣어 실제 책처럼 한 장 디자인. 상단 제목/작가소개·중앙 사진·하단 이야기 영역 구성.
+- 사진은 이번 작업용 image_gen 신규 생성. 다른 작업 이미지 사용하지 않음. 예시 작가명·글·사진은 실제 고객 자료와 분리.
+- 프로젝트 output/interior-sample-v002/, data/interior_sample_v002.json, scripts/BuildInteriorSampleV002.jsx가 최신. 실제 앱 출력은 미검증.
+- 사용자 피드백 전 다른 페이지에 적용하지 않음.
+
 ## 최신 — 인생사진첩 내지 한 장 우선
 - 사용자 요청으로 한 페이지 시안을 먼저 확인하고 전체 적용은 보류.
 - 프로젝트 output/interior-sample-v001/에 4p 대표 시안 PNG/SVG, data에 편집 데이터, scripts/BuildInteriorSample.jsx에 한 쪽 InDesign 생성 코드.
