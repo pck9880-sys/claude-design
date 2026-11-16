@@ -5,7 +5,7 @@
   "requires_personal_pc_off": true,
   "proposed_backend": "adobe_firefly_services",
   "python_role": "job_orchestration_and_api_client",
-  "status": "manuscript_received_layout_script_prepared_not_executed",
+  "status": "full_24_page_layout_v002_prepared_native_app_run_pending",
   "api_entitlements_verified": false,
   "cost_verified": false,
   "credentials_configured": false,
@@ -16,5 +16,10 @@
   "manuscript_received": true,
   "cover_reference_received": true,
   "photo_archives_received": false,
-  "desktop_install_requested": false
+  "desktop_install_requested": false,
+  "native_render_attempted": true,
+  "native_render_visual_passed": false,
+  "layout_preview_generated": true,
+  "current_script": "scripts/BuildLayoutV002.jsx",
+  "all_interior_pages_included": true
 }

@@ -4,6 +4,14 @@
 
 > freelance/projects/2026_11.16_인생사진첩/CLAUDE.md와 START-HERE.md를 읽고 인생사진첩을 이어서 작업해줘. 고객 HWP 원고와 최신 수신 현황을 확인하고, 다른 작업 이미지는 사용하지 마. InDesign 실행 가능 여부를 먼저 구분하고 24쪽 구조를 유지해줘.
 
+## v002 — 내지 전체 작업의 최신 진입점
+
+- 먼저 `output/v002/README.md`, `source/indesign/v002/README.md`를 읽는다.
+- `data/layout_v002.json`에 표지·모든 내지 24쪽의 배치가 들어 있다.
+- 현재 InDesign 생성 스크립트는 **scripts/BuildLayoutV002.jsx**이다. 기존 BuildAlbum.jsx는 이전 구조 초안.
+- 데이터 갱신 후 `python scripts/sync_jsx_data.py` → `python scripts/build_layout.py` → InDesign에서 BuildLayoutV002.jsx 실행 순서.
+- 자체 SVG/PNG 검토도와 Adobe 실제 출력은 구분한다. 실험한 직접 IDML은 빈 출력이 발견되어 배포하지 않았다. 자세한 내용은 automation/RENDER-CHECK-v002.md.
+
 ## 파일 위치
 
 - `inputs/manuscript/`: 고객 HWP 원본 사본. 변경하지 않음.
@@ -32,7 +40,7 @@
 1. 해당 GitHub 브랜치를 사용 중인 비공개 작업 폴더에서 연다. 바탕화면 설치는 필요하지 않다.
 2. `python scripts/sync_jsx_data.py` 실행(프로젝트 폴더 기준). JSON 검사 및 JSX 데이터 갱신.
 3. InDesign에 Pretendard Regular/Bold 설치·활성화를 확인.
-4. 창 → 유틸리티 → 스크립트 → 사용자 폴더에 BuildAlbum.jsx의 사본만 넣으면 상대 데이터 경로를 찾지 못하므로, 프로젝트 내부 **scripts/BuildAlbum.jsx 자체를 가리키는 스크립트 별칭/바로가기**로 실행하거나, 프로젝트 폴더 구조 전체를 유지한 채 스크립트를 실행한다.
+4. 창 → 유틸리티 → 스크립트 → 사용자 폴더에 BuildLayoutV002.jsx의 사본만 넣으면 상대 데이터 경로를 찾지 못하므로, 프로젝트 내부 **scripts/BuildLayoutV002.jsx 자체를 가리키는 스크립트 별칭/바로가기**로 실행하거나, 프로젝트 폴더 구조 전체를 유지한 채 스크립트를 실행한다.
 5. `source/indesign/review_<시각>/`에 INDD·IDML·검토 PDF·BUILD-REPORT.txt가 생성된다. 고객 원본이나 기존 작업 파일을 덮어쓰지 않는다.
 6. 자료가 없으면 원고·사진 자리가 표시된 **검토 구조**다. INDD를 열어 모든 펼침면과 오버셋·누락 링크·폰트·사진 비례를 확인한다. 부정확한 위치가 있으면 JSX/데이터에서 수정.
 7. 완성된 INDD에서 IDML·검토 PDF를 다시 출력하고 핸드오프 및 실제 실행 결과를 기록한 뒤 commit/push.
