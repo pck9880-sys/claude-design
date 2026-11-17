@@ -1,0 +1,5 @@
+pyyaml>=6
+Pillow>=10
+mss>=9
+pytest>=8
+pywin32>=306; sys_platform == "win32"

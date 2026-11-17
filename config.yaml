@@ -1,0 +1,50 @@
+# AI 매니저 설정 — 이 파일은 self-update가 수정할 수 없습니다(보호 경로).
+
+workspace: ~/AI_Inbox          # 모든 결과물(초안, 레퍼런스, 리포트)이 쌓이는 곳. 원본 작업 파일은 건드리지 않음.
+
+intervals:
+  tick_seconds: 30             # 내부 점검 주기
+  dispatch_minutes: 10         # 작업 파악 + 배분
+  self_update_minutes: 60      # 매니저 자기 업그레이드
+  idle_self_update_minutes: 20 # 할 일이 바닥났을 때 더 빨리 업그레이드 시도(최소 간격)
+
+capture:
+  enabled: true
+  downscale_width: 1280        # 사용량 절약을 위해 축소 후 전달
+  keep_last: 50                # 보관할 스크린샷 수
+  change_threshold: 6          # 화면 해시 차이가 이보다 작으면 "변화 없음"으로 보고 플래너 생략
+  # 이 앱이 맨 앞에 있으면 캡처하지 않음 (부분 일치, 대소문자 무시)
+  exclude_apps: [1Password, Bitwarden, Keychain, 키체인, KakaoTalk, 카카오톡, Messages, 메시지,
+                 Mail, 메일, Outlook, Slack, Telegram, Banking, Toss, 토스]
+  exclude_title_keywords: [은행, bank, password, 비밀번호, 로그인, sign in, 시크릿, incognito,
+                           inprivate, private browsing, 공인인증, 인증서]
+
+idle:
+  idle_after_minutes: 5        # 이 시간 이상 입력 없으면 "자리 비움" → 무거운 작업 허용
+
+claude:
+  binary: claude               # Claude Max 계정으로 로그인된 Claude Code CLI
+  model: ""                    # 비우면 CLI 기본값
+  task_timeout_minutes: 20
+  max_tasks_per_hour: 4        # Max 요금제 사용량 보호
+  max_tasks_per_hour_idle: 8   # 자리 비움일 때 허용량
+  backoff_minutes_on_limit: 60 # 사용량 한도 도달 시 쉬는 시간
+
+fonts:
+  sources: [noonnu.cc, fonts.adobe.com]
+  require_commercial_ok: true  # 상업적 사용 불가 폰트는 추천 목록에서 제외
+  auto_install: false          # 폰트 자동 설치 금지 — 추천+링크만, 설치는 사용자가
+
+self_update:
+  enabled: true
+  require_tests: true
+  max_diff_lines: 400          # 한 번에 너무 큰 변경 금지
+  protected_paths:             # AI가 절대 수정할 수 없는 파일
+    - config.yaml
+    - supervisor.py
+    - manager/safety.py
+    - manager/selfupdate.py
+    - install/
+  healthy_after_minutes: 10    # 업데이트 후 이 시간 동안 안 죽으면 확정, 죽으면 자동 롤백
+
+notify: true
