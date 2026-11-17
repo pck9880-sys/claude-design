@@ -85,3 +85,11 @@ def test_config_creates_workspace(tmp_path, monkeypatch):
     cfg_file.write_text(f"workspace: {tmp_path / 'ws'}\n", encoding="utf-8")
     cfg = load(cfg_file)
     assert (tmp_path / "ws" / "fonts").is_dir() and cfg.workspace.endswith("ws")
+
+
+def test_partial_config_uses_defaults(tmp_path):
+    f = tmp_path / "c.yaml"
+    f.write_text(f"workspace: {tmp_path / 'ws'}\nclaude: {{max_tasks_per_hour: 1}}\n", encoding="utf-8")
+    cfg = load(f)
+    assert cfg["intervals"]["dispatch_minutes"] == 10
+    assert cfg["claude"]["max_tasks_per_hour"] == 1 and cfg["claude"]["binary"] == "claude"
