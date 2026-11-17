@@ -2,3 +2,5 @@
 __pycache__/
 .selfupdate/
 .pytest_cache/
+*.zip
+*.bundle
